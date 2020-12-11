@@ -4,7 +4,7 @@ title: "Microbiome binfies"
 description: "Bioinformatics and the Microbiome"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
-baseurl: /bash-for-bioinformatics
+baseurl: /microbiome-bioinformatics
 google_analytics: 'UA-185637-8'
 include: ["_pages"]
 permalink: /:title/
@@ -32,7 +32,7 @@ authors:
     gravatar: b1cc14991db7a456fcd761680bbc8f81
     description: "A friendly bot"
   sal:
-    name: Sally Bot
+    name: Simon Bot
     display_name: Sally Bot
     gravatar: b1cc14991db7a456fcd761680bbc8f81
     description: "A friendly bot"
