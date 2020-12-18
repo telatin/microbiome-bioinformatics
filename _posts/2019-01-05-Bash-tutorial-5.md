@@ -9,7 +9,7 @@ image: assets/images/coding.jpg
 
 > A basic introduction on passing parameters to shell scripts
 
-Our [simple script]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-2 %})
+Our [simple script]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-2.md %})
 converting all files from SAM to BAM assumes they all are in
 the current directory, that is we first we need to enter into it,
 then execute the script. What if we want to supply the **directory path** to the script?

@@ -6,7 +6,7 @@ categories: [ bash, tutorial ]
 image: assets/images/coding.jpg
 ---
 
-After a small [introduction]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-2 %}) to Bash scripting,
+After a small [introduction]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-2.md %}) to Bash scripting,
 we finally create a first bioinformatics script…
 introducing one of the **loops** we can use with the shell.
 A loop is a structure that allows to perform a set of commands a number of times.
