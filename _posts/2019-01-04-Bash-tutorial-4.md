@@ -6,12 +6,12 @@ categories: [ bash, tutorial ]
 image: assets/images/coding.jpg
 ---
 
-> We can instruct our scripts to stop when a problem is found with the “set -euo pipefail” directive
+We can instruct our scripts to stop when a problem is found with the `set -euo pipefail` directive.
 
 In the past articles we introduced some small examples of Bash scripts:
-[what they are]({{ site.baseurl }}{% link _articles/01-bash.md %}),
-[how to loop]({{ site.baseurl }}{% link _articles/02-bash.md %}) and
-[how to check conditions]({{ site.baseurl }}{% link _articles/03-bash.md %}).
+ - [what they are]({{ site.baseurl }}{% link _posts/2019-01-01-Bash-tutorial-1 %}),
+ - [how to loop]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-2 %}) and
+ - [how to check conditions]({{ site.baseurl }}{% link _posts/2019-01-03-Bash-tutorial-3 %}).
 The last topic is very important, as it let us make our scripts safer.
 Unfortunately checking for every possible error is time consuming,
 and the more “_if conditions_” we have to write, the more errors we end to add to our scripts.
