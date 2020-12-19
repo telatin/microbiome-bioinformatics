@@ -70,16 +70,14 @@ ga('send', 'pageview');
                 {% else %}
                 <li class="nav-item">
                 {% endif %}
-                <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
+                <a class="nav-link" href="{{ site.baseurl }}/index.html">Articles</a>
                 </li>
 
                 <li class="nav-item">
                 <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
                 </li>
 
-                <li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
-                </li>
+
 
 
                 {% include search-lunr.html %}
@@ -102,10 +100,12 @@ ga('send', 'pageview');
 <!-- Site Title
 ================================================== -->
 <div class="mainheading">
+	<a href="{{ site.baseurl }}/index.html">
     <h1 class="sitetitle">{{ site.name }}</h1>
     <p class="lead">
         {{ site.description }}
     </p>
+	</a>
 </div>
 
 <!-- Content
