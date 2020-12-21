@@ -96,8 +96,8 @@ section.recent-posts {
 
 a.header-link  {
   color: black;
-
 }
+
 @media (min-width:576px) {
     .card-columns.listfeaturedtag {
         -webkit-column-count: 2;
