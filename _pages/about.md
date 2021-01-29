@@ -7,4 +7,6 @@ comments: true
 
 # Welcome to Microbiome Binfies
 
-Lorem ipsum is always a good start.
+Some notes and tutorials for microbiologists interested in bioinformatics.
+
+:package: [repository](https://github.com/telatin/microbiome-bioinformatics)
