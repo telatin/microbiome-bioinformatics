@@ -15,16 +15,15 @@ authors:
     name: Andrea Telatin
     display_name: Andrea Telatin
     gravatar: f4ae403ab821b6c55bed3a7efd4c6aa1
-    web: https://telatin.github.com/
+    web: https://telatin.github.io/
     twitter: https://twitter.com/telatin
     description: "Senior bioinformatician at the Quadram Institute Bioscience, Norwich."
   ra:
     name: Rebecca Ansorge
-    display_name: Sal
+    display_name: Rebecca Ansorge
     gravatar: a195b7e9cc3b68ec3fd5d19c96880724
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
+    twitter: https://twitter.com/rebecca_ansorge
+    web: https://quadram.ac.uk/people/rebecca-ansorge/
     description: "Researcher on metagenomics at the Quadram Institute Bioscience, Norwich."
   john:
     name: John Bot
@@ -44,6 +43,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-archives
+  - jemoji
 
 # Archives
 jekyll-archives:
