@@ -24,12 +24,12 @@ your actions with scripts. This is a gentle introduction for you.
 
 #### Metabarcoding workshop
 
-* Day1 - [Introduction, Qiime2 and QC]({% post_url 2021-02-01-Metabarcoding-1.md %})
-* Day2 - [From the feature table to diversity analyses]({% post_url 2021-02-02-Metabarcoding-2.md %})
-* Day3 - [Analyse your data in R]({% post_url 2021-02-03-Metabarcoding-3.md %})
+* Day1 - [Introduction, Qiime2 and QC]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-1.md %})
+* Day2 - [From the feature table to diversity analyses]({{ site.baseurl }}{% link _posts/2021-02-02-Metabarcoding-2.md %})
+* Day3 - [Analyse your data in R]({{ site.baseurl }}{% link _posts/2021-02-03-Metabarcoding-3.md %})
 
 #### Metagenomics workshop: classifying your reads
 
-* Day1 - [Introduction and preliminary aspects]({% post_url 2021-03-01-Metagenomics-classification-1.md %})
-* Day2 - [Kraken2, Bracken, Krona and MultiQC]({% post_url 2021-03-02-Metagenomics-classification-2.md %})
-* Day3 - [Analyse your data in R]({% post_url 2021-03-03-Metagenomics-classification-3.md %})
+* Day1 - [Introduction and preliminary aspects]({{ site.baseurl }}{% link _posts/2021-03-01-Metagenomics-classification-1.md %})
+* Day2 - [Kraken2, Bracken, Krona and MultiQC]({{ site.baseurl }}{% link _posts/2021-03-02-Metagenomics-classification-2.md %})
+* Day3 - [Analyse your data in R]({{ site.baseurl }}{% link _posts/2021-03-03-Metagenomics-classification-3.md %})
