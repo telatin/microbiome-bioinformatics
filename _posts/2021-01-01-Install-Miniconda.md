@@ -36,7 +36,7 @@ There are installer for Linux, macOS and Linux, and based on different versions
 of Python: copy the link for your platform and the version desired (avoid Python 2.7
 and 32-bit versions):
 
-![get link]({{ site.baseurl }}{% link assets/images/conda-install.png %})
+![get link]({{ site.baseurl }}{% link assets/images/conda-link.png %})
 
 Here a typical workflow (changing the URL accordingly), that will install
 Miniconda in your home directory (`~/miniconda3`).
