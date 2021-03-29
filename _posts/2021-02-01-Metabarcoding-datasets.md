@@ -4,14 +4,13 @@ title:  "Metabarcoding workshop (day 1)"
 author: at
 categories: [ metabarcoding, 16S, tutorial ]
 image: assets/images/green-bact.jpg
+hidden: true
 ---
 
 ## Installing Qiime2
 
 The [installation](https://docs.qiime2.org/2021.2/install/native/#install-qiime-2-within-a-conda-environment) is usually performed using Miniconda as a package manager (that will
-download the required dependencies).
-We will use `mamba`, a (faster) drop-in replacement for `conda`
-(see [Miniconda tutorial]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})).
+download the required dependencies). We will use `mamba`, a (faster) drop-in replacement for `conda`.
 
 ```bash
 wget https://data.qiime2.org/distro/core/qiime2-2021.2-py36-linux-conda.yml
@@ -42,11 +41,10 @@ like `&`, that would be interpreted as instructions for the shell.
 ```bash
  for fileR1 in per_sample_FASTQ/98546/*R1*;
  do
-   echo $fileR1
-   fastp -i $fileR1 -I ${fileR1/_R1/_R2} -o reads-trimmed/$(basename $fileR1) \
-     -O reads-trimmed/$(basename  ${fileR1/_R1/_R2}) -Q -f 17 -F 21 -w 8 \
-     -h per_sample_FASTQ/$(basename $fileR1|cut -f1 -d.).html \
-     -j per_sample_FASTQ/$(basename $fileR1|cut -f1 -d.).json;
+ echo $fileR1; fastp -i $fileR1 -I ${fileR1/_R1/_R2} -o reads-trimmed/$(basename $fileR1) \
+   -O reads-trimmed/$(basename  ${fileR1/_R1/_R2}) -Q -f 17 -F 21 -w 8 \
+   -h per_sample_FASTQ/$(basename $fileR1|cut -f1 -d.).html \
+   -j per_sample_FASTQ/$(basename $fileR1|cut -f1 -d.).json;
 done
 ```
 
