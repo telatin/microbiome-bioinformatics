@@ -3,7 +3,7 @@ layout: post
 title:  "Install Miniconda"
 author: at
 categories: [ bash, tutorial ]
-image: assets/images/laptop.jpg
+image: assets/images/anaconda.jpg
 hidden: true
 ---
 
@@ -49,7 +49,8 @@ bash install.sh
 This will start an _interactive_ process that will ask some questions (to accept the license
   and to start the initializer).
 
-When the process is finished you'll be asked to restart your shell (_i. e._ to log out and login again, or
+When the process is finished you'll be asked to restart your shell
+(_i. e._ to log out and login again, or
   simply type `source ~/.bashrc` on most systems)
 
 ## The bioconda repository
@@ -95,3 +96,9 @@ and to install (for example):
 ```bash
 mamba install -c bioconda covtobed
 ```
+
+---
+
+See also:
+ * [Introdution to conda by _Astrobiomike_](https://astrobiomike.github.io/unix/conda-intro)
+ * [:video: Install Miniconda (video)](https://www.youtube.com/watch?v=bbIG5d3bOmk)
