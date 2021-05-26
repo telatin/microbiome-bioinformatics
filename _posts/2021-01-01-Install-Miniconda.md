@@ -46,12 +46,12 @@ wget -O install.sh "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-
 bash install.sh
 ```
 
-This will start an _interactive_ process that will ask some questions (to accept the license
-  and to start the initializer).
+This will start an _interactive_ process that will ask some questions 
+(to accept the license and to start the initializer).
 
 When the process is finished you'll be asked to restart your shell
-(_i. e._ to log out and login again, or
-  simply type `source ~/.bashrc` on most systems)
+(_i. e._ to log out and login again, 
+or simply try typing `source ~/.bashrc` on most systems)
 
 ## The bioconda repository
 
@@ -78,6 +78,52 @@ or specify the version you require:
 conda search -c bioconda samtools=1.10
 ```
 
+To install a package, simply replace _search_ with _install_. 
+If you also add `-y` you will not be prompted and will try to install directly.
+
+```bash
+conda install -y -c bioconda vsearch
+```
+
+## Creating and using environments
+
+Conda simplifies installing package, but a problem remains: conflicting versions.
+You may want to use _samtools 1.10_, for example, but another tool installed an 
+older version because it's not yet ready to support a more recent one. 
+
+Conda allows to create _environments_, that are isolated rooms where you can install
+packages independently from other rooms.
+
+#### Create a new environment
+
+We need to choose a unique name for our new environment, in this example _myenv1_ (usually it's the name of a tool (like _qiime2-2020.1_) or a task (like _denovo_):
+```bash
+conda create -n myenv1
+```
+
+#### Activate the environment
+
+To _use_ an environment we need first to *activate* it:
+```bash
+conda activate myenv1
+```
+
+When the environment is active, 
+you will no longer be able to access the packages you installed 
+in the _base_ environment, and if you install a package now it will
+belong to the _active_ environment.
+
+```bash
+conda install -c bioconda vsearch=2.17
+```
+
+#### Deactivate the environment
+
+To return to the previous environment:
+```
+conda deactivate
+```
+
 ## Using mamba for faster installations
 
 Sometimes we require a lot of packages to be installed and this will trigger a long
@@ -101,4 +147,4 @@ mamba install -c bioconda covtobed
 
 See also:
  * [Introdution to conda by _Astrobiomike_](https://astrobiomike.github.io/unix/conda-intro)
- * [:video: Install Miniconda (video)](https://www.youtube.com/watch?v=bbIG5d3bOmk)
+ * [:film_projector: Install Miniconda (video)](https://www.youtube.com/watch?v=bbIG5d3bOmk)
