@@ -3,21 +3,21 @@ layout: post
 title:  "Taxonomic profiling of whole metagenome shotgun"
 author: at
 categories: [ metagenomics, tutorial ]
-image: assets/images/xray-bact.jpg
+image: assets/images/qiime.jpg
 hidden: true
+featured: true 
 ---
 
 ## CLIMB Workshop on Metabarcoding (16S) analysis
 
 | Date          | What                                    |
 |---------------|-----------------------------------------|
-| 2021-03-20    | Registration deadline [link](https://)  |
-| 2021-04-10    | 9.30 Workshop: day 1                    |
-|               | Introduction, QC, Host removal, Kraken2 |
-| 2021-04-11    | 9.30 Workshop: day 2                    |
-|               | Bracken, merging results, MultiQC, Pavian  |
-| 2021-04-12    | 9.30 Workshop: day 3                    |
-|               | Using R to analyse and visualize the output files  |
+| 2021-05-14    | 9.30 - 12.00 Workshop: day 1            |
+|               | _Introduction, QC, Denoising_            |
+| 2021-04-15    | 9.30 - 12.00 Workshop: day 2            |
+|               | _Core diversity, Handoff to PhyloSeq..._  |
+| 2021-04-16    | 9.30 - 11.00 Workshop: day 3            |
+|               | _Importing data in R_                     |
 
 ### Requisites
 
@@ -29,6 +29,9 @@ hidden: true
 
 ### Programme
 
-* Day1 - [Introduction and preliminary aspects]({{ site.baseurl }}{% link _posts/2021-03-01-Metagenomics-classification-1.md %})
-* Day2 - [Kraken2, Bracken, Krona and MultiQC]({{ site.baseurl }}{% link _posts/2021-03-02-Metagenomics-classification-2.md %})
-* Day3 - [Analyse your data in R]({{ site.baseurl }}{% link _posts/2021-03-03-Metagenomics-classification-3.md %})
+* **Day 1** - 
+[Introduction and denoising]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-1.md %})
+* **Day 2** - 
+[Core diversity analyses]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-2.md %})
+* **Day 3** - 
+[Analyse your data in R]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-3.md %})

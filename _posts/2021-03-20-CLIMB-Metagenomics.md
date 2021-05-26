@@ -10,13 +10,12 @@ hidden: true
 ## CLIMB Workshop on Metagenomics taxonomic profiling
 
 | Date          | What                                    |
-|---------------|-----------------------------------------|
-| 2021-03-20    | Registration deadline [link](https://)  |
-| 2021-04-10    | 9.30 Workshop: day 1                    |
+|---------------|-----------------------------------------| 
+| 2021-07-05    | 9.30 Workshop: day 1                    |
 |               | Introduction, QC, Host removal, Kraken2 |
-| 2021-04-11    | 9.30 Workshop: day 2                    |
+| 2021-07-06    | 9.30 Workshop: day 2                    |
 |               | Bracken, merging results, MultiQC, Pavian  |
-| 2021-04-12    | 9.30 Workshop: day 3                    |
+| 2021-07-07    | 9.30 Workshop: day 3                    |
 |               | Using R to analyse and visualize the output files  |
 
 ### Requisites

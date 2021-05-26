@@ -3,7 +3,6 @@ layout: post
 title:  "Metabarcoding datasets (16S, ITS)"
 author: at
 categories: [ metabarcoding, 16S, tutorial ]
-image: assets/images/green-bact.jpg
 hidden: true
 ---
 

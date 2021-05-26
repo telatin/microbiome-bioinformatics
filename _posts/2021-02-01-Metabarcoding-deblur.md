@@ -1,9 +1,8 @@
 ---
 layout: post
-title:  "Metabarcoding workshop (day 1)"
+title:  "Denoising with Deblur"
 author: at
 categories: [ metabarcoding, 16S, tutorial ]
-image: assets/images/qiime.jpg
 hidden: true
 ---
 

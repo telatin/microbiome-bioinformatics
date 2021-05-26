@@ -134,7 +134,7 @@ just by dragging and dropping the file.
 This requires the transfer of the artifact to the local computer, alternatively
 we can click the link below to see the visualization artifact.
 
-:mag: [reads.qzv](https://view.qiime2.org/visualization/?type=html&src=https%3A%2F%2Fdl.dropbox.com%2Fs%2Fzuvb1n7499fhsie%2Freads.qzv%3Fdl%3D1)
+:mag: view artifact: [reads.qzv](https://view.qiime2.org/visualization/?type=html&src=https%3A%2F%2Fdl.dropbox.com%2Fs%2Fzuvb1n7499fhsie%2Freads.qzv%3Fdl%3D1)
 
 
 ## Denoising with DADA2
