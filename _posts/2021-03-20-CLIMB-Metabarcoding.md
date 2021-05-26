@@ -32,6 +32,6 @@ featured: true
 * **Day 1** - 
 [Introduction and denoising]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-1.md %})
 * **Day 2** - 
-[Core diversity analyses]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-2.md %})
+[Core diversity analyses]({{ site.baseurl }}{% link _posts/2021-02-02-Metabarcoding-2.md %})
 * **Day 3** - 
-[Analyse your data in R]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-3.md %})
+[Analyse your data in R]({{ site.baseurl }}{% link _posts/2021-02-03-Metabarcoding-3.md %})
