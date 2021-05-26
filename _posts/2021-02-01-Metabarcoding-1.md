@@ -158,7 +158,7 @@ qiime dada2 denoise-paired \
 ```
 
 An alternative method to denoise the sequences is **Deblur**, that we cover in 
-a [separate page]({{ site.baseurl }}{% link _posts/2021-01-01-Metabarcoding-deblur.md %}).
+a [separate page]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-deblur.md %}).
 
 
 ## Taxonomy
