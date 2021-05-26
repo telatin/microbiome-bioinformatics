@@ -3,29 +3,256 @@ layout: post
 title:  "Metabarcoding workshop (day 1)"
 author: at
 categories: [ metabarcoding, 16S, tutorial ]
-image: assets/images/green-bact.jpg
+image: assets/images/qiime.jpg
 ---
 
-## Installing Qiime2
+## Preparing our workbench
 
-The [installation](https://docs.qiime2.org/2021.2/install/native/#install-qiime-2-within-a-conda-environment) is usually performed using Miniconda as a package manager (that will
-download the required dependencies).
-We will use `mamba`, a (faster) drop-in replacement for `conda`
-(see [Miniconda tutorial]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})).
+We will use Miniconda throughout this workshop. This is generally a great tool
+to install packages and manage conflicting/multiple versions of libraries and 
+tools, but in this case it's also the required way to install Qiime2.
+
+If we don't have `conda` installed and available, we first need to
+[install Miniconda]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %}).
+
+## Installing Qiime2 (2021.4)
+
+The [installation](https://docs.qiime2.org/2021.2/install/native/#install-qiime-2-within-a-conda-environment) 
+is usually performed using Miniconda as a package manager 
+(that will download the required dependencies).
+We will use `mamba`, a (faster) drop-in replacement for `conda`.
 
 ```bash
-wget https://data.qiime2.org/distro/core/qiime2-2021.2-py36-linux-conda.yml
-mamba env create -n qiime2-2021.2 --file qiime2-2021.2-py36-linux-conda.yml
-# OPTIONAL CLEANUP
-rm qiime2-2021.2-py36-linux-conda.yml
+wget https://data.qiime2.org/distro/core/qiime2-2021.4-py38-linux-conda.yml
+mamba env create -n qiime2-2021.4 --file qiime2-2021.4-py38-linux-conda.yml
+rm qiime2-2021.4-py38-linux-conda.yml
 ```
 
 To activate the environment:
 ```bash
-conda activate qiime2-2021.2
+conda activate qiime2-2021.4
+```
+
+## Getting the raw reads
+
+We will analyse a very famous dataset from Pat Schloss, 
+author of [Mothur](https://mothur.org/), that he used to prepare a 
+[tutorial](https://mothur.org/wiki/miseq_sop/)
+for his own tool.
+
+```bash
+wget https://mothur.s3.us-east-2.amazonaws.com/wiki/miseqsopdata.zip
+unzip miseqsopdata.zip
+rm miseqsopdata.zip
+```
+
+The archive we extracted produced a couple of directories, one of which
+containing the reads and some text files we will use to extract some metadata.
+We will now make a dedicated directory for our reads, and compress them:
+
+```bash
+mkdir reads
+mv MiSeq_SOP/*fastq reads
+gzip reads/*fastq
+```
+
+## Importing the reads in Qiime
+
+As discussed, we need to build a new artifact containing our raw reads.
+There are different type of libraries (single-end, paired-end) and setups
+(demultiplexed or not). 
+
+We have a set of demultiplexed Illumina paired-end reads, which is the
+most common setup nowadays. 
+
+Check [Qiime2 importing page](https://docs.qiime2.org/2021.4/tutorials/importing/#sequence-data-with-sequence-quality-information-i-e-fastq) for more information.
+
+If our reads have the filenames in the format produced by Illumina demultiplexing
+(something like *Sample1_S1_L001_R1_001.fastq.gz*) we can directly import the folder
+containing the reads:
+
+```bash
+qiime tools import \
+  --type 'SampleData[PairedEndSequencesWithQuality]' \
+  --input-path reads \
+  --input-format CasavaOneEightSingleLanePerSampleDirFmt \
+  --output-path raw-reads.qza
+```
+
+Just to make the tutorial a little bit more complete, we also show how to import
+generic paired end files assuming we can discriminate R1 and R2 by the filename.
+
+
+## Alternative method:  manifest file
+
+If the reads have a different naming scheme, we can either rename them or prepare
+a _manifest file_ that tells to Qiime which file is what. For paired end reads
+it should contain three coluns: sample name, forward file and reverse file.
+
+The generation can be automated, as long as we know where to find the sample name
+(in our case it's the first part before the "_"), the forward file (contains "_R1")
+and the reverse file (contains "_R2"):
+
+```bash
+echo -e 'sample-id\tforward-absolute-filepath\treverse-absolute-filepath' > manifest.tsv
+for FOR in reads/*_R1*fastq.gz;
+do
+  n=$(basename $FOR | cut -f1 -d_);
+  REV=${FOR/_R1_/_R2_}
+  echo $n
+  echo -e "${n%.fastq.gz}\t$PWD/$FOR\t$PWD/$REV" >> manifest.tsv;
+done
+```
+
+After having prepared such "manifest file", we can simply:
+
+```bash
+qiime tools import \
+  --type 'SampleData[PairedEndSequencesWithQuality]' \
+  --input-path manifest.tsv \
+  --output-path reads.qza \
+  --input-format PairedEndFastqManifestPhred33V2
 ```
 
 
+## Analysis
+
+```bash
+qiime demux summarize \
+      --i-data raw-reads.qza \
+      --o-visualization raw-reads.qzv
+```
+### Sequence quality control and feature table construction
+```bash
+qiime quality-filter q-score \
+       --i-demux raw-reads.qza \
+       --o-filtered-sequences demux-filtered.qza \
+       --o-filter-stats demux-filter-stats.qza
+```
+
+
+####  Denoising with deblur
+```bash
+qiime deblur denoise-16S \
+       --i-demultiplexed-seqs demux-filtered.qza \
+       --p-trim-length 150 \
+       --p-sample-stats \
+       --p-jobs-to-start 4 \
+       --o-stats deblur-stats.qza \
+       --o-representative-sequences rep-seqs-deblur.qza \
+       --o-table table-deblur.qza
+```
+
+```bash
+qiime deblur visualize-stats \
+       --i-deblur-stats deblur-stats.qza \
+       --o-visualization deblur-stats.qzv
+
+qiime feature-table tabulate-seqs \
+       --i-data rep-seqs-deblur.qza \
+       --o-visualization rep-seqs-deblur.qzv
+
+qiime feature-table summarize \
+       --i-table table-deblur.qza \
+       --m-sample-metadata-file metadata.tsv \
+       --o-visualization table-deblur.qzv
+
+```
+
+```bash
+wget -O "sepp-refs-gg-13-8.qza" \
+    "https://data.qiime2.org/2019.10/common/sepp-refs-gg-13-8.qza"
+```
+
+We will use the fragment-insertion tree-building method as described by
+_Janssen et al._ (2018) using the sepp action of the `q2-fragment-insertion` plugin,
+which has been shown to outperform traditional alignment-based methods with
+short 16S amplicon data. This method aligns our unknown short fragments to
+full-length sequences in a known reference database and then places them onto
+a fixed tree.
+Note that this plugin has only been tested and benchmarked on 16S data against
+the Greengenes reference database (_McDonald et al._, 2012),
+so if you are using different data types you should consider
+the alternative methods mentioned below.
+```bash
+qiime fragment-insertion sepp \
+        --i-representative-sequences rep-seqs-deblur.qza \
+        --i-reference-database sepp-refs-gg-13-8.qza \
+        --p-threads 48 \
+        --o-tree insertion-tree.qza \
+        --o-placements insertion-placements.qza
+```
+Once the insertion tree is created, you must filter **your feature table** so that
+it only contains fragments that are in the insertion tree.
+This step is needed because SEPP might reject the insertion of some fragments,
+such as erroneous sequences or those that are too distantly related to the
+reference alignment and phylogeny.
+
+Features in your feature table without a
+corresponding phylogeny will cause diversity computation to fail, because
+branch lengths cannot be determined for sequences not in the tree.
+```bash
+qiime fragment-insertion filter-features \
+       --i-table table-deblur.qza \
+       --i-tree insertion-tree.qza \
+       --o-filtered-table filtered-table-deblur.qza \
+       --o-removed-table removed-table.qza
+```
+
+### Taxonomic classification
+
+```bash
+wget https://github.com/BenKaehler/readytowear/raw/master/data/gg_13_8/515f-806r/human-stool.qza
+wget https://github.com/BenKaehler/readytowear/raw/master/data/gg_13_8/515f-806r/ref-seqs.qza
+wget https://github.com/BenKaehler/readytowear/raw/master/data/gg_13_8/515f-806r/ref-tax.qza
+```
+
+```bash
+qiime feature-classifier fit-classifier-naive-bayes \
+       --i-reference-reads ref-seqs.qza \
+       --i-reference-taxonomy ref-tax.qza \
+       --i-class-weight human-stool.qza \
+       --o-classifier gg138_v4_human-stool_classifier.qza
+
+qiime feature-classifier classify-sklearn \
+       --i-reads rep-seqs-deblur.qza \
+       --i-classifier gg138_v4_human-stool_classifier.qza \
+       --o-classification bespoke-taxonomy.qza
+```
+
+```bash
+qiime metadata tabulate \
+       --m-input-file bespoke-taxonomy.qza \
+       --m-input-file rep-seqs-deblur.qza \
+       --o-visualization bespoke-taxonomy.qzv
+
+```
+
+```bash
+qiime diversity core-metrics-phylogenetic \
+       --i-table table-deblur.qza \
+       --i-phylogeny insertion-tree.qza \
+       --p-sampling-depth 3000 \
+       --m-metadata-file metadata.tsv \
+       --p-n-jobs-or-threads 32 \
+       --output-dir all-core-metrics-results
+```
+
+```bash
+```
+
+```bash
+```
+
+```bash
+```
+
+```bash
+```
+---
+
+
+---
 ## Getting the data
 
 The samples are a subset of the ECAM study, which consists of monthly fecal samples collected from children at birth up to 24 months of life, as well as corresponding fecal samples collected from the mothers throughout the same period
