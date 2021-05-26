@@ -56,6 +56,10 @@ mv MiSeq_SOP/*fastq reads
 gzip reads/*fastq
 ```
 
+:bulb: Some more 
+[toy datasets]({{ site.baseurl }}{% link _posts/2021-01-01-Metabarcoding-datasets.md %}).
+
+
 ## Importing the reads in Qiime
 
 As discussed, we need to build a new artifact containing our raw reads.
@@ -83,7 +87,7 @@ Just to make the tutorial a little bit more complete, we also show how to import
 generic paired end files assuming we can discriminate R1 and R2 by the filename.
 
 
-## Alternative method:  manifest file
+### Alternative method:  manifest file
 
 If the reads have a different naming scheme, we can either rename them or prepare
 a _manifest file_ that tells to Qiime which file is what. For paired end reads
@@ -115,50 +119,49 @@ qiime tools import \
 ```
 
 
-## Analysis
+## A first visualization: quality scores
 
+Before starting the analysis, let's see how Qiime2 allows us to visualize
 ```bash
 qiime demux summarize \
       --i-data raw-reads.qza \
       --o-visualization raw-reads.qzv
 ```
-### Sequence quality control and feature table construction
-```bash
-qiime quality-filter q-score \
-       --i-demux raw-reads.qza \
-       --o-filtered-sequences demux-filtered.qza \
-       --o-filter-stats demux-filter-stats.qza
-```
+
+The visualization files can be viewed from 
+[https://view.qiime2.org](https://view.qiime2.org),
+just by dragging and dropping the file. 
+This requires the transfer of the artifact to the local computer, alternatively
+we can click the link below to see the visualization artifact.
+
+:mag: [reads.qzv](https://view.qiime2.org/visualization/?type=html&src=https%3A%2F%2Fdl.dropbox.com%2Fs%2Fzuvb1n7499fhsie%2Freads.qzv%3Fdl%3D1)
 
 
-####  Denoising with deblur
-```bash
-qiime deblur denoise-16S \
-       --i-demultiplexed-seqs demux-filtered.qza \
-       --p-trim-length 150 \
-       --p-sample-stats \
-       --p-jobs-to-start 4 \
-       --o-stats deblur-stats.qza \
-       --o-representative-sequences rep-seqs-deblur.qza \
-       --o-table table-deblur.qza
-```
+## Denoising with DADA2
+
+[DADA2](https://benjjneb.github.io/dada2/tutorial.html)
+is an R package that can denoise the reads to identify
+the representative sequences and produce the feature table.
+
+The key step is to identify the boundaries where the quality drops
+significantly, both in the R1 and in the R2 reads.
 
 ```bash
-qiime deblur visualize-stats \
-       --i-deblur-stats deblur-stats.qza \
-       --o-visualization deblur-stats.qzv
-
-qiime feature-table tabulate-seqs \
-       --i-data rep-seqs-deblur.qza \
-       --o-visualization rep-seqs-deblur.qzv
-
-qiime feature-table summarize \
-       --i-table table-deblur.qza \
-       --m-sample-metadata-file metadata.tsv \
-       --o-visualization table-deblur.qzv
-
+qiime dada2 denoise-paired \
+      --i-demultiplexed-seqs reads.qza \
+      --p-trunc-len-f 235 \
+      --p-trunc-len-r 154 \
+      --p-n-threads 32 \
+      --o-table table.qza \
+      --o-representative-sequences repseqs.qza \
+      --o-denoising-stats dada-stats.qza
 ```
 
+An alternative method to denoise the sequences is **Deblur**, that we cover in 
+a [separate page]({{ site.baseurl }}{% link _posts/2021-01-01-Metabarcoding-deblur.md %}).
+
+
+## Taxonomy
 ```bash
 wget -O "sepp-refs-gg-13-8.qza" \
     "https://data.qiime2.org/2019.10/common/sepp-refs-gg-13-8.qza"

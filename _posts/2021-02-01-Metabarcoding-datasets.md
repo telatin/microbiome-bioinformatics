@@ -1,13 +1,29 @@
 ---
 layout: post
-title:  "Metabarcoding datasets"
+title:  "Metabarcoding datasets (16S, ITS)"
 author: at
 categories: [ metabarcoding, 16S, tutorial ]
 image: assets/images/green-bact.jpg
 hidden: true
 ---
 
-## Some 16S (and ITS) datasets
+
+## Mothur MiSeq SOP
+
+:chart: The dataset contains 20 samples, sequenced Paired-End.
+
+:book: Kozich JJ, _et al._ (2013)
+**Development of a dual-index sequencing strategy and curation pipeline for analyzing amplicon sequence data on the MiSeq Illumina sequencing platform**.
+Applied and Environmental Microbiology.
+
+:package: Available from [Mothur Wiki](https://mothur.org/wiki/miseq_sop/)
+
+```bash
+# Subsample
+wget "https://mothur.s3.us-east-2.amazonaws.com/wiki/miseqsopdata.zip"
+```
+
+
 
 ## Mouse diet (16S)
 
@@ -16,10 +32,13 @@ Diet-induced obesity (DIO) is proposed to cause impairments in intestinal barrie
 :chart: The dataset contains 478 samples, sequenced single ended (**V4** region).
 
 :book: Müller VM _et al._ (2016)
+
 **Gut barrier impairment by high-fat diet in mice depends on housing conditions**.
 Mol Nutr Food Res. [doi](https://doi.org/10.1002/mnfr.201500775).
 
 :package: ENA [PRJEB13041](https://www.ebi.ac.uk/ena/browser/view/PRJEB13041)
+
+
 
 ## ECAM Study (16S, large dataset)
 
@@ -41,17 +60,4 @@ wget -O dataset.zip "https://qiita.ucsd.edu/public_artifact_download/?artifact_i
 unzip dataset.zip
 ```
 
-## Mothur MiSeq SOP
 
-:chart: The dataset contains 20 samples, sequenced Paired-End.
-
-:book: Kozich JJ, _et al._ (2013)
-**Development of a dual-index sequencing strategy and curation pipeline for analyzing amplicon sequence data on the MiSeq Illumina sequencing platform**.
-Applied and Environmental Microbiology.
-
-:package: Available from [Mothur Wiki](https://mothur.org/wiki/miseq_sop/)
-
-```bash
-# Subsample
-wget "https://mothur.s3.us-east-2.amazonaws.com/wiki/miseqsopdata.zip"
-```
