@@ -57,7 +57,7 @@ gzip reads/*fastq
 ```
 
 :bulb: Some more 
-[toy datasets]({{ site.baseurl }}{% link _posts/2021-01-01-Metabarcoding-datasets.md %}).
+[toy datasets]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-datasets.md %}).
 
 
 ## Importing the reads in Qiime
