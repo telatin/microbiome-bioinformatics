@@ -87,7 +87,7 @@ Just to make the tutorial a little bit more complete, we also show how to import
 generic paired end files assuming we can discriminate R1 and R2 by the filename.
 
 
-### Alternative method:  manifest file
+### Alternative method: manifest file
 
 If the reads have a different naming scheme, we can either rename them or prepare
 a _manifest file_ that tells to Qiime which file is what. For paired end reads
@@ -157,14 +157,54 @@ qiime dada2 denoise-paired \
       --o-denoising-stats dada-stats.qza
 ```
 
+:information_source:
 An alternative method to denoise the sequences is **Deblur**, that we cover in 
 a [separate page]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-deblur.md %}).
 
+## Tree
 
-## Taxonomy
+```bash
+qiime phylogeny align-to-tree-mafft-fasttree \
+  --i-sequences repseqs.qza \
+  --o-alignment aligned-repseqs.qza \
+  --o-masked-alignment masked-aligned-repseqs.qza \
+  --o-tree unrooted-tree.qza \
+  --o-rooted-tree rooted-tree.qza
+  ```
+
+## Taxonomy 
+```bash
+wget "https://data.qiime2.org/2021.4/common/silva-138-99-515-806-nb-classifier.qza"
+
+qiime feature-classifier classify-sklearn \
+  --i-classifier gg-13-8-99-515-806-nb-classifier.qza \
+  --i-reads repseqs.qza \
+  --o-classification taxonomy.qza
+```
+
+A tabular visualization can be generated, as usual:
+```bash
+qiime metadata tabulate \
+  --m-input-file taxonomy.qza \
+  --o-visualization taxonomy.qzv
+```
+
+But a more common visualization is provided by the
+barplots:
+
+```bash
+qiime taxa barplot \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --m-metadata-file sample-metadata.tsv \
+  --o-visualization taxa-bar-plots.qzv
+```
+
+### Taxonomy (alternative)
+
 ```bash
 wget -O "sepp-refs-gg-13-8.qza" \
-    "https://data.qiime2.org/2019.10/common/sepp-refs-gg-13-8.qza"
+    "https://data.qiime2.org/2021.4/common/sepp-refs-gg-13-8.qza"
 ```
 
 We will use the fragment-insertion tree-building method as described by
@@ -177,14 +217,16 @@ Note that this plugin has only been tested and benchmarked on 16S data against
 the Greengenes reference database (_McDonald et al._, 2012),
 so if you are using different data types you should consider
 the alternative methods mentioned below.
+
 ```bash
 qiime fragment-insertion sepp \
-        --i-representative-sequences rep-seqs-deblur.qza \
+        --i-representative-sequences repseqs.qza \
         --i-reference-database sepp-refs-gg-13-8.qza \
-        --p-threads 48 \
+        --p-threads 1 \
         --o-tree insertion-tree.qza \
         --o-placements insertion-placements.qza
 ```
+
 Once the insertion tree is created, you must filter **your feature table** so that
 it only contains fragments that are in the insertion tree.
 This step is needed because SEPP might reject the insertion of some fragments,
@@ -196,7 +238,7 @@ corresponding phylogeny will cause diversity computation to fail, because
 branch lengths cannot be determined for sequences not in the tree.
 ```bash
 qiime fragment-insertion filter-features \
-       --i-table table-deblur.qza \
+       --i-table table.qza \
        --i-tree insertion-tree.qza \
        --o-filtered-table filtered-table-deblur.qza \
        --o-removed-table removed-table.qza
