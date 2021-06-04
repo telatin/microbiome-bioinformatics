@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Taxonomic profiling of whole metagenome shotgun"
+title:  "16S Analysis with Qiime2"
 author: at
-categories: [ metagenomics, tutorial ]
+categories: [ metabarcoding, tutorial ]
 image: assets/images/qiime.jpg
 hidden: true
 featured: true 

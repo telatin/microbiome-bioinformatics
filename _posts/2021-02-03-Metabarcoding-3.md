@@ -9,3 +9,5 @@ image: assets/images/green-bact.jpg
 ## Phyloseq object
 
 ## A preliminary exploration of the phyloseq object
+
+An example is available as an **[R markdown]({{ site.baseurl }}/rmd/phyloseq.html)** script.
