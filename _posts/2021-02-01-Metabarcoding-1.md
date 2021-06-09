@@ -16,29 +16,6 @@ If we don't have `conda` installed and available, we first need to
 [install Miniconda]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})
 and then _mamba_.
 
-## Installing Qiime2 (2021.4)
-
-The [installation](https://docs.qiime2.org/2021.2/install/native/#install-qiime-2-within-a-conda-environment) 
-is usually performed using Miniconda as a package manager 
-(that will download the required dependencies).
-We will use `mamba`, a (faster) drop-in replacement for `conda`, but conda will work as well.
-
-```bash
-wget https://data.qiime2.org/distro/core/qiime2-2021.4-py38-linux-conda.yml
-mamba env create -n qiime2-2021.4 --file qiime2-2021.4-py38-linux-conda.yml
-rm qiime2-2021.4-py38-linux-conda.yml
-```
-
-To activate the environment:
-```bash
-conda activate qiime2-2021.4
-```
-
-After activating the environment, we can install more packages. We'll use two
-utilities for this workshop (while USEARCH is already installed):
-```
-mamba install -c conda-forge -c bioconda seqfu qax
-```
 ## Getting the raw reads
 
 We will analyse a very famous dataset from Pat Schloss, 
@@ -85,6 +62,38 @@ When dealing with old datasets, it's good to ensure their quality encoding
 ```
 seqfu qual reads/*R1*.fastq.gz
 ```
+
+## Metabarcoding tutorials 
+
+Here we will describe how to use **Qiime 2** to analyse the dataset (see below).
+Two alternative tutorials are also available:
+* [USEARCH tutorial]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-with-USEARCH.md %}) - this is an instructive (simplified) workflow, that allow for an easy inspection of the intermediate files.
+* [Dadaist2 tutorial]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-with-Dadaist.md %}) - this pipeline can be used to quickly produce a PhyloSeq object and offers some degree of customisation
+  
+## Installing Qiime2 (2021.4)
+
+The [installation](https://docs.qiime2.org/2021.2/install/native/#install-qiime-2-within-a-conda-environment) 
+is usually performed using Miniconda as a package manager 
+(that will download the required dependencies).
+We will use `mamba`, a (faster) drop-in replacement for `conda`, but conda will work as well.
+
+```bash
+wget https://data.qiime2.org/distro/core/qiime2-2021.4-py38-linux-conda.yml
+mamba env create -n qiime2-2021.4 --file qiime2-2021.4-py38-linux-conda.yml
+rm qiime2-2021.4-py38-linux-conda.yml
+```
+
+To activate the environment:
+```bash
+conda activate qiime2-2021.4
+```
+
+After activating the environment, we can install more packages. We'll use two
+utilities for this workshop (while USEARCH is already installed):
+```
+mamba install -c conda-forge -c bioconda seqfu qax
+```
+
 
 ## Importing the reads in Qiime
 

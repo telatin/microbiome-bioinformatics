@@ -3,10 +3,11 @@ layout: post
 title:  "A simple workflow with USEARCH"
 author: at
 categories: [ metabarcoding, 16S, tutorial ]
+hidden: true
 ---
 
 ## What is USEARCH
-**[USEARCH](https://drive5.com/usearch/) is a popular package for metabarcoding analyses
+**[USEARCH](https://drive5.com/usearch/)** is a popular package for metabarcoding analyses
 developed by Robert Edgar, and (partially) described in a set of [papers](https://drive5.com/usearch/manual/citation.html).
 
 

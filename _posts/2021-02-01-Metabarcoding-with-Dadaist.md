@@ -3,6 +3,7 @@ layout: post
 title:  "A primer on Dadaist2"
 author: at
 categories: [ metabarcoding, 16S, tutorial ]
+image: assets/images/green-bact.jpg
 ---
 
 ## What is Dadaist2
@@ -44,44 +45,18 @@ where:
 * `-o` is the output directory (will be created)
 * `-t` is the number of computing cores
 * `-d` is the reference database to use
+* `-m` link to the metadata file (if not supplied a blank one will be generated and used)
+  
+## The output directory
 
-This will produce a directory with this structure:
-```
-dadaist-output/
-├── MicrobiomeAnalyst                <--- all files for Microbiome Analyst
-│   ├── metadata.csv
-│   ├── rep-seqs.tree
-│   ├── seqs.fa
-│   ├── table.csv
-│   └── taxonomy.csv
-├── R
-│   └── phyloseq.rds                 <--- PhyloSeq object
-├── Rhea
-│   ├── OTUs-Seqs.fasta
-│   ├── OTUs-Table.tab
-│   ├── OTUs-Tree.tre
-│   ├── OTUs_Table-norm-rel-tax.tab
-│   ├── OTUs_Table-norm-rel.tab
-│   ├── OTUs_Table-norm-tax.tab
-│   ├── OTUs_Table-norm.tab
-│   ├── RarefactionCurve.pdf
-│   ├── RarefactionCurve.tab
-│   ├── alpha-diversity.tab
-│   └── mapping_file.tab
-├── dada2_raw.tsv                   
-├── dada2_stats.tsv
-├── dadaist.log
-├── dadaist2.html
-├── feature-table.tsv              <--- feature table
-├── metadata.tsv
-├── qc
-│   ├── F3D0.json
-|   |   ....
-│   ├── quality_R1.pdf
-│   └── quality_R2.pdf
-├── rep-seqs-tax.fasta            <--- ASV with taxonomy
-├── rep-seqs.fasta
-├── rep-seqs.msa
-├── rep-seqs.tree
-└── taxonomy.txt
-```
+Notable files:
+* **rep-seqs.fasta** representative sequences (ASVs) in FASTA format
+* **rep-seqs-tax.fasta** representative sequences (ASVs) in FASTA format, with taxonomy labels as comments
+* **feature-table.tsv** table of raw counts (after cross-talk removal if specified)
+* **taxonomy.tsv** a text file with the taxonomy of each ASV (used to add the labels to the _rep-seqs-tax.fasta_)
+* copy of the **metadata.tsv** file
+
+Subdirectories:
+* **MicrobiomeAnalyst** a set of files formatted to be used with the online (also available offline as R package) software [MicrobiomeAnalyst](https://www.microbiomeanalyst.ca/MicrobiomeAnalyst/upload/OtuUploadView.xhtml).
+* **Rhea** a directory with files to be used with the [Rhea pipeline](https://lagkouvardos.github.io/Rhea/), as well as some pre-calculated outputs (Normalization and Alpha diversity are done by default, as they don't require knowledge about metadata categories)
+* **R** a directory with the PhyloSeq object
