@@ -7,7 +7,7 @@ image: assets/images/anaconda.jpg
 hidden: true
 ---
 
-## The problem
+## The problem and its solution
 
 A typical bioinformatics workflow involves dozens of different tools, sometimes
 each requiring a broad range of libraries and other dependencies. Installing all
@@ -18,7 +18,7 @@ There are two main solutions to the problem: one is to rely on **containers** (w
 resolve the problem of conflicting packages, but does not necessarily simplify
 the installation of the packages) or **package managers**.
 
-## Miniconda: a popular solution
+### Miniconda: a popular solution
 
 Miniconda is a package manager that was developed to simplify the installation
 of Python tools and the creation of isolated environments (to allow, for example,
@@ -53,9 +53,10 @@ When the process is finished you'll be asked to restart your shell
 (_i. e._ to log out and login again, 
 or simply try typing `source ~/.bashrc` on most systems)
 
-## The bioconda repository
 
-Conda allows to install packages from a default channel (mainly containing python
+## Repositories
+
+Conda allows to install packages from a *default channel* (mainly containing python
   modules), but also supports third party channels. There are three channels that
   can be of particular interest in (bio)data science:
 
@@ -85,6 +86,20 @@ If you also add `-y` you will not be prompted and will try to install directly.
 conda install -y -c bioconda vsearch
 ```
 
+We can add some channels to a configuration file so that conda always checks them
+when searching. This will make some searches slower so I generally only add `conda-forge`,
+but adding also `bioconda` can be appropriate. Avoid adding `r`: it's massive and 
+rarely used in bioinformatics (most biological R packages are available in `bioconda`).
+
+To add some channels in your configuration file, create (or edit) the `~/.condarc` file as
+follows:
+```
+channels:
+  - defaults
+  - conda-forge
+  - bioconda
+```
+
 ## Creating and using environments
 
 Conda simplifies installing package, but a problem remains: conflicting versions.
@@ -94,14 +109,14 @@ older version because it's not yet ready to support a more recent one.
 Conda allows to create _environments_, that are isolated rooms where you can install
 packages independently from other rooms.
 
-#### Create a new environment
+### Create a new environment
 
 We need to choose a unique name for our new environment, in this example _myenv1_ (usually it's the name of a tool (like _qiime2-2020.1_) or a task (like _denovo_):
 ```bash
 conda create -n myenv1
 ```
 
-#### Activate the environment
+### Activate the environment
 
 To _use_ an environment we need first to *activate* it:
 ```bash
@@ -117,11 +132,25 @@ belong to the _active_ environment.
 conda install -c bioconda vsearch=2.17
 ```
 
-#### Deactivate the environment
+### Deactivate the environment
 
 To return to the previous environment:
 ```
 conda deactivate
+```
+
+### List your environments
+
+To get a list of the environments in your system:
+```
+conda info --envs
+```
+
+
+### Delete an environment
+To be used with care:
+```
+conda remove -n ENVIRONMENT_NAME --all
 ```
 
 ## Using mamba for faster installations
@@ -135,12 +164,12 @@ conda install -y -c conda-forge mamba
 
 Then just replace "conda" with "mamba" to use it, for example:
 ```bash
-mamba search -c bioconda covtobed
+mamba search -c bioconda seqfu
 ```
 
 and to install (for example):
 ```bash
-mamba install -c bioconda covtobed
+mamba install -c bioconda seqfu
 ```
 
 ---
