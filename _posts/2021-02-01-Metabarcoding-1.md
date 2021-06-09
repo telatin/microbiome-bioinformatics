@@ -13,14 +13,15 @@ to install packages and manage conflicting/multiple versions of libraries and
 tools, but in this case it's also the required way to install Qiime2.
 
 If we don't have `conda` installed and available, we first need to
-[install Miniconda]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %}).
+[install Miniconda]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})
+and then _mamba_.
 
 ## Installing Qiime2 (2021.4)
 
 The [installation](https://docs.qiime2.org/2021.2/install/native/#install-qiime-2-within-a-conda-environment) 
 is usually performed using Miniconda as a package manager 
 (that will download the required dependencies).
-We will use `mamba`, a (faster) drop-in replacement for `conda`.
+We will use `mamba`, a (faster) drop-in replacement for `conda`, but conda will work as well.
 
 ```bash
 wget https://data.qiime2.org/distro/core/qiime2-2021.4-py38-linux-conda.yml
@@ -33,6 +34,11 @@ To activate the environment:
 conda activate qiime2-2021.4
 ```
 
+After activating the environment, we can install more packages. We'll use two
+utilities for this workshop (while USEARCH is already installed):
+```
+mamba install -c conda-forge -c bioconda seqfu qax
+```
 ## Getting the raw reads
 
 We will analyse a very famous dataset from Pat Schloss, 
@@ -59,6 +65,26 @@ gzip reads/*fastq
 :bulb: Some more 
 [toy datasets]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-datasets.md %}).
 
+### A first look
+
+[SeqFu count](https://telatin.github.io/seqfu2/tools/count.html)
+ can be used to count the reads in each sample. 
+ When reading Paired End datasets,
+will also ensure that both files have the same amount of reads:
+```
+seqfu count reads/*.fastq.gz
+```
+For more informations on the reads size statistics, 
+[SeqFu stats](https://telatin.github.io/seqfu2/tools/stats.html) can be used instead:
+```
+seqfu stats -n -b reads/*R1*.fastq.gz
+```
+
+When dealing with old datasets, it's good to ensure their quality encoding
+(the modern being _Illumina 1.8_). [SeqFu qual](https://telatin.github.io/seqfu2/tools/qual.html) can be used for this:
+```
+seqfu qual reads/*R1*.fastq.gz
+```
 
 ## Importing the reads in Qiime
 
@@ -106,6 +132,13 @@ do
   echo $n
   echo -e "${n%.fastq.gz}\t$PWD/$FOR\t$PWD/$REV" >> manifest.tsv;
 done
+```
+
+:bulb: SeqFu contains a [function](https://telatin.github.io/seqfu2/tools/metadata.html) 
+to prepare metadata templates from a directory containing
+reads (the default output format is indeed a _manifest file_). Try and compare the result.
+```bash
+seqfu metadata reads/ > alt-manifest.tsv
 ```
 
 After having prepared such "manifest file", we can simply:
