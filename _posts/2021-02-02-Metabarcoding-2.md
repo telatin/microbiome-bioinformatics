@@ -123,15 +123,17 @@ artifacts.
 
 ### Installing the packages
 
-We can create an _ad hoc_ environment that will contain R, and the required packages to import the artifacts:
+We can create an _ad hoc_ environment that will contain R, and the required packages to import the artifacts.
+The package _r-qiime2r_ is available from the developer's channel (rujinlong), but misses _dplyr_ for full 
+functionality so we will install that as well (from _conda-forge_). _qax_ can also help.
 ```
-mamba create -n q2import -c rujinlong r-qiime2r r-dplyr
+mamba create -n q2import -c conda-forge -c bioconda -c rujinlong r-qiime2r r-dplyr qax
 
 conda activate q2import
 ```
 
 
-### Importing
+### Importing artifacts using _qiime2R_
 
 After opening "R" we can create a phyloseq object with a simple command:
 
@@ -160,6 +162,13 @@ ps <- readRDS(file = "phyloseq.rds")
 ```
 
 ## Importing without qiime2R
+
+PhyloSeq is able to load a very broad range of formats, so there are many
+ways to import files. I came up with the following procedure, but there are 
+probably better alternatives (suggestions welcome).
+
+The taxonomy is in a "peculiar format", so we will combine it with the feature
+table to have a more compact _table with taxonomy_. 
 
 From the bash we can prepare the text files:
 
@@ -196,4 +205,17 @@ Rscript --vanilla import.R
 ```
 
 
-:bulb: Dadaist2 has a script automating this process called `dadaist2-importq2`.
+:bulb: Dadaist2 has [a script](https://quadram-institute-bioscience.github.io/dadaist2/pages/dadaist2-importq2.html)
+automating this process called `dadaist2-importq2`. 
+This feature was added recently
+and will be improved in future releases. At the moment will save the PhyloSeq object (only).
+
+```
+dadaist2-importq2 --feature-table table.qza \
+  --tree rooted-tree.qza  \
+  --metadata sample-metadata.tsv  \
+  --rep-seqs repseqs.qza  \
+  --taxonomy taxonomy.qza \
+  --output-phyloseq qiime-phyloseq.rds \
+  --verbose
+```
