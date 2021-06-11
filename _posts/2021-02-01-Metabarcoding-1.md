@@ -226,9 +226,41 @@ qiime dada2 denoise-paired \
       --o-denoising-stats dada-stats.qza
 ```
 
-:information_source:
-An alternative method to denoise the sequences is **Deblur**, that we cover in 
+:information_source: An alternative method to denoise the sequences is **Deblur**, that we cover in 
 a [separate page]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-deblur.md %}).
+
+DADA2 is the core step in this microbiome analysis workflow as it both produces:
+* our representative sequences
+* the feature table
+
+### A quick preview of the Mock community: a command line example
+
+Let's try to estimate the number of ASVs found in the "Mock" sample, which is an artificial community generated
+from the genomic DNA from 21 bacterial strains.
+
+ First we can extract the artifact with:
+```
+# With Qax (more portable as does not require Qiime2 and its environment active), will produce _table.biom_:
+qax extract table.qza
+
+# or natively with Qiime 2 (will produce a directory with the UUID of the artifact):
+qiime tools extract --input-path table.qza --output-path .
+```
+
+The extracted file is a BIOM file, that can be converted to a tabular format with:
+```
+biom convert --to-tsv -i table.biom -o table.tsv
+```
+
+The Mock sample is the last, it's number 20 (so column 21). Let's have a look:
+```
+cut -f 1,21 table.tsv | sort -n -k 2 | tail -n 50
+```
+
+An to count any number larger than a threshold:
+```
+cut -f 1,21 table.tsv | sort -n -k 2 | awk '$2 > 2.0' | wc -l
+```
 
 ## Tree
 
@@ -248,221 +280,10 @@ qiime phylogeny align-to-tree-mafft-fasttree \
 :book: It can be an interesting exercise to reproduce the step manually starting from the _representative sequences_
 using [MAFFT](https://mafft.cbrc.jp/alignment/software/) and [FastTree](http://www.microbesonline.org/fasttree/).
 
-## Taxonomy 
-
-A key step in our analysis, but also a step that is error prone and should be checked carefully, 
-is the assignment of a taxonomic classification to our sequences.
-For this step we need a reference database, [Silva](https://www.arb-silva.de/) being a widely adopted choice.
-
-```bash
-wget "https://data.qiime2.org/2021.4/common/silva-138-99-515-806-nb-classifier.qza"
-
-qiime feature-classifier classify-sklearn \
-  --i-classifier silva-138-99-515-806-nb-classifier.qza \
-  --i-reads repseqs.qza \
-  --p-n-jobs 8 \
-  --o-classification taxonomy.qza
-```
-
-A tabular visualization can be generated, as usual:
-```bash
-qiime metadata tabulate \
-  --m-input-file taxonomy.qza \
-  --o-visualization taxonomy.qzv
-```
-
-But a more common visualization is provided by the
-barplots:
-
-```bash
-qiime taxa barplot \
-  --i-table table.qza \
-  --i-taxonomy taxonomy.qza \
-  --m-metadata-file sample-metadata.tsv \
-  --o-visualization taxa-bar-plots.qzv
-```
-
-
-### Taxonomic classification
-
-```bash
-wget https://github.com/BenKaehler/readytowear/raw/master/data/gg_13_8/515f-806r/human-stool.qza
-wget https://github.com/BenKaehler/readytowear/raw/master/data/gg_13_8/515f-806r/ref-seqs.qza
-wget https://github.com/BenKaehler/readytowear/raw/master/data/gg_13_8/515f-806r/ref-tax.qza
-```
-
-```bash
-qiime feature-classifier fit-classifier-naive-bayes \
-       --i-reference-reads ref-seqs.qza \
-       --i-reference-taxonomy ref-tax.qza \
-       --i-class-weight human-stool.qza \
-       --o-classifier gg138_v4_human-stool_classifier.qza
-
-qiime feature-classifier classify-sklearn \
-       --i-reads rep-seqs-deblur.qza \
-       --i-classifier gg138_v4_human-stool_classifier.qza \
-       --o-classification bespoke-taxonomy.qza
-```
-
-```bash
-qiime metadata tabulate \
-       --m-input-file bespoke-taxonomy.qza \
-       --m-input-file rep-seqs-deblur.qza \
-       --o-visualization bespoke-taxonomy.qzv
-
-```
-
-```bash
-qiime diversity core-metrics-phylogenetic \
-       --i-table table-deblur.qza \
-       --i-phylogeny insertion-tree.qza \
-       --p-sampling-depth 3000 \
-       --m-metadata-file metadata.tsv \
-       --p-n-jobs-or-threads 32 \
-       --output-dir all-core-metrics-results
-```
-
-```bash
-```
-
-```bash
-```
-
-```bash
-```
-
-```bash
-```
----
 
 
 ---
-## Getting the data
 
-The samples are a subset of the ECAM study, which consists of monthly fecal samples collected from children at birth up to 24 months of life, as well as corresponding fecal samples collected from the mothers throughout the same period
-```bash
-wget -O dataset.zip "https://qiita.ucsd.edu/public_artifact_download/?artifact_id=81253"
-unzip dataset.zip
-```
-
-:bulb: It's a good practice to use quotes around URLs as they can contain special characters,
-like `&`, that would be interpreted as instructions for the shell.
-
-## Understanding Qiime2 workflow
-
-```bash
- for fileR1 in per_sample_FASTQ/98546/*R1*;
- do
-   echo $fileR1
-   fastp -i $fileR1 -I ${fileR1/_R1/_R2} -o reads-trimmed/$(basename $fileR1) \
-     -O reads-trimmed/$(basename  ${fileR1/_R1/_R2}) -Q -f 17 -F 21 -w 8 \
-     -h per_sample_FASTQ/$(basename $fileR1|cut -f1 -d.).html \
-     -j per_sample_FASTQ/$(basename $fileR1|cut -f1 -d.).json;
-done
-```
-
-### Preparing a manifest
-
-```bash
-echo -e 'sample-id\tabsolute-filepath' > manifest.tsv
-for i in per_sample_FASTQ/81253/*gz;
-do
-  n=$(basename $i);
-  echo -e "${n%.fastq.gz}\t$PWD/$i" >> manifest.tsv;
-done
-```
-
-```bash
-qiime tools import \
-       --input-path manifest.tsv \
-       --type 'SampleData[SequencesWithQuality]' \
-       --input-format SingleEndFastqManifestPhred33V2 \
-       --output-path raw-reads.qza
-```
-```bash
-qiime demux summarize \
-      --i-data raw-reads.qza \
-      --o-visualization raw-reads.qzv
-```
-### Sequence quality control and feature table construction
-```bash
-qiime quality-filter q-score \
-       --i-demux raw-reads.qza \
-       --o-filtered-sequences demux-filtered.qza \
-       --o-filter-stats demux-filter-stats.qza
-```
-
-
-####  Denoising with deblur
-```bash
-qiime deblur denoise-16S \
-       --i-demultiplexed-seqs demux-filtered.qza \
-       --p-trim-length 150 \
-       --p-sample-stats \
-       --p-jobs-to-start 4 \
-       --o-stats deblur-stats.qza \
-       --o-representative-sequences rep-seqs-deblur.qza \
-       --o-table table-deblur.qza
-```
-
-```bash
-qiime deblur visualize-stats \
-       --i-deblur-stats deblur-stats.qza \
-       --o-visualization deblur-stats.qzv
-
-qiime feature-table tabulate-seqs \
-       --i-data rep-seqs-deblur.qza \
-       --o-visualization rep-seqs-deblur.qzv
-
-qiime feature-table summarize \
-       --i-table table-deblur.qza \
-       --m-sample-metadata-file metadata.tsv \
-       --o-visualization table-deblur.qzv
-
-```
-
-```bash
-wget -O "sepp-refs-gg-13-8.qza" \
-    "https://data.qiime2.org/2019.10/common/sepp-refs-gg-13-8.qza"
-```
-
-We will use the fragment-insertion tree-building method as described by
-_Janssen et al._ (2018) using the sepp action of the `q2-fragment-insertion` plugin,
-which has been shown to outperform traditional alignment-based methods with
-short 16S amplicon data. This method aligns our unknown short fragments to
-full-length sequences in a known reference database and then places them onto
-a fixed tree.
-Note that this plugin has only been tested and benchmarked on 16S data against
-the Greengenes reference database (_McDonald et al._, 2012),
-so if you are using different data types you should consider
-the alternative methods mentioned below.
-```bash
-qiime fragment-insertion sepp \
-        --i-representative-sequences rep-seqs-deblur.qza \
-        --i-reference-database sepp-refs-gg-13-8.qza \
-        --p-threads 48 \
-        --o-tree insertion-tree.qza \
-        --o-placements insertion-placements.qza
-```
-Once the insertion tree is created, you must filter **your feature table** so that
-it only contains fragments that are in the insertion tree.
-This step is needed because SEPP might reject the insertion of some fragments,
-such as erroneous sequences or those that are too distantly related to the
-reference alignment and phylogeny.
-
-Features in your feature table without a
-corresponding phylogeny will cause diversity computation to fail, because
-branch lengths cannot be determined for sequences not in the tree.
-```bash
-qiime fragment-insertion filter-features \
-       --i-table table-deblur.qza \
-       --i-tree insertion-tree.qza \
-       --o-filtered-table filtered-table-deblur.qza \
-       --o-removed-table removed-table.qza
-```
-
-
- 
 
 ## Primary bibliography
 
