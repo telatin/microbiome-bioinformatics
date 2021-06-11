@@ -9,7 +9,7 @@ hidden: true
 
 ## Mothur MiSeq SOP
 
-:chart: The dataset contains 20 samples, sequenced Paired-End.
+:bar_chart: The dataset contains 20 samples, sequenced Paired-End.
 
 :book: Kozich JJ, _et al._ (2013)
 **Development of a dual-index sequencing strategy and curation pipeline for analyzing amplicon sequence data on the MiSeq Illumina sequencing platform**.
@@ -28,7 +28,7 @@ wget "https://mothur.s3.us-east-2.amazonaws.com/wiki/miseqsopdata.zip"
 
 Diet-induced obesity (DIO) is proposed to cause impairments in intestinal barrier integrity, but contradictory results have been published and it appears that the outcomes depend on other environmental factors. We therefore assessed whether the hygienic status of animal facilities alters the gut barrier in DIO mice.
 
-:chart: The dataset contains 478 samples, sequenced single ended (**V4** region).
+:bar_chart: The dataset contains 478 samples, sequenced single ended (**V4** region).
 
 :book: Müller VM _et al._ (2016)
 
@@ -46,7 +46,7 @@ which consists of monthly fecal samples collected from children at birth up to
 24 months of life, as well as corresponding fecal samples collected from the
 mothers throughout the same period.
 
-:chart: The dataset contains 24 samples, sequenced Paired-End (**V3-V4** region).
+:bar_chart: The dataset contains 24 samples, sequenced Paired-End (**V3-V4** region).
 
 :book: Bokulich NA, _et al._. (2016)
 **Antibiotics, birth mode, and diet shape microbiome maturation during early life**.

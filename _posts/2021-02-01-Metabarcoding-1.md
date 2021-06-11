@@ -12,7 +12,8 @@ We will use Miniconda throughout this workshop. This is generally a great tool
 to install packages and manage conflicting/multiple versions of libraries and 
 tools, but in this case it's also the required way to install Qiime2.
 
-If we don't have `conda` installed and available, we first need to
+If we don't have _conda_ installed and available, 
+we first need to
 [install Miniconda]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})
 and then _mamba_.
 
@@ -62,6 +63,27 @@ When dealing with old datasets, it's good to ensure their quality encoding
 ```
 seqfu qual reads/*R1*.fastq.gz
 ```
+
+:bulb: The last column of the report is the position on the reads where the quality drops (according to
+customizable parameters). This was designed to help automating DADA2.
+
+### Preparing the metadata
+
+Most metabarcoding experiments rely on the metadata associated to each sample, and it's important 
+to correctly. [Seqfu metadata]() can be used to prepare a "blank" file in the correct format, to be 
+extended with as many columns as needed. A useful addition is the possibility to add the full path of
+the analysed files as an extra column and the reads count too (which can be useful to understand some
+differences in diversity in undersampled samples).
+
+```
+seqfu metadata --format qiime2 reads/ > sample-metadata.tsv
+```
+
+In our dataset the samples have been collected at different times from birth, reported in the file name
+as `D{number}` which indicates the number of days.
+
+:pencil: Add a "Timepoint" column to the file, classifing the samples with D(1..100) as _Early_ and
+the others as _Late_. Label the Mock community as _Mock_.
 
 ## Metabarcoding tutorials 
 
@@ -186,14 +208,19 @@ is an R package that can denoise the reads to identify
 the representative sequences and produce the feature table.
 
 The key step is to identify the boundaries where the quality drops
-significantly, both in the R1 and in the R2 reads.
+significantly, both in the R1 and in the R2 reads (either with the 
+visual inspection of the artifacts or using 
+[SeqFu qual](https://telatin.github.io/seqfu2/tools/qual.html)).
+
+:bulb: Change the number of working threads based on the availability on
+the used system
 
 ```bash
 qiime dada2 denoise-paired \
-      --i-demultiplexed-seqs reads.qza \
+      --i-demultiplexed-seqs raw-reads.qza \
       --p-trunc-len-f 235 \
       --p-trunc-len-r 154 \
-      --p-n-threads 32 \
+      --p-n-threads 12 \
       --o-table table.qza \
       --o-representative-sequences repseqs.qza \
       --o-denoising-stats dada-stats.qza
@@ -205,6 +232,10 @@ a [separate page]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-debl
 
 ## Tree
 
+Some _diversity metrics_ are based on the tree of the representative sequences. 
+Qiime has several options to generate one, for example the
+[align-to-tree-mafft-fasttree](https://docs.qiime2.org/2021.4/plugins/available/phylogeny/align-to-tree-mafft-fasttree/).
+
 ```bash
 qiime phylogeny align-to-tree-mafft-fasttree \
   --i-sequences repseqs.qza \
@@ -214,13 +245,22 @@ qiime phylogeny align-to-tree-mafft-fasttree \
   --o-rooted-tree rooted-tree.qza
   ```
 
+:book: It can be an interesting exercise to reproduce the step manually starting from the _representative sequences_
+using [MAFFT](https://mafft.cbrc.jp/alignment/software/) and [FastTree](http://www.microbesonline.org/fasttree/).
+
 ## Taxonomy 
+
+A key step in our analysis, but also a step that is error prone and should be checked carefully, 
+is the assignment of a taxonomic classification to our sequences.
+For this step we need a reference database, [Silva](https://www.arb-silva.de/) being a widely adopted choice.
+
 ```bash
 wget "https://data.qiime2.org/2021.4/common/silva-138-99-515-806-nb-classifier.qza"
 
 qiime feature-classifier classify-sklearn \
-  --i-classifier gg-13-8-99-515-806-nb-classifier.qza \
+  --i-classifier silva-138-99-515-806-nb-classifier.qza \
   --i-reads repseqs.qza \
+  --p-n-jobs 8 \
   --o-classification taxonomy.qza
 ```
 
@@ -242,49 +282,6 @@ qiime taxa barplot \
   --o-visualization taxa-bar-plots.qzv
 ```
 
-### Taxonomy (alternative)
-
-```bash
-wget -O "sepp-refs-gg-13-8.qza" \
-    "https://data.qiime2.org/2021.4/common/sepp-refs-gg-13-8.qza"
-```
-
-We will use the fragment-insertion tree-building method as described by
-_Janssen et al._ (2018) using the sepp action of the `q2-fragment-insertion` plugin,
-which has been shown to outperform traditional alignment-based methods with
-short 16S amplicon data. This method aligns our unknown short fragments to
-full-length sequences in a known reference database and then places them onto
-a fixed tree.
-Note that this plugin has only been tested and benchmarked on 16S data against
-the Greengenes reference database (_McDonald et al._, 2012),
-so if you are using different data types you should consider
-the alternative methods mentioned below.
-
-```bash
-qiime fragment-insertion sepp \
-        --i-representative-sequences repseqs.qza \
-        --i-reference-database sepp-refs-gg-13-8.qza \
-        --p-threads 1 \
-        --o-tree insertion-tree.qza \
-        --o-placements insertion-placements.qza
-```
-
-Once the insertion tree is created, you must filter **your feature table** so that
-it only contains fragments that are in the insertion tree.
-This step is needed because SEPP might reject the insertion of some fragments,
-such as erroneous sequences or those that are too distantly related to the
-reference alignment and phylogeny.
-
-Features in your feature table without a
-corresponding phylogeny will cause diversity computation to fail, because
-branch lengths cannot be determined for sequences not in the tree.
-```bash
-qiime fragment-insertion filter-features \
-       --i-table table.qza \
-       --i-tree insertion-tree.qza \
-       --o-filtered-table filtered-table-deblur.qza \
-       --o-removed-table removed-table.qza
-```
 
 ### Taxonomic classification
 
@@ -464,58 +461,11 @@ qiime fragment-insertion filter-features \
        --o-removed-table removed-table.qza
 ```
 
-### Taxonomic classification
 
-```bash
-wget https://github.com/BenKaehler/readytowear/raw/master/data/gg_13_8/515f-806r/human-stool.qza
-wget https://github.com/BenKaehler/readytowear/raw/master/data/gg_13_8/515f-806r/ref-seqs.qza
-wget https://github.com/BenKaehler/readytowear/raw/master/data/gg_13_8/515f-806r/ref-tax.qza
-```
+ 
 
-```bash
-qiime feature-classifier fit-classifier-naive-bayes \
-       --i-reference-reads ref-seqs.qza \
-       --i-reference-taxonomy ref-tax.qza \
-       --i-class-weight human-stool.qza \
-       --o-classifier gg138_v4_human-stool_classifier.qza
-
-qiime feature-classifier classify-sklearn \
-       --i-reads rep-seqs-deblur.qza \
-       --i-classifier gg138_v4_human-stool_classifier.qza \
-       --o-classification bespoke-taxonomy.qza
-```
-
-```bash
-qiime metadata tabulate \
-       --m-input-file bespoke-taxonomy.qza \
-       --m-input-file rep-seqs-deblur.qza \
-       --o-visualization bespoke-taxonomy.qzv
-
-```
-
-```bash
-qiime diversity core-metrics-phylogenetic \
-       --i-table table-deblur.qza \
-       --i-phylogeny insertion-tree.qza \
-       --p-sampling-depth 3000 \
-       --m-metadata-file metadata.tsv \
-       --p-n-jobs-or-threads 32 \
-       --output-dir all-core-metrics-results
-```
-
-```bash
-```
-
-```bash
-```
-
-```bash
-```
-
-```bash
-```
-
-## Bibliography
+## Primary bibliography
 
 * Bolyen, E., Rideout, J.R., Dillon, M.R. et al. (2019) **Reproducible, interactive, scalable and extensible microbiome data science using QIIME 2**. _Nat Biotechnol._ [doi: 10.1038/s41587-019-0209-9](https://doi.org/10.1038/s41587-019-0209-9)
 * Estaki, M., Jiang, L., Bokulich, N. A., McDonald, D., González, A., Kosciolek, T., Martino, C., Zhu, Q., Birmingham, A., Vázquez-Baeza, Y., Dillon, M. R., Bolyen, E., Caporaso, J. G., & Knight, R. (2020). **QIIME 2 enables comprehensive end-to-end analysis of diverse microbiome data and comparative studies with publicly available data**. _Current Protocols in Bioinformatics_ [doi: 10.1002/cpbi.100](https://doi.org/10.1002/cpbi.100)
+* Kozich JJ, Westcott SL, Baxter NT, Highlander SK, Schloss PD. (2013) **Development of a dual-index sequencing strategy and curation pipeline for analyzing amplicon sequence data on the MiSeq Illumina sequencing platform.** _Appl Environ Microbiol._ [doi: 10.1128/AEM.01043-13](https://doi.org/10.1128/AEM.01043-13) 

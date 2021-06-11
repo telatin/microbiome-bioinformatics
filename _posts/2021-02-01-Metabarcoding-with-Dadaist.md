@@ -3,7 +3,7 @@ layout: post
 title:  "A primer on Dadaist2"
 author: at
 categories: [ metabarcoding, 16S, tutorial ]
-image: assets/images/green-bact.jpg
+image: https://quadram-institute-bioscience.github.io/dadaist2/img/dadaist.png
 ---
 
 ## What is Dadaist2
