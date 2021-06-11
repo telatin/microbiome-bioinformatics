@@ -162,6 +162,7 @@ ps <- readRDS(file = "phyloseq.rds")
 ## Importing without qiime2R
 
 From the bash we can prepare the text files:
+
 ```bash
 # Prepare table
 qax extract table.qza
@@ -181,7 +182,8 @@ qax extract rooted-tree.qza
 ```
 
 Then an "R script" as follows (call it `import.R`):
-```r
+
+```R
 library("phyloseq")
 data = import_qiime("table-tax.tsv", "sample-metadata.tsv", "rooted-tree.nwk", "repseqs.fasta")
 data
