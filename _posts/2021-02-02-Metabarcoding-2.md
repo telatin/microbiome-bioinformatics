@@ -95,24 +95,26 @@ qiime diversity core-metrics-phylogenetic \
    * *Beta diversity*: How similar are pairs of samples?
 
 * Weighted and unweighted
- * Unweighted metrics only account for whether an organism is present or absent
- * Weighted metrics account for abundance
+   * Unweighted metrics only account for whether an organism is present or absent
+   * Weighted metrics account for abundance
 
 * Phylogenetic versus non-phylogenetic metrics
-  * non-phylogenetic metrics treat all ASVs as being equally related
-  * phylogenetic metrics incorporate evolutionary relationships between the ASVs
+   * non-phylogenetic metrics treat all ASVs as being equally related
+   * phylogenetic metrics incorporate evolutionary relationships between the ASVs
 
-:pencil: The program produces _4 artifacts_, which can be viewed (you can use the links above). "Emperor" is
+#### Exploring the output
+:pencil:  The program produces _4 artifacts_, which can be viewed (you can use the links above). "Emperor" is
 a plug-in to visualize 3D-plots in the browser, allowing to customise the aspect. This plugin is used to plot
 the PCoA of **[Beta diversity](https://en.wikipedia.org/wiki/Beta_diversity)** metrices: 
 [Bray-Curtis](https://en.wikipedia.org/wiki/Bray%E2%80%93Curtis_dissimilarity#:~:text=In%20ecology%20and%20biology%2C%20the,on%20counts%20at%20each%20site.), Jackard and [Unifrac](https://en.wikipedia.org/wiki/UniFrac) (weighted means that the abundance of 
 each feature is taken into account, while unwheighted attempts to simplify the distance in a presence/absence
 fashion.)
 
-:pencil: Try to extract the content of one _regular_ artifact to understand how the data is encoded 
+:pencil:  Try to extract the content of one _regular_ artifact to understand how the data is encoded 
 (for example _shannon\_vector.qza_). If the artifacts contain a single text file, that can be viewed 
 with Qax (e.g. `qax view core-metrics-results/shannon_vector.qza`).
 
+:book: An in-depth tutorial (based on Python, with with great explanations in plain English) [is available here](http://readiab.org/book/latest/3/1#1).
 
 ## From Qiime to R
 
@@ -156,3 +158,40 @@ saveRDS(ps, file = "phyloseq.rds")
 # conversely:
 ps <- readRDS(file = "phyloseq.rds")
 ```
+
+## Importing without qiime2R
+
+From the bash we can prepare the text files:
+```
+# Prepare table
+qax extract table.qza
+biom convert --to-tsv -i table.biom -o table.raw
+tail -n +2 table.raw > table.tsv
+
+# Taxonomy
+qax extract taxonomy.qza
+cut -f 2 taxonomy.tsv | sed '1s/Taxon/Consensus Lineage/' > taxonomy.column
+
+# Combine taxonomy and matrix
+paste table.tsv taxonomy.column > table-tax.tsv
+
+# Extract tree and sequences
+qax extract repseqs.qza
+qax extract rooted-tree.qza
+```
+
+Then an "R script" as follows:
+```r import.R
+library("phyloseq")
+data = import_qiime("table-tax.tsv", "sample-metadata.tsv", "rooted-tree.nwk", "repseqs.fasta")
+data
+saveRDS(data, file = "phyloseq.rds")
+```
+
+to be executed as:
+```
+Rscript --vanilla import.R
+```
+
+
+:bulb: Dadaist2 has a script automating this process called `dadaist2-importq2`.
