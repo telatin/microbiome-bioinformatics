@@ -80,7 +80,7 @@ customizable parameters). This was designed to help automating DADA2.
 ### Preparing the metadata
 
 Most metabarcoding experiments rely on the metadata associated to each sample, and it's important 
-to correctly. [Seqfu metadata]() can be used to prepare a "blank" file in the correct format, to be 
+to correctly. [Seqfu metadata](https://telatin.github.io/seqfu2/tools/metadata.html) can be used to prepare a "blank" file in the correct format, to be 
 extended with as many columns as needed. A useful addition is the possibility to add the full path of
 the analysed files as an extra column and the reads count too (which can be useful to understand some
 differences in diversity in undersampled samples).
