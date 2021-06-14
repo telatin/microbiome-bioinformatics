@@ -172,7 +172,7 @@ do
   n=$(basename $FOR | cut -f1 -d_);
   REV=${FOR/_R1_/_R2_}
   echo $n
-  echo -e "${n%.fastq.gz}\t$PWD/$FOR\t$PWD/$REV" >> manifest.tsv;
+  echo -e "$n\t$PWD/$FOR\t$PWD/$REV" >> manifest.tsv;
 done
 ```
 
