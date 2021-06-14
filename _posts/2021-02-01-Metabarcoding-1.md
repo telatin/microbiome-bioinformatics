@@ -94,6 +94,7 @@ as `D{number}` which indicates the number of days.
 
 :pencil: Add a "Timepoint" column to the file, classifing the samples with D(1..100) as _Early_ and
 the others as _Late_. Label the Mock community as _Mock_.
+:mag: The result should [look like this](https://gist.github.com/telatin/7b5b2e86eeef59db4b13ec42d98acb3b).
 
 ## Metabarcoding tutorials 
 
