@@ -6,6 +6,16 @@ categories: [ metabarcoding, 16S, tutorial ]
 image: assets/images/qiime.jpg
 ---
 
+## Before we start
+
+This is an intermediate workshop and some knowledge of Unix is required, but
+we will be at different levels so... here some usful links:
+
+* [Log in via SSH](https://github.com/telatin/learn_bash/wiki/Connect-via-SSH)
+* [Using GNU screen](https://github.com/telatin/learn_bash/wiki/Using-%22screen%22)
+    * [.screenrc file](https://gist.github.com/telatin/66fab72e9bf0dda9984cad8d97c6174b)
+* [A Unix CLI tutorial (basic)](http://www.ee.surrey.ac.uk/Teaching/Unix/unix1.html)
+  
 ## Preparing our workbench
 
 We will use Miniconda throughout this workshop. This is generally a great tool
