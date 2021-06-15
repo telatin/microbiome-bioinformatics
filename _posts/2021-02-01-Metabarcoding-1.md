@@ -27,6 +27,13 @@ we first need to
 [install Miniconda]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})
 and then _mamba_.
 
+When we are ready with _conda_ (and _mamba_) installed, we can install a couple of utilities
+that we will use later:
+ 
+```
+mamba install -c conda-forge -c bioconda seqfu qax
+```
+
 ## Getting the raw reads
 
 We will analyse a very famous dataset from Pat Schloss, 
@@ -120,13 +127,6 @@ To activate the environment:
 ```bash
 conda activate qiime2-2021.4
 ```
-
-After activating the environment, we can install more packages. We'll use two
-utilities for this workshop (while USEARCH is already installed):
-```
-mamba install -c conda-forge -c bioconda seqfu qax
-```
-
 
 ## Importing the reads in Qiime
 
