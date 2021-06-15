@@ -135,18 +135,34 @@ conda activate q2import
 
 ### Importing artifacts using _qiime2R_
 
-After opening "R" we can create a phyloseq object with a simple command:
+[Qiime2R](https://rdrr.io/github/jbisanz/qiime2R/man/qza_to_phyloseq.html) is a nice R library
+that allows to create a PhyloSeq object directly from the Qiime 2 artifacts.  It's a nice addition
+to your RStudio set of libraries, and I recommend to install it as it simplifies the workflow from
+the server where Qiime 2 generated the artifacts to your statistical explorarion and analysis of
+the data.
+
+In our _q2import_ environment we have R, qiime2R and of course phyloseq.
+
+:warning: _qiime2R_ requires the metadata to be in "Qiime 2" format (with an extra line after the header),
+like this [sample-metadata.tsv](https://gist.github.com/telatin/7b5b2e86eeef59db4b13ec42d98acb3b#file-sample-metadata-tsv).
+Qiime metadata is forward compatible, meaning that Qiime 2 itself can accept Qiime 1 metadata files.
+
+After opening "R" (type `R` from the environment) we can create a phyloseq object with a simple command:
 
 ```r
+# These are "R" commands, not to be typeed from the shell prompt
 library("dplyr")
 library("qiime2R")
 ps <- qza_to_phyloseq(features="table.qza", tree="rooted-tree.qza", metadata="sample-metadata.tsv", taxonomy="taxonomy.qza")
+
+# Check the ps object
 ps
 # phyloseq-class experiment-level object
-# otu_table()   OTU Table:         [ 235 taxa and 19 samples ]
-# sample_data() Sample Data:       [ 19 samples by 2 sample variables ]
+# otu_table()   OTU Table:         [ 235 taxa and 20 samples ]
+# sample_data() Sample Data:       [ 20 samples by 3 sample variables ]
 # tax_table()   Taxonomy Table:    [ 235 taxa by 7 taxonomic ranks ]
 # phy_tree()    Phylogenetic Tree: [ 235 tips and 233 internal nodes ]
+# refseq()      DNAStringSet:      [ 235 reference sequences ]
 ```
 
 ### Saving (and reading) the PhyloSeq object to file
@@ -155,9 +171,14 @@ This can be useful for sharing our whole experiment as a single file, and also t
 usual "R Studio" setup (with its libraries) if we create it in a server.
 
 ```r
+# Save an object to file
 saveRDS(ps, file = "phyloseq.rds")
+```
 
-# conversely:
+Then you can move the _phyloseq.rds_ file to the location with you RStudio environment and,
+from RStudio:
+```
+# load an object from file
 ps <- readRDS(file = "phyloseq.rds")
 ```
 
