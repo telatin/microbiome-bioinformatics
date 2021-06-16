@@ -50,4 +50,4 @@ Once that we have our PhyloSeq object, we can use the many functions that [Phylo
 Here we provide an example based on the dataset analysed in the workshop ("MiSeq SOP"), available 
  as an **[R markdown]({{ site.baseurl }}/rmd/phyloseq.html)** script made by Rebecca Ansorge.
 
-:bulb: If you need the phyloseq object, you can [download it from here](https://telatin.github.io/data/phyloseq.rds).
+:bulb: If you need the phyloseq object, you can [download it from here]({{ '/data/phyloseq.rds' | prepend: site.baseurl }}).
