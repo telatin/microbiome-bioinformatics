@@ -6,6 +6,16 @@ categories: [ metabarcoding, 16S, tutorial ]
 image: assets/images/green-bact.jpg
 ---
 
+Yesterday we introduced the whole workflow to analyze 16S reads, and the powerful framework that Qiime2
+introduced that:
+
+* ensures reproducibility with tightly controlled Conda environments
+* enforces descriptive commands (no short options, and self descriptive plug-in names)
+* introduces a new file package (the "artifact" [_sic_]) that propagates metadata and allows for type check
+* and more!
+
+Today we will complete our first tutorial adding a taxonomy classification using a classifier, and exploring the diversity of the samples with an _all-in-one_ Qiime plugin.
+
 ## Taxonomy 
 
 A key step in our analysis, but also a step that is error prone and should be checked carefully, 
@@ -31,14 +41,24 @@ qiime metadata tabulate \
 
 :mag: view artifact: [taxonomy.qzv](https://view.qiime2.org/visualization/?type=html&src=https%3A%2F%2Fdl.dropbox.com%2Fs%2Fzen8877w0qwvezk%2Ftaxonomy.qzv%3Fdl%3D1)
 
-This visualization is relatively raw, but provides an important insight: the confidence of the classification. For some
-features we might be interested in performing a manual inspection. We can use _qax_ and _seqfu_ to extract a feature by name:
+:bulb: the very same table is stored in text format in the _data artifact_, so you can view it from the 
+terminal - for example - with this command:
+```
+qax view taxonomy.qza | less -S -x 20
+```
+
+This visualization is relatively raw, but provides an important insight: 
+the confidence of the classification (_i. e._ the confidence at the last reported rank). 
+
+For some features we might be interested in performing a manual inspection. 
+We can use _qax_ and _seqfu_ to extract a feature by name, for example as:
 ```
 qax view repseqs.qza | seqfu grep -n '0a3cf58d4ca062c13d42c9db4ebcbc53'
 ```
 
 A more common visualization is provided by the
-**bar plots** that requires, in addition to the feature table and the taxonomy, aslo the _metadata file_:
+**bar plots** that requires, in addition to the 
+feature table and the taxonomy, also the _metadata file_:
 
 ```bash
 qiime taxa barplot \
@@ -49,6 +69,7 @@ qiime taxa barplot \
 ```
 
 :mag: view artifact: [taxa-bar-plots.qzv](https://view.qiime2.org/visualization/?type=html&src=https%3A%2F%2Fdl.dropbox.com%2Fs%2F96au5a96x0m61xp%2Ftaxa-bar-plots.qzv%3Fdl%3D1)
+Note how you can make use of the metadata to order your samples.
 
 ## Diversity analysis
 
@@ -119,10 +140,23 @@ with Qax (e.g. `qax view core-metrics-results/shannon_vector.qza`).
 ## From Qiime to R
 
 If we adopt the qiime2R package, we can (finally!) generate a PhyloSeq object direcly from our
-artifacts.
+artifacts. This transition involves two worlds: the command line where we ran Qiime2 (usually a powerful remote server) and RStudio in a workstation with a GUI (Mac, Windows, or Linux).
 
-### Installing the packages
+1) If our RStudio has the library _qiime2R_, or if we can/want to install it, 
+we can simply transfer the relevant artifacts and metadata to our workstation.
+2) If we want to use _qiime2R_ in the remote server we can use the command line interface (as the GUI is not reqlly required) as described below
+3) We can extract the artifacts content and import those (ase described after "qiime2R")
+4) We can also use Dadaist from our server to create the phyloseq object (see at the end)
 
+### qiime2R
+
+[Qiime2R](https://rdrr.io/github/jbisanz/qiime2R/man/qza_to_phyloseq.html) is a nice R library
+that allows to create a PhyloSeq object directly from the Qiime 2 artifacts.  It's a nice addition
+to your RStudio set of libraries, and I recommend to install it as it simplifies the workflow from
+the server where Qiime 2 generated the artifacts to your statistical explorarion and analysis of
+the data.
+
+#### Installing qiime2R in our server (headless)
 We can create an _ad hoc_ environment that will contain R, and the required packages to import the artifacts.
 The package _r-qiime2r_ is available from the developer's channel (rujinlong), but misses _dplyr_ for full 
 functionality so we will install that as well (from _conda-forge_). _qax_ can also help.
@@ -132,14 +166,7 @@ mamba create -n q2import -c conda-forge -c bioconda -c rujinlong r-qiime2r r-dpl
 conda activate q2import
 ```
 
-
-### Importing artifacts using _qiime2R_
-
-[Qiime2R](https://rdrr.io/github/jbisanz/qiime2R/man/qza_to_phyloseq.html) is a nice R library
-that allows to create a PhyloSeq object directly from the Qiime 2 artifacts.  It's a nice addition
-to your RStudio set of libraries, and I recommend to install it as it simplifies the workflow from
-the server where Qiime 2 generated the artifacts to your statistical explorarion and analysis of
-the data.
+#### Importing artifacts using _qiime2R_
 
 In our _q2import_ environment we have R, qiime2R and of course phyloseq.
 
@@ -165,7 +192,7 @@ ps
 # refseq()      DNAStringSet:      [ 235 reference sequences ]
 ```
 
-### Saving (and reading) the PhyloSeq object to file
+#### Saving (and reading) the PhyloSeq object to file
 
 This can be useful for sharing our whole experiment as a single file, and also to load it from our
 usual "R Studio" setup (with its libraries) if we create it in a server.
@@ -175,7 +202,7 @@ usual "R Studio" setup (with its libraries) if we create it in a server.
 saveRDS(ps, file = "phyloseq.rds")
 ```
 
-Then you can move the _phyloseq.rds_ file to the location with you RStudio environment and,
+:bulb: Then you can move the _phyloseq.rds_ file to the location with you RStudio environment and,
 from RStudio:
 ```
 # load an object from file
@@ -225,6 +252,7 @@ to be executed as:
 Rscript --vanilla import.R
 ```
 
+### The Dadaist way
 
 :bulb: Dadaist2 has [a script](https://quadram-institute-bioscience.github.io/dadaist2/pages/dadaist2-importq2.html)
 automating this process called `dadaist2-importq2`. 

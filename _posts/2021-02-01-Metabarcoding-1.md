@@ -107,9 +107,12 @@ the others as _Late_. Label the Mock community as _Mock_.
 
 Here we will describe how to use **Qiime 2** to analyse the dataset (see below).
 Two alternative tutorials are also available:
+
 * [USEARCH tutorial]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-with-USEARCH.md %}) - this is an instructive (simplified) workflow, that allow for an easy inspection of the intermediate files.
 * [Dadaist2 tutorial]({{ site.baseurl }}{% link _posts/2021-02-01-Metabarcoding-with-Dadaist.md %}) - this pipeline can be used to quickly produce a PhyloSeq object and offers some degree of customisation
-  
+* [Lotus tutorial](https://github.com/telatin/lotus-tutorial#readme) - Lotus has been a tool providing an easy access to multiple strategies for OTU picking (clustering). 
+The [new version](https://github.com/hildebra/lotus2), currently under development, also supports DADA2 denoising.
+
 ## Installing Qiime2 (2021.4)
 
 The [installation](https://docs.qiime2.org/2021.2/install/native/#install-qiime-2-within-a-conda-environment) 

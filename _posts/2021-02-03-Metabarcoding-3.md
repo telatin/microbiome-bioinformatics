@@ -8,12 +8,19 @@ image: assets/images/green-bact.jpg
 
 ## From the Command line to R
 
+In your _RStudio_ you will need two libraries:
+
+* PhyloSeq
+* ggplot2
+
 ### Installing packages
 
-The repository for bioinformatics libraries for R is called [Bioconductor](https://bioconductor.org/install/) 
-(we can think of it as 
-the _bioconda_ channel for the _Miniconda_ package manager.). To install the Bioconductor package 
-manager we can run this command:
+:bulb: If you  have _PhyloSeq_ installed, skip this section.
+
+The repository for bioinformatics libraries for R is called 
+[Bioconductor](https://bioconductor.org/install/) 
+(we can think of it as the _bioconda_ channel for the _Miniconda_ package manager.). 
+To install the Bioconductor package manager we can run this command:
 ```r
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
@@ -22,7 +29,7 @@ BiocManager::install(version = "3.13")
 
 To install one or more (bioconductor) package:
 ```r
-BiocManager::install(c("phyloseq", "microbiome"))
+BiocManager::install( c("phyloseq", "microbiome") )
 ```
 
 ## Phyloseq object
