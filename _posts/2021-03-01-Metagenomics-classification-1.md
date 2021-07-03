@@ -122,13 +122,14 @@ to make a script instead of typing the whole command (if we make an error, we ca
 of our command):
 
 
-```bash filter.sh
+```bash
 
 mkdir -p filt
 mkdir -p reports
 
 for i in reads/*R1*gz;
 do
+  echo "Processing sample $i";
   fastp  -w 16 -i $i -I ${i/R1/R1} \
    -o filt/$(basename $i) -O filt/$(basename  ${i/_R1/_R2}) \
    -h reports/$(basename $i | cut -f 1 -d _).html -j reports/$(basename $i | cut -f 1 -d _).json \
