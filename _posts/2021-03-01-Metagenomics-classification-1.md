@@ -116,7 +116,36 @@ Some notes:
  * Similarly, the two output files are specified with `-o filtered_R1.fq` and `-O filtered_R2.fq`.
  * During the process, a report can be saved in both HTML (`-h report.html`) and JSON (`-j report.json`) formats.
  * All the other paramters will affect what files are retained / discarded
-  
+
+
+### Running fastp over a single sample
+
+Let's first try with a single sample, where we ask to perform an automatic adapter detection on the paired-end
+reads (it's enabled by default for single-end datasest):
+```
+cd ~/workshop-ws/
+mkdir fastp-test
+fastp -i reads/Sample3_R1.fq.gz -I reads/Sample3_R2.fq.gz \
+   -o fastp-test/Sample3_R1.fq.gz -O fastp-test/Sample3_R2.fq.gz \
+   --detect_adapter_for_pe 
+```
+
+We should find the output FASTQ files in the `fastp-test` subdirectory.
+
+
+To quickly check the amount of reads before and after filtering:
+```
+seqfu stats --nice {reads,fastp-test}/Sample3_R*.fq.gz
+```
+
+
+By default, _fastp_ also saves a report (called _fastp.html_) in the current
+directory. An [**example report**]({{ '/data/fastp/Sample3.html' | prepend: site.baseurl }}) allows to see
+that in a single report we have data on the reads _before_ and _after_ the quality filter.
+
+
+### Processing multiple samples with a script
+
 To process multiple samples we can make a [for loop](https://telatin.github.io/articles/02-bash.html), but it's wise
 to make a script instead of typing the whole command (if we make an error, we can quickly fix it, and we keep track
 of our command):
