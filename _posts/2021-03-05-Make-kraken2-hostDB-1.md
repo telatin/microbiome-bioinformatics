@@ -1,7 +1,13 @@
 
-# Kraken2 - Build custom host database (optional)
+---
+layout: post
+title:  "Kraken2 - Build custom host database"
+author: ra
+categories: [ metagenomics, tutorial ]
+hidden: true
+---
 
-In this case above we proivided a kraken2 database for you to use. However, most of the times, you would need to create a database for your own host. For the creation of a human database kraken to already provides pre-processed databases. But sometimes you need to build a custom database. Here we can practise the corona virus genome which is small enough to keep computation times and storage space minimal.
+In our workshop  we proivided a kraken2 database for you to use. However, most of the times, you would need to create a database for your own host. For the creation of a human database kraken to already provides pre-processed databases. But sometimes you need to build a custom database. Here we can practise the corona virus genome which is small enough to keep computation times and storage space minimal.
 
 
 ## Custom host (example: corona virus)

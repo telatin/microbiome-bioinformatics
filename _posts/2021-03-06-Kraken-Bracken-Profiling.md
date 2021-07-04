@@ -1,4 +1,11 @@
-# Profile the community using kraken2
+---
+layout: post
+title:  "Profile the community using kraken2"
+author: ra
+categories: [ metagenomics, tutorial ]
+hidden: true
+---
+
 
 To determine the microbial composition in your samples, one method to get this information is taxonomic read profiling. Here you compare your reads to a database of interest. *Kraken2* is a popular tool, but there are other tools like *metaphlan3* that use similar approaches. One thing to remember when using this reference-based approach is, that you are blind to everything that is not in your database. Unknown organisms will not be detected this way. To persue a reference-free approach, you would have to perform an assembly-based approach which can detect unknown taxa, but on the other hand this is more limited to detect low abundant taxa. 
 

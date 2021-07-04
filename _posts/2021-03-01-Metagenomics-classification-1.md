@@ -104,6 +104,81 @@ Sometimes it can be useful to have some data on our files from the command line:
 
 ## Host removal
 
+We will use [kraken2](https://ccb.jhu.edu/software/kraken2/),
+the same program we will use to classify our reads, also to flag (and remove) the host reads.
+
+First create a directory for your decontaminated output in your workshop directory:
+
+```
+mkdir ~/kraken-ws/reads-no-host
+```
+
+To view the settings of kraken2 you can run `kraken2 -h`.
+
+Now can try to run the host decontamination for one sample (_e.g._ Sample8). 
+
+:bulb: Make sure you have the conda environment with your kraken2 installation activated. 
+
+```bash
+kraken2 --db /data/db/kraken2/mouse_GRCm39 --threads 5 --confidence 0.5 \
+  --minimum-base-quality 22 \
+  --report ~/kraken-ws/reads-no-host/Sample8.report \
+  --unclassified-out ~/kraken-ws/reads-no-host/Sample8#.fq \
+  --paired /data/shared/reads/Sample8_R1.fastq.gz /data/shared/reads/Sample8_R2.fastq.gz > ~/kraken-ws/reads-no-host/Sample8.txt 
+```
+
+* `/data/db/kraken2/mouse_GRCm39` is the path to the kraken2 database for host (see optional part below to see how you can create your own custom database)
+* `~/kraken-ws/reads-no-host/` is out output directory
+* `Sample8` is our sample name 
+* `--report nomouse/Sample8.report` is going to create the report that describes the amount of contamination
+* `--unclassified-out nomouse/Sample8#.fq.gz` is needed to collect the reads that don't match the host database, hence represent contamination-free reads
+* `~/kraken-ws/reads-no-host/Sample8.txt` will save the read-by-read report. :bulb: you usually will discard it so you can redirect to `/dev/null` instead
+
+The kraken2 output will be unzipped and therefore taking up a lot iof disk space. So best we gzip the fastq reads again before continuing.
+```bash
+pigz -p 6 ~/kraken-ws/reads-no-host/Sample8_*.fq
+```
+
+Since we have multiple samples, we need to run the command for all reads. This can be done using a for-loop. Save the following into a script `removehost.sh` 
+
+```
+DB=/data/db/kraken2/mouse_GRCm39
+DIR=/data/workshop/reads/
+OUT=~/kraken-ws/reads-no-host
+
+mkdir -p "$OUT/"
+
+for R1 in $DIR/Sample*_R1.fq.gz;
+do
+    # We cut the sample name on the first _ and store it in $sample 
+    sample=$(basename $R1 | cut -f1 -d_)
+
+    # We infer the second pair replacing _R1 with _R2
+    R2=${R1/_R1/_R2}
+    
+    echo "removing mouse contamination from $sample"
+    echo "Reads: $R1 / $R2"
+    kraken2 \
+        --db $DB \
+        --threads 8 \
+        --confidence 0.5 \
+        --minimum-base-quality 22 \
+        --report $OUT/${sample}.report \
+        --unclassified-out $OUT/${sample}#.fq > /dev/null \
+        --paired $R1 $R2
+    pigz ${OUT}/*.fq
+done
+```
+
+Now run the script with 
+
+```
+bash removehost.sh
+```
+
+:link: See [Host removal]({% link _posts/2021-03-04-Host-removal-1.md %})
+ 
+
 ## Reads filtering
 
 
@@ -121,22 +196,41 @@ Some notes:
 ### Running fastp over a single sample
 
 Let's first try with a single sample, where we ask to perform an automatic adapter detection on the paired-end
-reads (it's enabled by default for single-end datasest):
+reads (it's enabled by default for single-end datasest) 
+and requiring a minimum length after filtration (`-l INT`):
 ```
 cd ~/workshop-ws/
 mkdir fastp-test
-fastp -i reads/Sample3_R1.fq.gz -I reads/Sample3_R2.fq.gz \
+fastp -i reads-no-host/Sample3_1.fq.gz -I reads-no-host/Sample3_2.fq.gz \
    -o fastp-test/Sample3_R1.fq.gz -O fastp-test/Sample3_R2.fq.gz \
-   --detect_adapter_for_pe 
+   -l 100 --detect_adapter_for_pe 
 ```
+
+
+:bulb: Note that Kraken will split the paired reads in files tagged as `_1`and `_2`. 
+We are restoring the more common `_R1` and `_R2` nomenclature with the output of _fastp_.
 
 We should find the output FASTQ files in the `fastp-test` subdirectory.
 
 
 To quickly check the amount of reads before and after filtering:
 ```
-seqfu stats --nice {reads,fastp-test}/Sample3_R*.fq.gz
+seqfu stats --nice {reads,reads-no-host,fastp-test}/Sample3_*1.fq.gz
 ```
+This will print a screen-friendly table.
+<span class="spoiler">
+From the table we can see the reads-loss and also the effect on the read
+length:
+```
+┌───────────────────────────────┬─────────┬───────────┬───────┬─────┬─────┬─────┬───────┬─────┬─────┐
+│ File                          │ #Seq    │ Total bp  │ Avg   │ N50 │ N75 │ N90 │ auN   │ Min │ Max │
+├───────────────────────────────┼─────────┼───────────┼───────┼─────┼─────┼─────┼───────┼─────┼─────┤
+│ reads/Sample3_R1.fq.gz        │ 1000000 │ 150000000 │ 150.0 │ 150 │ 150 │ 150 │ 0.000 │ 150 │ 150 │
+│ reads-no-host/Sample3_1.fq.gz │ 989295  │ 148394250 │ 150.0 │ 150 │ 150 │ 150 │ 0.000 │ 150 │ 150 │
+│ fastp-test/Sample3_R1.fq.gz   │ 915797  │ 135443988 │ 147.9 │ 150 │ 150 │ 150 │ 0.006 │ 100 │ 150 │
+└───────────────────────────────┴─────────┴───────────┴───────┴─────┴─────┴─────┴───────┴─────┴─────┘
+```
+</span>
 
 
 By default, _fastp_ also saves a report (called _fastp.html_) in the current
@@ -156,17 +250,17 @@ of our command):
 mkdir -p filt
 mkdir -p reports
 
-for i in reads/*R1*gz;
+for i in reads-no-host/*_1*gz;
 do
   echo "Processing sample $i";
-  fastp  -w 16 -i $i -I ${i/R1/R1} \
-   -o filt/$(basename $i) -O filt/$(basename  ${i/_R1/_R2}) \
+  fastp  -w 16 -i $i -I ${i/_1/_2} \
+   -o filt/$(basename ${i/_1/_R1}) -O filt/$(basename  ${i/_1/_R2}) \
    -h reports/$(basename $i | cut -f 1 -d _).html -j reports/$(basename $i | cut -f 1 -d _).json \
    -w 16 \
    --detect_adapter_for_pe \
    --length_required 100 \
    --overrepresentation_analysis;
- done
+done
 ```
 
 To run the script:
