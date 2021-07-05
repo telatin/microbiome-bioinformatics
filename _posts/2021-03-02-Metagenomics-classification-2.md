@@ -83,42 +83,16 @@ The source:
 programs in a single report. We will combine our _fastp_ and _Kraken2_ classifications
 to have a single report.
 
-It works with a bit of magic: it scans all your files to check if some looks like a bioinformatic output. Sometimes the filename is important as well, for example 
-for _fastp_ it will use the `.json` file, that should be in the `*.fastp.json` format.
-
-```
-cd ~/kraken-ws
-for i in reports/*.json;
-dd
-  mv $i ${i/json/fastp.json}
-done
-```
-
-We can first create a report just based on FASTP with: 
-
-```
-multiqc -o fastp-report reports/
-```
-
-With *-o* we specify the output directory, then we need to tell where MultiQC should scan for known files.
-The output should be similar to [this one](https://telatin.github.io/microbiome-bioinformatics/data/multiqc/fastp-report/).
-If you check your report, you will notice that MultiQC thinks our samples are called _Samplename\_1_, because 
-it's taken from the first pair. 
-
-We want to remove the `_1` to make it mergeable with Kraken:
-
-```
-sed -i 's/_1//' reports/*.json
-```
-
-Now we can combine _fastp_ and _Kraken2_:
-```
-multiqc -o multiqc reports/ kraken/
-```
+* [See the MultiQC tutorial]({{ site.baseurl }}{% _posts/2021-03-06-MultiQC.md %})
 
 :mag: The output should be [like this one](https://telatin.github.io/microbiome-bioinformatics/data/multiqc/)
 
 ## Krona plots
 
-[krona]({{ site.baseurl }}{% link _posts/2021-03-06-Kraken-to-Krona.md %})
+Krona is a flexible tool to generate interactive pie charts. We have a dedicated tutorial on 
+how to produce an HTML interactive plot using Krona.
+
+The procedure works both on Kraken2 and Bracken _report_ files.
+
+* [See the Krona tutorial]({{ site.baseurl }}{% link _posts/2021-03-06-Kraken-to-Krona.md %})
 
