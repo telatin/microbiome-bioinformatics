@@ -134,7 +134,7 @@ kraken2 --db /data/db/kraken2/mouse_GRCm39 --threads 5 --confidence 0.5 \
   --minimum-base-quality 22 \
   --report ~/kraken-ws/reads-no-host/Sample8.report \
   --unclassified-out ~/kraken-ws/reads-no-host/Sample8#.fq \
-  --paired /data/shared/reads/Sample8_R1.fastq.gz /data/shared/reads/Sample8_R2.fastq.gz > ~/kraken-ws/reads-no-host/Sample8.txt 
+  --paired /data/shared/reads/Sample8_R1.fq.gz /data/shared/reads/Sample8_R2.fq.gz > ~/kraken-ws/reads-no-host/Sample8.txt 
 ```
 
 * `/data/db/kraken2/mouse_GRCm39` is the path to the kraken2 database for host (see optional part below to see how you can create your own custom database)
