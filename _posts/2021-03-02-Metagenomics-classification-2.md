@@ -75,7 +75,8 @@ bash classify.sh [input_dir]
 
 The source:
 
- 
+{% gist fa79d013707a293c0c3ff019abc7313d %}
+
 
 ## MultiQC report
 
@@ -83,7 +84,7 @@ The source:
 programs in a single report. We will combine our _fastp_ and _Kraken2_ classifications
 to have a single report.
 
-* [See the MultiQC tutorial]({{ site.baseurl }}{% _posts/2021-03-06-MultiQC.md %})
+* [See the MultiQC tutorial]({{ site.baseurl }}{% link _posts/2021-03-06-MultiQC.md %})
 
 
 ## Krona plots
