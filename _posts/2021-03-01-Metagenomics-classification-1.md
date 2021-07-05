@@ -262,10 +262,9 @@ mkdir -p reports
 for i in reads-no-host/*_1*gz;
 do
   echo "Processing sample $i";
-  fastp  -w 16 -i $i -I ${i/_1/_2} \
+  fastp  -w 8 -i $i -I ${i/_1/_2} \
    -o filt/$(basename ${i/_1/_R1}) -O filt/$(basename  ${i/_1/_R2}) \
    -h reports/$(basename $i | cut -f 1 -d _).html -j reports/$(basename $i | cut -f 1 -d _).json \
-   -w 16 \
    --detect_adapter_for_pe \
    --length_required 100 \
    --overrepresentation_analysis;
