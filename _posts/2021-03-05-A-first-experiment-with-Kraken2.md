@@ -53,7 +53,10 @@ We have some Kraken2 databases in `/data/db/kraken2/`, and we are specifically g
 ```
 
 :bulb: If you set the *$KRAKEN2_DEFAULT_DB* you can omit the database in the command. 
-For example with `export KRAKEN2_DEFAULT_DB=/data/db/kraken2/standard-16gb/`.
+For example with:
+```
+export KRAKEN2_DEFAULT_DB=/data/db/kraken2/standard-16gb/
+```
 
 the full command to generate both a summary report and the detailed output would be:
 ```

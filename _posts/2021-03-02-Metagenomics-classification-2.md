@@ -18,14 +18,19 @@ We can now profile our samples, saving both the "raw" output and the report.
 We should be now familiar with `for` loops, so why don't you write yours using the
 following template?
 
+:warning: Save it as `~/kraken.sh` so that we can check it!
+
 ```
 DB={fill_this}
-for READS_FOR in filt/*_R1*.gz;
+for READS_FOR in ~/kraken-ws/filt/*_R1*.gz;
 do
     READS_REV=${READS_FOR/_R1/_R2}
     kraken2 {fill_this}
 done
 ```
+
+:bulb: In the next paragraphs you'll find a complete script that does Kraken and Bracken 
+in one go.
 
 ## Bracken
 
@@ -43,7 +48,7 @@ Where:
  * *INPUT* is the report produced by Kraken2
  * *OUTPUT* is the tabular output, while *OUTREPORT* is a _Kraken style_ report (recalibrated)
  * *LEVEL* is the taxonomic level (usually `S` for _species_)
- * *THRESHOLD* should be 10 for species level (this is the default), it's the minimum number of reads required
+ * *THRESHOLD*  it's the minimum number of reads required (default is 10)
 
 Run bracken on one of the samples, and check the output files produced.
 
