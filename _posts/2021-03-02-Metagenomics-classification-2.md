@@ -122,4 +122,6 @@ multiqc -o multiqc reports/ kraken/
 
 [krona]({{ site.baseurl }}{% link _posts/2021-03-06-Kraken-to-Krona.md %})
 
-![krona]({{ site.baseurl }}/assets/images/krona.png)
+Baseurl: {{ site.baseurl }}
+
+![krona]({{ site.baseurl }}{% link assets/images/krona.png %})
