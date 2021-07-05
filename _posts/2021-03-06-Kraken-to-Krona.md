@@ -6,8 +6,6 @@ categories: [ metagenomics, tutorial ]
 hidden: true
 ---
 
-## Krona plots
-
 
 ![krona]({{ site.baseurl }}{% link assets/images/krona.png %})
 
@@ -41,14 +39,17 @@ now we can generate a first plot with:
 ktImportTaxonomy -m 1 -o krona-test.html input.tsv 
 ```
 
+By default, the column where to take the taxonomy is the second, while we specify the
+"magnitude" with `-m 1`, as we used the first column to store the _raw counts_.
+
 :mag: The output is [available here]({{ site.baseurl }}{% link data/krona/krona-test.html %})
 
 
 ### Generating the Krona plot from Kraken or Bracken reports
 
 If we examine out minimal file we had two relevant columns:
-* counts
-* NCBI Taxonomy ID
+* counts (`-m`)
+* NCBI Taxonomy ID (`-t`)
 
 In a Kraken report, these are in columns 3 and 5, respectively:
 
@@ -62,4 +63,8 @@ Krona can also work on multiple samples:
 ktImportTaxonomy -t 5 -m 3 -o multi-krona.html *.report 
 ```
 
-:bulb: Kraken keep track of the unclassified reads, while we loose this datum with Bracken
+:bulb: Kraken keep track of the unclassified reads, while we loose this datum with Bracken.
+
+### Citation
+
+Ondov, B.D., Bergman, N.H. & Phillippy, A.M. [Interactive metagenomic visualization in a Web browser](https://doi.org/10.1186/1471-2105-12-385). BMC Bioinformatics 12, 385 (2011). 
