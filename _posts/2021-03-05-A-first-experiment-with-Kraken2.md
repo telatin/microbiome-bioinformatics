@@ -47,12 +47,9 @@ fu-shred -l 100 -s 10 /data/shared/genomes/GCF_000027325.1_ASM2732v1_genomic.fna
 ## Classify our dataset with Kraken2
 
 A curated collection of Krakent2 databases is available from [BenLangmead lab](https://benlangmead.github.io/aws-indexes/k2).
-We have some Kraken2 databases in `/data/db/kraken2/`, and we are specifically going to use:
-```
-/data/db/kraken2/standard-16gb/
-```
+We have some Kraken2 databases in `/data/db/kraken2/`, and we are specifically going to use `/data/db/kraken2/standard-16gb/`.
 
-:bulb: If you set the *$KRAKEN2_DEFAULT_DB* you can omit the database in the command. 
+:bulb: If you set the `$KRAKEN2_DEFAULT_DB` you can omit the database in the command. 
 For example with:
 ```
 export KRAKEN2_DEFAULT_DB=/data/db/kraken2/standard-16gb/
