@@ -7,7 +7,7 @@ hidden: true
 ---
 
 A more complex script to perform a 
-[_for loop_](https://telatin.github.io/articles/02-bash.html)
+[**for loop**](https://telatin.github.io/articles/02-bash.html)
 is available from GitHub as shown below:
 
 {% gist fa79d013707a293c0c3ff019abc7313d %}
@@ -15,8 +15,9 @@ is available from GitHub as shown below:
 ## Some notes on how to make a script
 
 This script requires a parameter from the user (the _input directory_). 
-Bash will store the first variable in `$1`. If the script is launched 
-without any argument, we should check that the first variable is not 
+Bash will store the first variable in `$1`. 
+If the script is launched without any argument, 
+we should check that the first variable is not 
 set, we should warn the user:
 
 ```bash
@@ -26,6 +27,8 @@ if [  -z ${1+x} ]; then
   exit 1
 fi
 ```
+
+* See [how to check if a variable is set](https://telatin.github.io/articles/06-bash.html)
 
 ## Introducing some checks
 
@@ -49,9 +52,11 @@ if [[ ! -e "$DB"/database${READLEN}mers.kmer_distrib ]]; then
 fi
 ```
 
+* See how to write [**if statements**](https://telatin.github.io/articles/03-bash.html)
+
 ## A for loop to run Kraken and Bracken
 
-As usual we prepare a [_for loop_](https://telatin.github.io/articles/02-bash.html),
+As usual we prepare a [**for loop**](https://telatin.github.io/articles/02-bash.html),
 manipulating the variables:
  * Replacing "_R1" with "_R2" to get the second pair 
    * :warning: this should be changed if our files have different tags
@@ -71,4 +76,4 @@ done
 If kraken fails, what is the point of running Kraken?
 This is why we have the `set -euo pipefail` instruction.
 
-* See [more about the safety net](https://telatin.github.io/articles/04-bash.html)
+* See [more about the **safety net**](https://telatin.github.io/articles/04-bash.html)
