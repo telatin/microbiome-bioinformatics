@@ -5,7 +5,7 @@ author: at
 categories: [ metabarcoding, tutorial ]
 image: assets/images/qiime.jpg
 hidden: true
-featured: true 
+featured: false 
 ---
 
 ## CLIMB Workshop on Metabarcoding (16S) analysis

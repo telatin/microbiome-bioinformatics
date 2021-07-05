@@ -130,8 +130,8 @@ kraken2 --db /data/db/kraken2/mouse_GRCm39 --threads 5 --confidence 0.5 \
 * `/data/db/kraken2/mouse_GRCm39` is the path to the kraken2 database for host (see optional part below to see how you can create your own custom database)
 * `~/kraken-ws/reads-no-host/` is out output directory
 * `Sample8` is our sample name 
-* `--report nomouse/Sample8.report` is going to create the report that describes the amount of contamination
-* `--unclassified-out nomouse/Sample8#.fq.gz` is needed to collect the reads that don't match the host database, hence represent contamination-free reads
+* `--report ~/kraken-ws/reads-no-host//Sample8.report` is going to create the report that describes the amount of contamination
+* `--unclassified-out ~/kraken-ws/reads-no-host//Sample8#.fq.gz` is needed to collect the reads that don't match the host database, hence represent contamination-free reads
 * `~/kraken-ws/reads-no-host/Sample8.txt` will save the read-by-read report. :bulb: you usually will discard it so you can redirect to `/dev/null` instead
 
 The kraken2 output will be unzipped and therefore taking up a lot iof disk space. So best we gzip the fastq reads again before continuing.
@@ -176,7 +176,7 @@ Now run the script with
 bash removehost.sh
 ```
 
-:link: See [Host removal]({% link _posts/2021-03-04-Host-removal-1.md %})
+:link: See [Host removal]({{ site.baseurl }}{% link _posts/2021-03-04-Host-removal.md %})
  
 
 ## Reads filtering
@@ -218,7 +218,7 @@ To quickly check the amount of reads before and after filtering:
 seqfu stats --nice {reads,reads-no-host,fastp-test}/Sample3_*1.fq.gz
 ```
 This will print a screen-friendly table.
-<span class="spoiler">
+
 From the table we can see the reads-loss and also the effect on the read
 length:
 ```
@@ -230,7 +230,6 @@ length:
 │ fastp-test/Sample3_R1.fq.gz   │ 915797  │ 135443988 │ 147.9 │ 150 │ 150 │ 150 │ 0.006 │ 100 │ 150 │
 └───────────────────────────────┴─────────┴───────────┴───────┴─────┴─────┴─────┴───────┴─────┴─────┘
 ```
-</span>
 
 
 By default, _fastp_ also saves a report (called _fastp.html_) in the current
@@ -267,3 +266,14 @@ To run the script:
 ```
 bash filter.sh
 ```
+
+
+---
+
+If you arrived at this point, you deserve your coffee and an emoji-medal: :medal_sports:
+
+If you have spare time and want to experiment something more:
+
+* [A first experiment with Kraken2]({{ site.baseurl }}{% link _posts/2021-03-05-A-first-experiment-with-Kraken2.md %})
+* [How to build a custom "host" database for Kraken2]({{ site.baseurl }}{% link _posts/2021-03-05-Build-a-kraken2-database.md %})
+
