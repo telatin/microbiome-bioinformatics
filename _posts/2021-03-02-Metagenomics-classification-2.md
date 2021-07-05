@@ -61,7 +61,7 @@ reads and produce two output folders (in the directory where the script
 was invoked):
 
 * kraken (containing the reports as `*.report` and raw output as `*.tsv`)
-* bracken (containing the reports as `*.breport`and tabular output as `*.tsv`)
+* bracken (containing the reports as `*.breport` and tabular output as `*.tsv`)
 
 We hosted the source on GitHub, and you can quickly download it as:
 ```
@@ -74,6 +74,7 @@ bash classify.sh [input_dir]
 ```
 
 The source:
+
 {% gist fa79d013707a293c0c3ff019abc7313d %}
 
 
@@ -85,7 +86,6 @@ to have a single report.
 
 * [See the MultiQC tutorial]({{ site.baseurl }}{% _posts/2021-03-06-MultiQC.md %})
 
-:mag: The output should be [like this one](https://telatin.github.io/microbiome-bioinformatics/data/multiqc/)
 
 ## Krona plots
 
