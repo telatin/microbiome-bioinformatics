@@ -13,6 +13,9 @@ image: assets/images/xray-bact.jpg
 
 * See [a first tutorial on Kraken2]({{ site.baseurl }}{% link _posts/2021-03-05-A-first-experiment-with-Kraken2.md %})
 
+After making a very small test, we can also try with the CAMI mock sample, that you might have in `~/sequences/`,
+or that you can find in `/data/cami/`.
+
 
 ## Taxonomy profiling with Kraken2
 
@@ -33,6 +36,8 @@ done
 
 :bulb: In the next paragraphs you'll find a complete script that does Kraken and Bracken 
 in one go.
+
+
 
 ## Bracken
 
@@ -117,7 +122,7 @@ The you can merge either a kraken2 or bracken reports with
 python /data/shared/scripts/merge_profiling_reports.py -i bracken/ -o merged
 ```
 
-* The [source file](https://gist.github.com/telatin/9c5e38e52e1d97f8b4cf93928a859166) is available
+:package: [merge_profiling_reports.py](https://gist.github.com/telatin/9c5e38e52e1d97f8b4cf93928a859166) source
   
 This produces 2 files in the same directory where the input files are (in our example _./bracken_):
 
