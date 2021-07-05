@@ -9,7 +9,7 @@ image: assets/images/xray-bact.jpg
 > On our first day we well cover the concepts behind taxonomic classification using Kraken2 (and Bracken), and see how to remove host reads and perform the quality checks (and filtering).
 
 
-## Before we start
+## Some links, before we start
 
 This is an intermediate workshop and some knowledge of Unix is required, but
 we will be at different levels so... here some usful links:
@@ -54,6 +54,16 @@ mamba create -n metax \
 
 :bulb: To be able to use the tools, you will need to activate the environment with `conda activate metax`. Do deactivate
 it, simply `conda deactivate`.
+
+:sos: Problems installing conda? We are here to help!
+
+## Reclaim your home
+
+Write your name in a file so that we know who is using each account:
+
+```
+echo "Name Surname" > ~/.name
+```
 
 ## Our dataset
 
