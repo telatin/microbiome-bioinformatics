@@ -15,7 +15,7 @@ featured: true
 | 2021-07-05    | 9.30 Workshop: day 1                    |
 |               | Introduction, QC, Host removal, Kraken2 |
 | 2021-07-06    | 9.30 Workshop: day 2                    |
-|               | Bracken, merging results, visualizatoins  |
+|               | Bracken, merging results, visualizations  |
 | 2021-07-07    | 9.30 Workshop: day 3                    |
 |               | Using R to analyse and visualize the output files  |
 
