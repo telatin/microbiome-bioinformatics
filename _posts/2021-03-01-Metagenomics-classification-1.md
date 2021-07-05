@@ -19,11 +19,11 @@ we will be at different levels so... here some usful links:
     * [.screenrc file](https://gist.github.com/telatin/66fab72e9bf0dda9984cad8d97c6174b)
 * [A Unix CLI tutorial (basic)](http://www.ee.surrey.ac.uk/Teaching/Unix/unix1.html)
 * **A primer on bash scripting (intermediate)**
-  * [Introduciton](https://telatin.github.io/articles/01-bash.html)
-  * [for loops](https://telatin.github.io/articles/02-bash.html)
-  * [if then](https://telatin.github.io/articles/03-bash.html)
-  * [safety net](https://telatin.github.io/articles/04-bash.html)
-  * [getting parameters](https://telatin.github.io/articles/05-bash.html)
+  * [Introduction](https://telatin.github.io/articles/01-bash.html)
+  * ["for" loops](https://telatin.github.io/articles/02-bash.html)
+  * ["if-then"](https://telatin.github.io/articles/03-bash.html)
+  * [Scripts safety net](https://telatin.github.io/articles/04-bash.html)
+  * [Getting parameters](https://telatin.github.io/articles/05-bash.html)
 
 ## Preparing our workbench
 
@@ -49,7 +49,7 @@ We can create an _ad hoc_ environment, called for example "metax" (here we split
 ```
 mamba create -n metax \
   -c conda-forge -c bioconda  \
-  seqkit seqfu kraken2 bracken entrez-direct bwa samtools fastp fastqc
+  seqkit kraken2 bracken entrez-direct krona fastp fastqc multiqc
 ```
 
 :bulb: To be able to use the tools, you will need to activate the environment with `conda activate metax`. Do deactivate
