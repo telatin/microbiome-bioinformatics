@@ -119,3 +119,7 @@ multiqc -o multiqc reports/ kraken/
 :mag: The output should be [like this one](https://telatin.github.io/microbiome-bioinformatics/data/multiqc/)
 
 ## Krona plots
+
+[krona]({{ site.baseurl }}{% link _posts/2021-03-06-Kraken-to-Krona.md %})
+
+![krona]({{ site.baseurl }}{% link assets/images/../../../assets/images/krona.png %})
