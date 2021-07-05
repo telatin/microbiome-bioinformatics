@@ -209,7 +209,7 @@ Let's first try with a single sample, where we ask to perform an automatic adapt
 reads (it's enabled by default for single-end datasest) 
 and requiring a minimum length after filtration (`-l INT`):
 ```
-cd ~/workshop-ws/
+cd ~/kraken-ws/
 mkdir fastp-test
 fastp -i reads-no-host/Sample3_1.fq.gz -I reads-no-host/Sample3_2.fq.gz \
    -o fastp-test/Sample3_R1.fq.gz -O fastp-test/Sample3_R2.fq.gz \
