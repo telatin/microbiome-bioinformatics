@@ -11,6 +11,8 @@ image: assets/images/xray-bact.jpg
 
 ## A small test on Kraken2
 
+* See [a first tutorial on Kraken2]({{ site.baseurl }}{% link _posts/2021-03-05-A-first-experiment-with-Kraken2.md %})
+
 
 ## Taxonomy profiling with Kraken2
 
