@@ -44,6 +44,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-archives
   - jemoji
+  - jekyll-gist 
 
 # Archives
 jekyll-archives:
