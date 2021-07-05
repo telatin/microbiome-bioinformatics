@@ -1,0 +1,9 @@
+Module	Section	Sample Name	Source
+fastp	all_sections	Sample13	/data/home/kraken049/kraken-ws/reports/Sample13.fastp.json
+fastp	all_sections	Sample22	/data/home/kraken049/kraken-ws/reports/Sample22.fastp.json
+fastp	all_sections	Sample25	/data/home/kraken049/kraken-ws/reports/Sample25.fastp.json
+fastp	all_sections	Sample3	/data/home/kraken049/kraken-ws/reports/Sample3.fastp.json
+fastp	all_sections	Sample30	/data/home/kraken049/kraken-ws/reports/Sample30.fastp.json
+fastp	all_sections	Sample31	/data/home/kraken049/kraken-ws/reports/Sample31.fastp.json
+fastp	all_sections	Sample4	/data/home/kraken049/kraken-ws/reports/Sample4.fastp.json
+fastp	all_sections	Sample6	/data/home/kraken049/kraken-ws/reports/Sample6.fastp.json
