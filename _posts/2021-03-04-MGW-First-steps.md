@@ -27,17 +27,21 @@ calling it `~/sequences/myco-bit.fa`, and calling the sequence itself `Seq1`.
 
 ### Making symbolic links
 
-1. Sometimes it's useful to make in our favourite locations a _link_ to files existing elsewhere. Remember that the link will break if we move/remove the source file.
+* Sometimes it's useful to make in our favourite locations a _link_ to files existing elsewhere. Remember that the link will break if we move/remove the source file.
 We have an Illumina paired end sample stored in `/data/cami/simple_R1.fq.gz` (and its corresponding R2). The command to make symbolic links is `ln -s SOURCE DESTINATION`.
+
 Try:
+
 ```
 ln -s /data/cami/simple_* ~/sequences/
 ```
-2. With `ls -l`, note how symbolic links are rendered.
-3. SeqFu has tools resembling the GNU commands but for sequences, like `seqfu head`, `seqfu tail`, `seqfu grep`, plus other utilities. Try `seqfu head`.
-4. Count the reads present in the files,for example with `seqfu count sequences/simple*`
+
+* With `ls -l`, note how symbolic links are rendered.
+* SeqFu has tools resembling the GNU commands but for sequences, like `seqfu head`, `seqfu tail`, `seqfu grep`, plus other utilities. Try `seqfu head`.
+* Count the reads present in the files,for example with `seqfu count sequences/simple*`
    * This command can take some time, why don't we save its output to a file instead: `seqfu count sequences/simple_* > sequences/simple_counts.txt &` (the final `&` will send the process to the background)
-5. We now want to make a subsample. To do this we can use `seqfu head --skip 10 FILE > SUBSAMPLED`. Let's try a "for loop":
+* We now want to make a subsample. To do this we can use `seqfu head --skip 10 FILE > SUBSAMPLED`. Let's try a "for loop":
+
 ```
 mkdir subsampled
 
@@ -47,3 +51,4 @@ do
    seqfu head --skip 10 $FQFILE > subsampled/$(basename $FQFILE); 
 done
 ```
+
