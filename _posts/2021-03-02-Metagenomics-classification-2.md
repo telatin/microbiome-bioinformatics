@@ -75,8 +75,7 @@ bash classify.sh [input_dir]
 
 The source:
 
-{% gist fa79d013707a293c0c3ff019abc7313d %}
-
+ 
 
 ## MultiQC report
 
