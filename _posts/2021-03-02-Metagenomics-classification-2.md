@@ -108,7 +108,8 @@ The procedure works both on Kraken2 and Bracken _report_ files.
 [Pavian](https://github.com/fbreitwieser/pavian) is an R package that will generate a web server in
 your local machine that you can access from (for example) `http://localhost:5000`.
 
-Pavian can import Kraken reports, but also Metaphlan and Centrifuge files.
+Pavian can import Kraken reports, but also Metaphlan and Centrifuge files. If you want to try without
+installing R, there is a [web app](https://fbreitwieser.shinyapps.io/pavian/).
 
 * Link: [**an example Pavian report**](https://telatin.github.io/microbiome-bioinformatics/data/pavian/)
 
@@ -125,7 +126,13 @@ To use it we need to install pandas first
 conda install pandas
 ```
 
-The you can merge either a kraken2 or bracken reports with
+The you can merge either a kraken2 or bracken reports with a custom script, as long as you supply
+an input directory with a set of `*.report` files.
+
+```
+# Check you have the files you expect
+ls -l bracken/*.report
+```
 
 ```
 python /data/shared/scripts/merge_profiling_reports.py -i bracken/ -o merged
