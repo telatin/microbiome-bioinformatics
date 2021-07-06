@@ -135,4 +135,4 @@ But feel free to sneak peak with `head merged_rel_abund.csv`.
 
 ---
 
-Optional track: [Kaiju]({{ site.baseurl }}{% link _posts/../2021-03-10-Kaiju.md %})
+Optional track: [Kaiju]({{ site.baseurl }}{% link _posts/2021-03-10-Kaiju.md %})
