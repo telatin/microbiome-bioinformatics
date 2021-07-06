@@ -1,9 +1,6 @@
 # Explore your data in R
 
 You can either work with R studio on your local computer or with our R studio servers. 
-If you want to use one of our servers please log in here:
-
-[Andrea can you fill this]
 
 ## Check classified and host reads across samples
 
@@ -28,7 +25,7 @@ When you are all set up follow the instruction in the following R markdown
 
 We also provided you with the output and solutions, so you know how this should look like. 
 
-    [link to 2021-03-31-Explore_readQ_solutions.html]
+[solution1]({{ site.baseurl }}/data/kraken-r/2021-03-31-Explore_readQ_solution.html)
 
 
 ## Let's analyse bracken relative abundances in R
@@ -45,8 +42,8 @@ Either download them to your local computer to work with your own RStudio instal
 
 Then, when you are ready, follow the exercises in the markdown
 
-    [link to 2021-03-32-ExploreMGprofiles_exercise.html]
+[exercise2]({{ site.baseurl }}/data/kraken-r/2021-03-32-ExploreMGprofiles_exercise.html)
 
 We also provided you with the output and solutions, so you know how this should look like. 
 
-    [link to 2021-03-33-ExploreMGprofiles_solutions.html]
+[solution2]({{ site.baseurl }}/data/kraken-r/2021-03-33-ExploreMGprofiles_solutions.html)
