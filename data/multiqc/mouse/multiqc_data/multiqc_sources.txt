@@ -7,3 +7,11 @@ Kaiju	all_sections	Sample13-species	/home/ubuntu/kraken-ws/kaiju/Sample13-specie
 Kaiju	all_sections	Sample3-species	/home/ubuntu/kraken-ws/kaiju/Sample3-species.tsv
 Kaiju	all_sections	Sample25-species	/home/ubuntu/kraken-ws/kaiju/Sample25-species.tsv
 Kaiju	all_sections	Sample31-species	/home/ubuntu/kraken-ws/kaiju/Sample31-species.tsv
+fastp	all_sections	Sample31	/home/ubuntu/kraken-ws/reports/Sample31.fastp.json
+fastp	all_sections	Sample25	/home/ubuntu/kraken-ws/reports/Sample25.fastp.json
+fastp	all_sections	Sample13	/home/ubuntu/kraken-ws/reports/Sample13.fastp.json
+fastp	all_sections	Sample4	/home/ubuntu/kraken-ws/reports/Sample4.fastp.json
+fastp	all_sections	Sample6	/home/ubuntu/kraken-ws/reports/Sample6.fastp.json
+fastp	all_sections	Sample3	/home/ubuntu/kraken-ws/reports/Sample3.fastp.json
+fastp	all_sections	Sample22	/home/ubuntu/kraken-ws/reports/Sample22.fastp.json
+fastp	all_sections	Sample30	/home/ubuntu/kraken-ws/reports/Sample30.fastp.json
