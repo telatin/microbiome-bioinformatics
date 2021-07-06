@@ -6,8 +6,12 @@ categories: [ metagenomics, tutorial ]
 image: assets/images/xray-bact.jpg
 ---
 
-### Programme
+## An introduction to the "Tidyverse"
 
-* Day1 - [Introduction and preliminary aspects]({{ site.baseurl }}{% link _posts/2021-03-01-Metagenomics-classification-1.md %})
-* Day2 - [Kraken2, Bracken, Krona and MultiQC]({{ site.baseurl }}{% link _posts/2021-03-02-Metagenomics-classification-2.md %})
-* Day3 - [Analyse your data in R]({{ site.baseurl }}{% link _posts/2021-03-03-Metagenomics-classification-3.md %})
+We saw this morning that a coherent ecosystem of libraries, called [the tidyverse](https://www.tidyverse.org), is 
+available for R, that makes our life easier when doing data analysis.
+
+Resources:
+* [A slideshow on the tidyverse](https://oliviergimenez.github.io/intro_tidyverse/#13)
+* [Slides and R markdown tutorials from DataCamp](https://github.com/LukaIgnjatovic/DataCamp_-_Track_-_Data_Scientist_with_R_-_Course_03_-_Introduction_to_the_Tidyverse)
+
