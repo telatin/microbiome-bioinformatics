@@ -132,3 +132,7 @@ This produces 2 files in the same directory where the input files are (in our ex
 We will use these files for the data exploration and analysis on day 3.
 
 But feel free to sneak peak with `head merged_rel_abund.csv`.
+
+---
+
+Optional track: [Kaiju]({{ site.baseurl }}{% link _posts/../2021-03-10-Kaiju.md %})
