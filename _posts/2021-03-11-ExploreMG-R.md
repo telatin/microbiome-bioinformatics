@@ -24,7 +24,7 @@ If you are copying the files to your local computer you can copy the entire fold
 
 When you are all set up follow the instruction in the following R markdown
 
-    {{ site.baseurl }}`https://github.com/telatin/microbiome-bioinformatics/blob/master/data/kraken-r/2021-03-30-Explore_readQ_exercise.html`
+    https://github.com/telatin/microbiome-bioinformatics/blob/master/data/kraken-r/2021-03-30-Explore_readQ_exercise.html
 
 We also provided you with the output and solutions, so you know how this should look like. 
 
