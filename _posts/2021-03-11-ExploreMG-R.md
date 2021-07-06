@@ -24,11 +24,11 @@ If you are copying the files to your local computer you can copy the entire fold
 
 When you are all set up follow the instruction in the following R markdown
 
-    [link to exercise]
+    [link to 2021-03-30-Explore_readQ_exercise.html]
 
 We also provided you with the output and solutions, so you know how this should look like. 
 
-    [link to solutions]
+    [link to 2021-03-31-Explore_readQ_solutions.html]
 
 
 ## Let's analyse bracken relative abundances in R
@@ -45,8 +45,8 @@ Either download them to your local computer to work with your own RStudio instal
 
 Then, when you are ready, follow the exercises in the markdown
 
-    [link to exercise2]
+    [link to 2021-03-32-ExploreMGprofiles_exercise.html]
 
 We also provided you with the output and solutions, so you know how this should look like. 
 
-    [link to solutions2]
+    [link to 2021-03-33-ExploreMGprofiles_solutions.html]
