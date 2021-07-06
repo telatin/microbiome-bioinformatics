@@ -17,15 +17,15 @@ We are also using the two files `classification_counts.csv` and `hostread_counts
     /data/shared/Rfiles/hostread_counts.csv
 
 Make sure you copy this file to your current working directory or specify the correct path to the file when importing into the R studio server.
-If you are copying the files to your local computer you can copy the entire folder /data/shared/Rfiles which will also contain the files for the next exercise.
+If you are copying the files to your local computer you can copy the entire folder `/data/shared/Rfiles` which will also contain the files for the next exercise.
 
 When you are all set up follow the instruction in the following R markdown
 
-[exercise1]({{ site.baseurl }}/data/kraken-r/2021-03-30-Explore_readQ_exercise.html)
+[Exercise 1]({{ site.baseurl }}/data/kraken-r/2021-03-30-Explore_readQ_exercise.html)
 
 We also provided you with the output and solutions, so you know how this should look like. 
 
-[solution1]({{ site.baseurl }}/data/kraken-r/2021-03-31-Explore_readQ_solution.html)
+[Solution 1]({{ site.baseurl }}/data/kraken-r/2021-03-31-Explore_readQ_solutions.html)
 
 
 ## Let's analyse bracken relative abundances in R
@@ -42,8 +42,8 @@ Either download them to your local computer to work with your own RStudio instal
 
 Then, when you are ready, follow the exercises in the markdown
 
-[exercise2]({{ site.baseurl }}/data/kraken-r/2021-03-32-ExploreMGprofiles_exercise.html)
+[Exercise 2]({{ site.baseurl }}/data/kraken-r/2021-03-32-ExploreMGprofiles_exercise.html)
 
 We also provided you with the output and solutions, so you know how this should look like. 
 
-[solution2]({{ site.baseurl }}/data/kraken-r/2021-03-33-ExploreMGprofiles_solutions.html)
+[Solution 2]({{ site.baseurl }}/data/kraken-r/2021-03-33-ExploreMGprofiles_solutions.html)
