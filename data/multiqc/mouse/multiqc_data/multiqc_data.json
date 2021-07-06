@@ -230,7 +230,7 @@
             }
         }
     ],
-    "report_multiqc_command": "/home/ubuntu/miniconda3/envs/wms/bin/multiqc -o multiqc/index.html kraken kaiju",
+    "report_multiqc_command": "/home/ubuntu/miniconda3/envs/wms/bin/multiqc -o multiqc/mouse reports/ kraken kaiju",
     "report_plot_data": {
         "kaiju-topfive-plot": {
             "plot_type": "bar_graph",
@@ -1411,14 +1411,16 @@
         }
     },
     "config_analysis_dir_abs": [
+        "/home/ubuntu/kraken-ws/reports",
         "/home/ubuntu/kraken-ws/kraken",
         "/home/ubuntu/kraken-ws/kaiju"
     ],
     "config_analysis_dir": [
+        "reports/",
         "kraken",
         "kaiju"
     ],
-    "config_creation_date": "2021-07-06, 08:54",
+    "config_creation_date": "2021-07-06, 08:59",
     "config_git_hash": null,
     "config_intro_text": null,
     "config_report_comment": null,
