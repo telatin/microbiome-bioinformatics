@@ -83,16 +83,18 @@ bash classify.sh [input_dir]
 * See the [full code]({{ site.baseurl }}{% link _posts/2021-03-06-Kraken-Bracken.md %})
 
 
-## MultiQC report
+## Visualization and reports
+
+### MultiQC 
 
 [MultiQC](https://multiqc.info) is a fantastic tool that can aggregate outputs from different bioinformatics
 programs in a single report. We will combine our _fastp_ and _Kraken2_ classifications
 to have a single report.
 
-* [See the MultiQC tutorial]({{ site.baseurl }}{% link _posts/2021-03-06-MultiQC.md %})
+* See [MultiQC tutorial]({{ site.baseurl }}{% link _posts/2021-03-06-MultiQC.md %})
+* See [a Fastp/Kraken/Kaiju report]({{ site.baseurl }}/data/multiqc/mouse/)
 
-
-## Krona plots
+### Krona plots
 
 Krona is a flexible tool to generate interactive pie charts. We have a dedicated tutorial on 
 how to produce an HTML interactive plot using Krona.
@@ -101,7 +103,14 @@ The procedure works both on Kraken2 and Bracken _report_ files.
 
 * [See the Krona tutorial]({{ site.baseurl }}{% link _posts/2021-03-06-Kraken-to-Krona.md %})
 
+### Pavian
 
+[Pavian](https://github.com/fbreitwieser/pavian) is an R package that will generate a web server in
+your local machine that you can access from (for example) `http://localhost:5000`.
+
+Pavian can import Kraken reports, but also Metaphlan and Centrifuge files.
+
+* Link: [**an example Pavian report**](https://telatin.github.io/microbiome-bioinformatics/data/pavian/)
 
 ## Combining the reports 
 
@@ -135,4 +144,4 @@ But feel free to sneak peak with `head merged_rel_abund.csv`.
 
 ---
 
-Optional track: [Kaiju]({{ site.baseurl }}{% link _posts/2021-03-10-Kaiju.md %})
+:bulb: Optional track: [Kaiju]({{ site.baseurl }}{% link _posts/2021-03-10-Kaiju.md %})
