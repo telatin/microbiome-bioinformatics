@@ -59,7 +59,7 @@ the full command to generate both a summary report and the detailed output would
 ```
 kraken2 --db /data/db/kraken2/standard-16gb/ \
   --report ~/myco-test/report.txt
-  --threads 4 > ~/myco-test/kraken-output.tsv
+  --threads 4  ~/myco-test/fragments.fq > ~/myco-test/kraken-output.tsv
 ```
 
 The program will print to the standard error, at the end of the execution, a summary of the operation:
