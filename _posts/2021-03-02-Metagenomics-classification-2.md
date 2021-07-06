@@ -34,8 +34,8 @@ do
 done
 ```
 
-:bulb: In the next paragraphs you'll find a complete script that does Kraken and Bracken 
-in one go.
+:bulb: In the **next** paragraphs you'll find a complete script that does Kraken and Bracken 
+in one go, but you can see a [Kraken2 solution here](https://gist.github.com/telatin/6594faebe6f8497f9a9365a83c9369d5).
 
 
 
