@@ -1,0 +1,3 @@
+Module	Section	Sample Name	Source
+Kaiju	all_sections	kaiju-phylum	/home/ubuntu/mock/kaiju-phylum.tsv
+Kaiju	all_sections	kaiju-species	/home/ubuntu/mock/kaiju-species.tsv

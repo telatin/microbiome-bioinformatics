@@ -1,0 +1,4 @@
+Sample	Kaiju_mqc-generalstats-kaiju-Assigned	Kaiju_mqc-generalstats-kaiju-Unclassified	Kaiju_mqc-generalstats-kaiju-assigned	Kraken_mqc-generalstats-kraken-Pseudomonas_aeruginosa	Kraken_mqc-generalstats-kraken-Top_5	Kraken_mqc-generalstats-kraken-Unclassified
+kaiju	94.3975906934472	3.1222584793932846	1884107			
+kraken-std				3.2457599902200833	9.563125304682986	70.80629702388916
+kraken-std2021				4.468600304520155	12.54665125528138	59.5493221946494

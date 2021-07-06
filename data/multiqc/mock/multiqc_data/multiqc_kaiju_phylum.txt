@@ -1,0 +1,2 @@
+Sample	Proteobacteria	Firmicutes	Bacteroidetes	Actinobacteria	Chloroflexi	not assigned	unclassified	other
+kaiju	579780	464158	315413	241124	166293	49502	62318	117339

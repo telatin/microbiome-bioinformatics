@@ -1,0 +1,845 @@
+{
+    "report_data_sources": {
+        "Kaiju": {
+            "all_sections": {
+                "kaiju-phylum": "/home/ubuntu/mock/kaiju-phylum.tsv",
+                "kaiju-species": "/home/ubuntu/mock/kaiju-species.tsv"
+            }
+        }
+    },
+    "report_general_stats_data": [
+        {
+            "kaiju": {
+                "% Unclassified": 3.1222584793932846,
+                "assigned": 1884107,
+                "% Assigned": 94.3975906934472
+            }
+        },
+        {
+            "kraken-std": {
+                "% Unclassified": 70.80629702388916,
+                "% Top 5": 9.563125304682986,
+                "% Pseudomonas aeruginosa": 3.2457599902200833
+            },
+            "kraken-std2021": {
+                "% Unclassified": 59.5493221946494,
+                "% Top 5": 12.54665125528138,
+                "% Pseudomonas aeruginosa": 4.468600304520155
+            }
+        }
+    ],
+    "report_general_stats_headers": [
+        {
+            "% Assigned": {
+                "title": "% Reads assigned",
+                "description": "Percentage of reads assigned at Phylum rank",
+                "min": 0,
+                "max": 100,
+                "suffix": "%",
+                "scale": "RdYlGn",
+                "namespace": "Kaiju",
+                "rid": "mqc-generalstats-kaiju-Assigned",
+                "format": "{:,.1f}",
+                "colour": "55,126,184",
+                "hidden": null,
+                "ceiling": null,
+                "floor": null,
+                "minRange": null,
+                "shared_key": null,
+                "modify": null,
+                "placement": 1000.0,
+                "dmax": 100.0,
+                "dmin": 0.0
+            },
+            "assigned": {
+                "title": "millions Reads assigned",
+                "description": "Number of reads assigned (millions)  at Phylum rank",
+                "modify": 1e-06,
+                "scale": "Blues",
+                "namespace": "Kaiju",
+                "rid": "mqc-generalstats-kaiju-assigned",
+                "format": "{:,.1f}",
+                "colour": "55,126,184",
+                "hidden": null,
+                "max": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minRange": null,
+                "shared_key": null,
+                "placement": 1000.0,
+                "dmax": 1.884107,
+                "dmin": 0
+            },
+            "% Unclassified": {
+                "title": "% Unclassified",
+                "description": "Percentage of reads that were unclassified",
+                "suffix": "%",
+                "max": 100,
+                "scale": "OrRd",
+                "namespace": "Kaiju",
+                "rid": "mqc-generalstats-kaiju-Unclassified",
+                "format": "{:,.1f}",
+                "colour": "55,126,184",
+                "hidden": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minRange": null,
+                "shared_key": null,
+                "modify": null,
+                "placement": 1000.0,
+                "dmax": 100.0,
+                "dmin": 0
+            }
+        },
+        {
+            "% Pseudomonas aeruginosa": {
+                "title": "% Pseudomonas aeruginosa",
+                "description": "Percentage of reads that were the top Species over all samples - Pseudomonas aeruginosa",
+                "suffix": "%",
+                "max": 100,
+                "scale": "PuBuGn",
+                "namespace": "Kraken",
+                "rid": "mqc-generalstats-kraken-Pseudomonas_aeruginosa",
+                "format": "{:,.1f}",
+                "colour": "77,175,74",
+                "hidden": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minRange": null,
+                "shared_key": null,
+                "modify": null,
+                "placement": 1000.0,
+                "dmax": 100.0,
+                "dmin": 0
+            },
+            "% Top 5": {
+                "title": "% Top 5 Species",
+                "description": "Percentage of reads that were classified by one of the top 5 Species (Pseudomonas aeruginosa, Paracoccus denitrificans, Desulfatibacillum aliphaticivorans, Exiguobacterium sp. MH3, Phycicoccus sp. HDW14)",
+                "suffix": "%",
+                "max": 100,
+                "scale": "PuBu",
+                "namespace": "Kraken",
+                "rid": "mqc-generalstats-kraken-Top_5",
+                "format": "{:,.1f}",
+                "colour": "77,175,74",
+                "hidden": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minRange": null,
+                "shared_key": null,
+                "modify": null,
+                "placement": 1000.0,
+                "dmax": 100.0,
+                "dmin": 0
+            },
+            "% Unclassified": {
+                "title": "% Unclassified",
+                "description": "Percentage of reads that were unclassified",
+                "suffix": "%",
+                "max": 100,
+                "scale": "OrRd",
+                "namespace": "Kraken",
+                "rid": "mqc-generalstats-kraken-Unclassified",
+                "format": "{:,.1f}",
+                "colour": "77,175,74",
+                "hidden": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minRange": null,
+                "shared_key": null,
+                "modify": null,
+                "placement": 1000.0,
+                "dmax": 100.0,
+                "dmin": 0
+            }
+        }
+    ],
+    "report_multiqc_command": "/home/ubuntu/miniconda3/envs/wms/bin/multiqc .",
+    "report_plot_data": {
+        "kaiju-topfive-plot": {
+            "plot_type": "bar_graph",
+            "samples": [
+                [
+                    "kaiju"
+                ],
+                [
+                    "kaiju"
+                ]
+            ],
+            "datasets": [
+                [
+                    {
+                        "name": "Schwartzia succinivorans",
+                        "data": [
+                            308688.0
+                        ]
+                    },
+                    {
+                        "name": "Hydrotalea sandarakina",
+                        "data": [
+                            254631.0
+                        ]
+                    },
+                    {
+                        "name": "Massilia sp. Root418",
+                        "data": [
+                            160882.0
+                        ]
+                    },
+                    {
+                        "name": "Tetrasphaera sp. Soil756",
+                        "data": [
+                            156968.0
+                        ]
+                    },
+                    {
+                        "name": "Anaeroplasma bactoclasticum",
+                        "data": [
+                            115137.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            371694.0
+                        ],
+                        "color": "#a65628"
+                    },
+                    {
+                        "name": "Cannot be assigned",
+                        "data": [
+                            565609.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            62318.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Proteobacteria",
+                        "data": [
+                            579780.0
+                        ]
+                    },
+                    {
+                        "name": "Firmicutes",
+                        "data": [
+                            464158.0
+                        ]
+                    },
+                    {
+                        "name": "Bacteroidetes",
+                        "data": [
+                            315413.0
+                        ]
+                    },
+                    {
+                        "name": "Actinobacteria",
+                        "data": [
+                            241124.0
+                        ]
+                    },
+                    {
+                        "name": "Chloroflexi",
+                        "data": [
+                            166293.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            117339.0
+                        ],
+                        "color": "#a65628"
+                    },
+                    {
+                        "name": "Cannot be assigned",
+                        "data": [
+                            49502.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            62318.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ]
+            ],
+            "config": {
+                "id": "kaiju-topfive-plot",
+                "title": "Kaiju: Top taxa",
+                "ylab": "Number of reads",
+                "cpswitch_counts_label": "Number of reads",
+                "data_labels": [
+                    {
+                        "name": "Species",
+                        "ylab": "Number of Reads at Species rank"
+                    },
+                    {
+                        "name": "Phylum",
+                        "ylab": "Number of Reads at Phylum rank"
+                    }
+                ]
+            }
+        },
+        "kraken-topfive-plot": {
+            "plot_type": "bar_graph",
+            "samples": [
+                [
+                    "kraken-std",
+                    "kraken-std2021"
+                ],
+                [
+                    "kraken-std",
+                    "kraken-std2021"
+                ],
+                [
+                    "kraken-std",
+                    "kraken-std2021"
+                ],
+                [
+                    "kraken-std",
+                    "kraken-std2021"
+                ],
+                [
+                    "kraken-std",
+                    "kraken-std2021"
+                ],
+                [
+                    "kraken-std",
+                    "kraken-std2021"
+                ],
+                [
+                    "kraken-std",
+                    "kraken-std2021"
+                ],
+                [
+                    "kraken-std",
+                    "kraken-std2021"
+                ],
+                [
+                    "kraken-std",
+                    "kraken-std2021"
+                ]
+            ],
+            "datasets": [
+                [
+                    {
+                        "name": "Pseudomonas aeruginosa",
+                        "data": [
+                            64783.0,
+                            89190.0
+                        ]
+                    },
+                    {
+                        "name": "Paracoccus denitrificans",
+                        "data": [
+                            73659.0,
+                            75326.0
+                        ]
+                    },
+                    {
+                        "name": "Desulfatibacillum aliphaticivorans",
+                        "data": [
+                            29535.0,
+                            40440.0
+                        ]
+                    },
+                    {
+                        "name": "Exiguobacterium sp. MH3",
+                        "data": [
+                            11638.0,
+                            23172.0
+                        ]
+                    },
+                    {
+                        "name": "Phycicoccus sp. HDW14",
+                        "data": [
+                            11258.0,
+                            22294.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            391812.0,
+                            556944.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            1413242.0,
+                            1188561.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Pseudomonas",
+                        "data": [
+                            166875.0,
+                            170113.0
+                        ]
+                    },
+                    {
+                        "name": "Exiguobacterium",
+                        "data": [
+                            70780.0,
+                            100641.0
+                        ]
+                    },
+                    {
+                        "name": "Paracoccus",
+                        "data": [
+                            80713.0,
+                            83462.0
+                        ]
+                    },
+                    {
+                        "name": "Massilia",
+                        "data": [
+                            32491.0,
+                            59846.0
+                        ]
+                    },
+                    {
+                        "name": "Desulfatibacillum",
+                        "data": [
+                            29535.0,
+                            40440.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            202291.0,
+                            352864.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            1413242.0,
+                            1188561.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Pseudomonadaceae",
+                        "data": [
+                            167004.0,
+                            170346.0
+                        ]
+                    },
+                    {
+                        "name": "Rhodobacteraceae",
+                        "data": [
+                            91607.0,
+                            102453.0
+                        ]
+                    },
+                    {
+                        "name": "Oxalobacteraceae",
+                        "data": [
+                            53062.0,
+                            90095.0
+                        ]
+                    },
+                    {
+                        "name": "Desulfobacteraceae",
+                        "data": [
+                            29626.0,
+                            40626.0
+                        ]
+                    },
+                    {
+                        "name": "Intrasporangiaceae",
+                        "data": [
+                            23429.0,
+                            43151.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            217957.0,
+                            360695.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            1413242.0,
+                            1188561.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Pseudomonadales",
+                        "data": [
+                            167126.0,
+                            170786.0
+                        ]
+                    },
+                    {
+                        "name": "Rhodobacterales",
+                        "data": [
+                            91607.0,
+                            102453.0
+                        ]
+                    },
+                    {
+                        "name": "Burkholderiales",
+                        "data": [
+                            69007.0,
+                            113622.0
+                        ]
+                    },
+                    {
+                        "name": "Bacillales",
+                        "data": [
+                            73122.0,
+                            107198.0
+                        ]
+                    },
+                    {
+                        "name": "Micrococcales",
+                        "data": [
+                            50938.0,
+                            87228.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            130885.0,
+                            226079.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            1413242.0,
+                            1188561.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Gammaproteobacteria",
+                        "data": [
+                            179248.0,
+                            189708.0
+                        ]
+                    },
+                    {
+                        "name": "Actinomycetia",
+                        "data": [
+                            92082.0,
+                            152747.0
+                        ]
+                    },
+                    {
+                        "name": "Alphaproteobacteria",
+                        "data": [
+                            99602.0,
+                            117294.0
+                        ]
+                    },
+                    {
+                        "name": "Betaproteobacteria",
+                        "data": [
+                            72479.0,
+                            118539.0
+                        ]
+                    },
+                    {
+                        "name": "Bacilli",
+                        "data": [
+                            73854.0,
+                            109574.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            65420.0,
+                            119504.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            1413242.0,
+                            1188561.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Proteobacteria",
+                        "data": [
+                            387691.0,
+                            475911.0
+                        ]
+                    },
+                    {
+                        "name": "Actinobacteria",
+                        "data": [
+                            92540.0,
+                            153614.0
+                        ]
+                    },
+                    {
+                        "name": "Firmicutes",
+                        "data": [
+                            84792.0,
+                            132035.0
+                        ]
+                    },
+                    {
+                        "name": "Bacteroidetes",
+                        "data": [
+                            7704.0,
+                            22442.0
+                        ]
+                    },
+                    {
+                        "name": "Cyanobacteria",
+                        "data": [
+                            328.0,
+                            903.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            9630.0,
+                            22461.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            1413242.0,
+                            1188561.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Metazoa",
+                        "data": [
+                            196.0,
+                            872.0
+                        ]
+                    },
+                    {
+                        "name": "Bamfordvirae",
+                        "data": [
+                            2.0,
+                            12.0
+                        ]
+                    },
+                    {
+                        "name": "Sangervirae",
+                        "data": [
+                            1.0,
+                            13.0
+                        ]
+                    },
+                    {
+                        "name": "Orthornavirae",
+                        "data": [
+                            NaN,
+                            1.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            582486.0,
+                            806468.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            1413242.0,
+                            1188561.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Bacteria",
+                        "data": [
+                            581371.0,
+                            804317.0
+                        ]
+                    },
+                    {
+                        "name": "Eukaryota",
+                        "data": [
+                            196.0,
+                            873.0
+                        ]
+                    },
+                    {
+                        "name": "Archaea",
+                        "data": [
+                            320.0,
+                            683.0
+                        ]
+                    },
+                    {
+                        "name": "Viruses",
+                        "data": [
+                            27.0,
+                            113.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            771.0,
+                            1380.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            1413242.0,
+                            1188561.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "root",
+                        "data": [
+                            582685.0,
+                            807366.0
+                        ]
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            1413242.0,
+                            1188561.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ]
+            ],
+            "config": {
+                "id": "kraken-topfive-plot",
+                "title": "Kraken 2: Top taxa",
+                "ylab": "Number of fragments",
+                "data_labels": [
+                    "Species",
+                    "Genus",
+                    "Family",
+                    "Order",
+                    "Class",
+                    "Phylum",
+                    "Kingdom",
+                    "Domain",
+                    "Root"
+                ]
+            }
+        }
+    },
+    "report_saved_raw_data": {
+        "multiqc_kaiju_species": {
+            "kaiju": {
+                "Schwartzia succinivorans": 308688,
+                "Hydrotalea sandarakina": 254631,
+                "Massilia sp. Root418": 160882,
+                "Tetrasphaera sp. Soil756": 156968,
+                "Anaeroplasma bactoclasticum": 115137,
+                "not assigned": 565609,
+                "unclassified": 62318,
+                "other": 371694
+            }
+        },
+        "multiqc_kaiju_phylum": {
+            "kaiju": {
+                "Proteobacteria": 579780,
+                "Firmicutes": 464158,
+                "Bacteroidetes": 315413,
+                "Actinobacteria": 241124,
+                "Chloroflexi": 166293,
+                "not assigned": 49502,
+                "unclassified": 62318,
+                "other": 117339
+            }
+        },
+        "multiqc_general_stats": {
+            "kaiju": {
+                "Kaiju_mqc-generalstats-kaiju-Assigned": 94.3975906934472,
+                "Kaiju_mqc-generalstats-kaiju-Unclassified": 3.1222584793932846,
+                "Kaiju_mqc-generalstats-kaiju-assigned": 1884107
+            },
+            "kraken-std": {
+                "Kraken_mqc-generalstats-kraken-Pseudomonas_aeruginosa": 3.2457599902200833,
+                "Kraken_mqc-generalstats-kraken-Top_5": 9.563125304682986,
+                "Kraken_mqc-generalstats-kraken-Unclassified": 70.80629702388916
+            },
+            "kraken-std2021": {
+                "Kraken_mqc-generalstats-kraken-Pseudomonas_aeruginosa": 4.468600304520155,
+                "Kraken_mqc-generalstats-kraken-Top_5": 12.54665125528138,
+                "Kraken_mqc-generalstats-kraken-Unclassified": 59.5493221946494
+            }
+        }
+    },
+    "config_analysis_dir_abs": [
+        "/home/ubuntu/mock"
+    ],
+    "config_analysis_dir": [
+        "."
+    ],
+    "config_creation_date": "2021-07-06, 06:07",
+    "config_git_hash": null,
+    "config_intro_text": null,
+    "config_report_comment": null,
+    "config_report_header_info": null,
+    "config_script_path": "/home/ubuntu/miniconda3/envs/wms/lib/python3.9/site-packages/multiqc/utils",
+    "config_short_version": "1.11",
+    "config_subtitle": null,
+    "config_title": null,
+    "config_version": "1.11"
+}

@@ -1,0 +1,2 @@
+Sample	Schwartzia succinivorans	Hydrotalea sandarakina	Massilia sp. Root418	Tetrasphaera sp. Soil756	Anaeroplasma bactoclasticum	not assigned	unclassified	other
+kaiju	308688	254631	160882	156968	115137	565609	62318	371694
