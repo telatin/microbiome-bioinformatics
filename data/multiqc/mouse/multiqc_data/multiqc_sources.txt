@@ -1,0 +1,9 @@
+Module	Section	Sample Name	Source
+Kaiju	all_sections	Sample4-species	/home/ubuntu/kraken-ws/kaiju/Sample4-species.tsv
+Kaiju	all_sections	Sample22-species	/home/ubuntu/kraken-ws/kaiju/Sample22-species.tsv
+Kaiju	all_sections	Sample30-species	/home/ubuntu/kraken-ws/kaiju/Sample30-species.tsv
+Kaiju	all_sections	Sample6-species	/home/ubuntu/kraken-ws/kaiju/Sample6-species.tsv
+Kaiju	all_sections	Sample13-species	/home/ubuntu/kraken-ws/kaiju/Sample13-species.tsv
+Kaiju	all_sections	Sample3-species	/home/ubuntu/kraken-ws/kaiju/Sample3-species.tsv
+Kaiju	all_sections	Sample25-species	/home/ubuntu/kraken-ws/kaiju/Sample25-species.tsv
+Kaiju	all_sections	Sample31-species	/home/ubuntu/kraken-ws/kaiju/Sample31-species.tsv

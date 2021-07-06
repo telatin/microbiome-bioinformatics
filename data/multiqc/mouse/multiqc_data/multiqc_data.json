@@ -1,0 +1,1431 @@
+{
+    "report_data_sources": {
+        "Kaiju": {
+            "all_sections": {
+                "Sample4-species": "/home/ubuntu/kraken-ws/kaiju/Sample4-species.tsv",
+                "Sample22-species": "/home/ubuntu/kraken-ws/kaiju/Sample22-species.tsv",
+                "Sample30-species": "/home/ubuntu/kraken-ws/kaiju/Sample30-species.tsv",
+                "Sample6-species": "/home/ubuntu/kraken-ws/kaiju/Sample6-species.tsv",
+                "Sample13-species": "/home/ubuntu/kraken-ws/kaiju/Sample13-species.tsv",
+                "Sample3-species": "/home/ubuntu/kraken-ws/kaiju/Sample3-species.tsv",
+                "Sample25-species": "/home/ubuntu/kraken-ws/kaiju/Sample25-species.tsv",
+                "Sample31-species": "/home/ubuntu/kraken-ws/kaiju/Sample31-species.tsv"
+            }
+        }
+    },
+    "report_general_stats_data": [
+        {
+            "Sample4": {
+                "% Unclassified": 26.751446796953832,
+                "assigned": 358048,
+                "% Assigned": 39.528634546044685
+            },
+            "Sample22": {
+                "% Unclassified": 28.31112644654422,
+                "assigned": 223826,
+                "% Assigned": 33.00450625803636
+            },
+            "Sample30": {
+                "% Unclassified": 20.425957056490798,
+                "assigned": 325992,
+                "% Assigned": 37.05267177915157
+            },
+            "Sample6": {
+                "% Unclassified": 24.86553993581668,
+                "assigned": 296299,
+                "% Assigned": 35.78745345380891
+            },
+            "Sample13": {
+                "% Unclassified": 24.101703225256337,
+                "assigned": 370497,
+                "% Assigned": 39.48935217752766
+            },
+            "Sample3": {
+                "% Unclassified": 22.492539285453,
+                "assigned": 327731,
+                "% Assigned": 35.78642428398433
+            },
+            "Sample25": {
+                "% Unclassified": 23.943198058307672,
+                "assigned": 352298,
+                "% Assigned": 38.551303179324215
+            },
+            "Sample31": {
+                "% Unclassified": 24.010342862338366,
+                "assigned": 362599,
+                "% Assigned": 40.20488358735882
+            }
+        },
+        {
+            "Sample4": {
+                "% Unclassified": 82.10752113615237,
+                "% Top 5": 3.9240710360192277,
+                "% Muribaculum gordoncarteri": 1.0234115041609904
+            },
+            "Sample31": {
+                "% Unclassified": 81.60172440174836,
+                "% Top 5": 3.9016363632331643,
+                "% Muribaculum gordoncarteri": 1.3508478973874516
+            },
+            "Sample25": {
+                "% Unclassified": 80.08813339723935,
+                "% Top 5": 4.57704942429873,
+                "% Muribaculum gordoncarteri": 1.2524046826475475
+            },
+            "Sample22": {
+                "% Unclassified": 73.90720293496597,
+                "% Top 5": 7.143362706585979,
+                "% Muribaculum gordoncarteri": 1.5238112090219533
+            },
+            "Sample13": {
+                "% Unclassified": 81.69992112724096,
+                "% Top 5": 3.510050947538957,
+                "% Muribaculum gordoncarteri": 0.8047153119737376
+            },
+            "Sample3": {
+                "% Unclassified": 76.68227784104992,
+                "% Top 5": 7.753792598141291,
+                "% Muribaculum gordoncarteri": 3.339277154216491
+            },
+            "Sample30": {
+                "% Unclassified": 70.10014696405007,
+                "% Top 5": 11.887038861932222,
+                "% Muribaculum gordoncarteri": 5.549398902259246
+            },
+            "Sample6": {
+                "% Unclassified": 76.19129865533897,
+                "% Top 5": 7.799468802728697,
+                "% Muribaculum gordoncarteri": 2.6218051769389366
+            }
+        }
+    ],
+    "report_general_stats_headers": [
+        {
+            "% Assigned": {
+                "title": "% Reads assigned",
+                "description": "Percentage of reads assigned at Species rank",
+                "min": 0,
+                "max": 100,
+                "suffix": "%",
+                "scale": "RdYlGn",
+                "namespace": "Kaiju",
+                "rid": "mqc-generalstats-kaiju-Assigned",
+                "format": "{:,.1f}",
+                "colour": "55,126,184",
+                "hidden": null,
+                "ceiling": null,
+                "floor": null,
+                "minRange": null,
+                "shared_key": null,
+                "modify": null,
+                "placement": 1000.0,
+                "dmax": 100.0,
+                "dmin": 0.0
+            },
+            "assigned": {
+                "title": "millions Reads assigned",
+                "description": "Number of reads assigned (millions)  at Species rank",
+                "modify": 1e-06,
+                "scale": "Blues",
+                "namespace": "Kaiju",
+                "rid": "mqc-generalstats-kaiju-assigned",
+                "format": "{:,.1f}",
+                "colour": "55,126,184",
+                "hidden": null,
+                "max": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minRange": null,
+                "shared_key": null,
+                "placement": 1000.0,
+                "dmax": 0.37049699999999997,
+                "dmin": 0
+            },
+            "% Unclassified": {
+                "title": "% Unclassified",
+                "description": "Percentage of reads that were unclassified",
+                "suffix": "%",
+                "max": 100,
+                "scale": "OrRd",
+                "namespace": "Kaiju",
+                "rid": "mqc-generalstats-kaiju-Unclassified",
+                "format": "{:,.1f}",
+                "colour": "55,126,184",
+                "hidden": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minRange": null,
+                "shared_key": null,
+                "modify": null,
+                "placement": 1000.0,
+                "dmax": 100.0,
+                "dmin": 0
+            }
+        },
+        {
+            "% Muribaculum gordoncarteri": {
+                "title": "% Muribaculum gordoncarteri",
+                "description": "Percentage of reads that were the top Species over all samples - Muribaculum gordoncarteri",
+                "suffix": "%",
+                "max": 100,
+                "scale": "PuBuGn",
+                "namespace": "Kraken",
+                "rid": "mqc-generalstats-kraken-Muribaculum_gordoncarteri",
+                "format": "{:,.1f}",
+                "colour": "77,175,74",
+                "hidden": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minRange": null,
+                "shared_key": null,
+                "modify": null,
+                "placement": 1000.0,
+                "dmax": 100.0,
+                "dmin": 0
+            },
+            "% Top 5": {
+                "title": "% Top 5 Species",
+                "description": "Percentage of reads that were classified by one of the top 5 Species (Muribaculum gordoncarteri, Muribaculum intestinale, Duncaniella dubosii, Acutalibacter muris, Curtobacterium flaccumfaciens)",
+                "suffix": "%",
+                "max": 100,
+                "scale": "PuBu",
+                "namespace": "Kraken",
+                "rid": "mqc-generalstats-kraken-Top_5",
+                "format": "{:,.1f}",
+                "colour": "77,175,74",
+                "hidden": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minRange": null,
+                "shared_key": null,
+                "modify": null,
+                "placement": 1000.0,
+                "dmax": 100.0,
+                "dmin": 0
+            },
+            "% Unclassified": {
+                "title": "% Unclassified",
+                "description": "Percentage of reads that were unclassified",
+                "suffix": "%",
+                "max": 100,
+                "scale": "OrRd",
+                "namespace": "Kraken",
+                "rid": "mqc-generalstats-kraken-Unclassified",
+                "format": "{:,.1f}",
+                "colour": "77,175,74",
+                "hidden": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minRange": null,
+                "shared_key": null,
+                "modify": null,
+                "placement": 1000.0,
+                "dmax": 100.0,
+                "dmin": 0
+            }
+        }
+    ],
+    "report_multiqc_command": "/home/ubuntu/miniconda3/envs/wms/bin/multiqc -o multiqc/index.html kraken kaiju",
+    "report_plot_data": {
+        "kaiju-topfive-plot": {
+            "plot_type": "bar_graph",
+            "samples": [
+                [
+                    "Sample13",
+                    "Sample22",
+                    "Sample25",
+                    "Sample3",
+                    "Sample30",
+                    "Sample31",
+                    "Sample4",
+                    "Sample6"
+                ]
+            ],
+            "datasets": [
+                [
+                    {
+                        "name": "Lachnospiraceae bacterium",
+                        "data": [
+                            26981.0,
+                            10525.0,
+                            22980.0,
+                            22718.0,
+                            16529.0,
+                            31210.0,
+                            30336.0,
+                            23287.0
+                        ]
+                    },
+                    {
+                        "name": "Lachnospiraceae bacterium A2",
+                        "data": [
+                            45290.0,
+                            8300.0,
+                            30227.0,
+                            9166.0,
+                            18530.0,
+                            34159.0,
+                            8693.0,
+                            3072.0
+                        ]
+                    },
+                    {
+                        "name": "Lachnospiraceae bacterium A4",
+                        "data": [
+                            15306.0,
+                            5791.0,
+                            15684.0,
+                            20028.0,
+                            34780.0,
+                            11875.0,
+                            28640.0,
+                            9981.0
+                        ]
+                    },
+                    {
+                        "name": "Muribaculaceae bacterium",
+                        "data": [
+                            7625.0,
+                            8780.0,
+                            9239.0,
+                            9891.0,
+                            11540.0,
+                            9303.0,
+                            5245.0,
+                            11632.0
+                        ]
+                    },
+                    {
+                        "name": "bacterium 1xD42-87",
+                        "data": [
+                            11555.0,
+                            4503.0,
+                            12184.0,
+                            14752.0,
+                            3986.0,
+                            12183.0,
+                            8501.0,
+                            7684.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            263740.0,
+                            185927.0,
+                            261984.0,
+                            251176.0,
+                            240627.0,
+                            263869.0,
+                            276633.0,
+                            240643.0
+                        ],
+                        "color": "#a65628"
+                    },
+                    {
+                        "name": "Cannot be assigned",
+                        "data": [
+                            341596.0,
+                            262345.0,
+                            342741.0,
+                            382080.0,
+                            374106.0,
+                            322735.0,
+                            305433.0,
+                            325770.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            226127.0,
+                            191997.0,
+                            218803.0,
+                            205986.0,
+                            179709.0,
+                            216544.0,
+                            242313.0,
+                            205872.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ]
+            ],
+            "config": {
+                "id": "kaiju-topfive-plot",
+                "title": "Kaiju: Top taxa",
+                "ylab": "Number of reads",
+                "cpswitch_counts_label": "Number of reads",
+                "data_labels": [
+                    {
+                        "name": "Species",
+                        "ylab": "Number of Reads at Species rank"
+                    }
+                ]
+            }
+        },
+        "kraken-topfive-plot": {
+            "plot_type": "bar_graph",
+            "samples": [
+                [
+                    "Sample13",
+                    "Sample22",
+                    "Sample25",
+                    "Sample3",
+                    "Sample30",
+                    "Sample31",
+                    "Sample4",
+                    "Sample6"
+                ],
+                [
+                    "Sample13",
+                    "Sample22",
+                    "Sample25",
+                    "Sample3",
+                    "Sample30",
+                    "Sample31",
+                    "Sample4",
+                    "Sample6"
+                ],
+                [
+                    "Sample13",
+                    "Sample22",
+                    "Sample25",
+                    "Sample3",
+                    "Sample30",
+                    "Sample31",
+                    "Sample4",
+                    "Sample6"
+                ],
+                [
+                    "Sample13",
+                    "Sample22",
+                    "Sample25",
+                    "Sample3",
+                    "Sample30",
+                    "Sample31",
+                    "Sample4",
+                    "Sample6"
+                ],
+                [
+                    "Sample13",
+                    "Sample22",
+                    "Sample25",
+                    "Sample3",
+                    "Sample30",
+                    "Sample31",
+                    "Sample4",
+                    "Sample6"
+                ],
+                [
+                    "Sample13",
+                    "Sample22",
+                    "Sample25",
+                    "Sample3",
+                    "Sample30",
+                    "Sample31",
+                    "Sample4",
+                    "Sample6"
+                ],
+                [
+                    "Sample13",
+                    "Sample22",
+                    "Sample25",
+                    "Sample3",
+                    "Sample30",
+                    "Sample31",
+                    "Sample4",
+                    "Sample6"
+                ],
+                [
+                    "Sample13",
+                    "Sample22",
+                    "Sample25",
+                    "Sample3",
+                    "Sample30",
+                    "Sample31",
+                    "Sample4",
+                    "Sample6"
+                ],
+                [
+                    "Sample13",
+                    "Sample22",
+                    "Sample25",
+                    "Sample3",
+                    "Sample30",
+                    "Sample31",
+                    "Sample4",
+                    "Sample6"
+                ]
+            ],
+            "datasets": [
+                [
+                    {
+                        "name": "Muribaculum gordoncarteri",
+                        "data": [
+                            7550.0,
+                            10334.0,
+                            11445.0,
+                            30581.0,
+                            48824.0,
+                            12183.0,
+                            9270.0,
+                            21707.0
+                        ]
+                    },
+                    {
+                        "name": "Muribaculum intestinale",
+                        "data": [
+                            9285.0,
+                            9418.0,
+                            12535.0,
+                            15272.0,
+                            23644.0,
+                            8584.0,
+                            5714.0,
+                            11923.0
+                        ]
+                    },
+                    {
+                        "name": "Duncaniella dubosii",
+                        "data": [
+                            5834.0,
+                            5663.0,
+                            4993.0,
+                            18590.0,
+                            22143.0,
+                            5409.0,
+                            8862.0,
+                            18486.0
+                        ]
+                    },
+                    {
+                        "name": "Acutalibacter muris",
+                        "data": [
+                            8793.0,
+                            3891.0,
+                            10376.0,
+                            5443.0,
+                            4102.0,
+                            7274.0,
+                            9753.0,
+                            3659.0
+                        ]
+                    },
+                    {
+                        "name": "Curtobacterium flaccumfaciens",
+                        "data": [
+                            1470.0,
+                            19138.0,
+                            2478.0,
+                            1123.0,
+                            5870.0,
+                            1738.0,
+                            1945.0,
+                            8800.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            138763.0,
+                            128509.0,
+                            140136.0,
+                            142534.0,
+                            158478.0,
+                            130742.0,
+                            126525.0,
+                            132547.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            766525.0,
+                            501215.0,
+                            731879.0,
+                            702254.0,
+                            616746.0,
+                            735948.0,
+                            743725.0,
+                            630819.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Duncaniella",
+                        "data": [
+                            26024.0,
+                            28384.0,
+                            23353.0,
+                            53925.0,
+                            46231.0,
+                            18840.0,
+                            20788.0,
+                            41302.0
+                        ]
+                    },
+                    {
+                        "name": "Muribaculum",
+                        "data": [
+                            16968.0,
+                            19925.0,
+                            24132.0,
+                            46237.0,
+                            72772.0,
+                            20899.0,
+                            15135.0,
+                            34034.0
+                        ]
+                    },
+                    {
+                        "name": "Bacteroides",
+                        "data": [
+                            6646.0,
+                            15220.0,
+                            9882.0,
+                            4339.0,
+                            15153.0,
+                            9899.0,
+                            2620.0,
+                            13409.0
+                        ]
+                    },
+                    {
+                        "name": "Lachnoclostridium",
+                        "data": [
+                            10317.0,
+                            3586.0,
+                            8995.0,
+                            9950.0,
+                            6675.0,
+                            9505.0,
+                            13294.0,
+                            6184.0
+                        ]
+                    },
+                    {
+                        "name": "Alistipes",
+                        "data": [
+                            6208.0,
+                            7764.0,
+                            6788.0,
+                            786.0,
+                            18182.0,
+                            6981.0,
+                            429.0,
+                            8848.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            105532.0,
+                            102074.0,
+                            108813.0,
+                            98306.0,
+                            104048.0,
+                            99806.0,
+                            109803.0,
+                            93345.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            766525.0,
+                            501215.0,
+                            731879.0,
+                            702254.0,
+                            616746.0,
+                            735948.0,
+                            743725.0,
+                            630819.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Muribaculaceae",
+                        "data": [
+                            44410.0,
+                            50060.0,
+                            48969.0,
+                            102377.0,
+                            121229.0,
+                            41155.0,
+                            36805.0,
+                            77860.0
+                        ]
+                    },
+                    {
+                        "name": "Lachnospiraceae",
+                        "data": [
+                            30794.0,
+                            11218.0,
+                            26889.0,
+                            28804.0,
+                            19298.0,
+                            28912.0,
+                            38281.0,
+                            19285.0
+                        ]
+                    },
+                    {
+                        "name": "Oscillospiraceae",
+                        "data": [
+                            18168.0,
+                            7380.0,
+                            18970.0,
+                            13409.0,
+                            10059.0,
+                            13929.0,
+                            18666.0,
+                            9347.0
+                        ]
+                    },
+                    {
+                        "name": "Bacteroidaceae",
+                        "data": [
+                            6646.0,
+                            15220.0,
+                            9882.0,
+                            4339.0,
+                            15153.0,
+                            9899.0,
+                            2620.0,
+                            13409.0
+                        ]
+                    },
+                    {
+                        "name": "Rikenellaceae",
+                        "data": [
+                            6208.0,
+                            7764.0,
+                            6788.0,
+                            786.0,
+                            18182.0,
+                            6981.0,
+                            429.0,
+                            8848.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            65469.0,
+                            85311.0,
+                            70465.0,
+                            63828.0,
+                            79140.0,
+                            65054.0,
+                            65268.0,
+                            68373.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            766525.0,
+                            501215.0,
+                            731879.0,
+                            702254.0,
+                            616746.0,
+                            735948.0,
+                            743725.0,
+                            630819.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Bacteroidales",
+                        "data": [
+                            62521.0,
+                            80261.0,
+                            72432.0,
+                            116417.0,
+                            168262.0,
+                            64414.0,
+                            44444.0,
+                            108267.0
+                        ]
+                    },
+                    {
+                        "name": "Eubacteriales",
+                        "data": [
+                            60360.0,
+                            23164.0,
+                            55793.0,
+                            51654.0,
+                            36456.0,
+                            53184.0,
+                            68641.0,
+                            35901.0
+                        ]
+                    },
+                    {
+                        "name": "Micrococcales",
+                        "data": [
+                            2386.0,
+                            19748.0,
+                            3403.0,
+                            1874.0,
+                            6713.0,
+                            2540.0,
+                            2724.0,
+                            9568.0
+                        ]
+                    },
+                    {
+                        "name": "Lactobacillales",
+                        "data": [
+                            5812.0,
+                            7472.0,
+                            8324.0,
+                            6504.0,
+                            6071.0,
+                            4057.0,
+                            8002.0,
+                            4665.0
+                        ]
+                    },
+                    {
+                        "name": "Primates",
+                        "data": [
+                            1154.0,
+                            15531.0,
+                            2173.0,
+                            1169.0,
+                            4147.0,
+                            1701.0,
+                            1760.0,
+                            5555.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            39462.0,
+                            30777.0,
+                            39838.0,
+                            35925.0,
+                            41412.0,
+                            40034.0,
+                            36498.0,
+                            33166.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            766525.0,
+                            501215.0,
+                            731879.0,
+                            702254.0,
+                            616746.0,
+                            735948.0,
+                            743725.0,
+                            630819.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Bacteroidia",
+                        "data": [
+                            62573.0,
+                            80317.0,
+                            72494.0,
+                            116481.0,
+                            168333.0,
+                            64471.0,
+                            44483.0,
+                            108317.0
+                        ]
+                    },
+                    {
+                        "name": "Clostridia",
+                        "data": [
+                            60814.0,
+                            23395.0,
+                            56219.0,
+                            52158.0,
+                            36700.0,
+                            53615.0,
+                            69223.0,
+                            36169.0
+                        ]
+                    },
+                    {
+                        "name": "Actinomycetia",
+                        "data": [
+                            5977.0,
+                            21983.0,
+                            6989.0,
+                            5263.0,
+                            10225.0,
+                            5887.0,
+                            5843.0,
+                            12580.0
+                        ]
+                    },
+                    {
+                        "name": "Bacilli",
+                        "data": [
+                            9290.0,
+                            9447.0,
+                            11911.0,
+                            9712.0,
+                            8403.0,
+                            7644.0,
+                            12545.0,
+                            7268.0
+                        ]
+                    },
+                    {
+                        "name": "Dipnotetrapodomorpha",
+                        "data": [
+                            1154.0,
+                            15531.0,
+                            2173.0,
+                            1169.0,
+                            4147.0,
+                            1701.0,
+                            1760.0,
+                            5555.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            31887.0,
+                            26280.0,
+                            32177.0,
+                            28760.0,
+                            35253.0,
+                            32612.0,
+                            28215.0,
+                            27233.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            766525.0,
+                            501215.0,
+                            731879.0,
+                            702254.0,
+                            616746.0,
+                            735948.0,
+                            743725.0,
+                            630819.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Bacteroidetes",
+                        "data": [
+                            64989.0,
+                            82832.0,
+                            75158.0,
+                            119129.0,
+                            171627.0,
+                            67360.0,
+                            46459.0,
+                            111179.0
+                        ]
+                    },
+                    {
+                        "name": "Firmicutes",
+                        "data": [
+                            74669.0,
+                            35321.0,
+                            72103.0,
+                            67064.0,
+                            53543.0,
+                            65654.0,
+                            86727.0,
+                            47194.0
+                        ]
+                    },
+                    {
+                        "name": "Proteobacteria",
+                        "data": [
+                            13916.0,
+                            11904.0,
+                            14822.0,
+                            10862.0,
+                            13829.0,
+                            14562.0,
+                            10848.0,
+                            10940.0
+                        ]
+                    },
+                    {
+                        "name": "Actinobacteria",
+                        "data": [
+                            8532.0,
+                            24196.0,
+                            9573.0,
+                            7434.0,
+                            12131.0,
+                            8471.0,
+                            7749.0,
+                            13988.0
+                        ]
+                    },
+                    {
+                        "name": "Chordata",
+                        "data": [
+                            1154.0,
+                            15531.0,
+                            2173.0,
+                            1169.0,
+                            4147.0,
+                            1701.0,
+                            1760.0,
+                            5555.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            8435.0,
+                            7169.0,
+                            8134.0,
+                            7885.0,
+                            7784.0,
+                            8182.0,
+                            8526.0,
+                            8266.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            766525.0,
+                            501215.0,
+                            731879.0,
+                            702254.0,
+                            616746.0,
+                            735948.0,
+                            743725.0,
+                            630819.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Metazoa",
+                        "data": [
+                            1154.0,
+                            15531.0,
+                            2173.0,
+                            1169.0,
+                            4147.0,
+                            1701.0,
+                            1760.0,
+                            5555.0
+                        ]
+                    },
+                    {
+                        "name": "Pararnavirae",
+                        "data": [
+                            1.0,
+                            21.0,
+                            1.0,
+                            2.0,
+                            3.0,
+                            1.0,
+                            2.0,
+                            8.0
+                        ]
+                    },
+                    {
+                        "name": "Bamfordvirae",
+                        "data": [
+                            5.0,
+                            3.0,
+                            6.0,
+                            NaN,
+                            NaN,
+                            2.0,
+                            5.0,
+                            2.0
+                        ]
+                    },
+                    {
+                        "name": "Orthornavirae",
+                        "data": [
+                            1.0,
+                            1.0,
+                            1.0,
+                            1.0,
+                            1.0,
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    {
+                        "name": "Shotokuvirae",
+                        "data": [
+                            1.0,
+                            1.0,
+                            NaN,
+                            NaN,
+                            NaN,
+                            NaN,
+                            NaN,
+                            NaN
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            170533.0,
+                            161396.0,
+                            179782.0,
+                            212371.0,
+                            258910.0,
+                            164225.0,
+                            160301.0,
+                            191556.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            766525.0,
+                            501215.0,
+                            731879.0,
+                            702254.0,
+                            616746.0,
+                            735948.0,
+                            743725.0,
+                            630819.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "Bacteria",
+                        "data": [
+                            169943.0,
+                            160919.0,
+                            179218.0,
+                            211856.0,
+                            258393.0,
+                            163634.0,
+                            159714.0,
+                            191127.0
+                        ]
+                    },
+                    {
+                        "name": "Eukaryota",
+                        "data": [
+                            1154.0,
+                            15531.0,
+                            2173.0,
+                            1169.0,
+                            4147.0,
+                            1701.0,
+                            1760.0,
+                            5555.0
+                        ]
+                    },
+                    {
+                        "name": "Archaea",
+                        "data": [
+                            289.0,
+                            183.0,
+                            251.0,
+                            247.0,
+                            208.0,
+                            277.0,
+                            263.0,
+                            190.0
+                        ]
+                    },
+                    {
+                        "name": "Viruses",
+                        "data": [
+                            52.0,
+                            57.0,
+                            54.0,
+                            48.0,
+                            49.0,
+                            49.0,
+                            56.0,
+                            46.0
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "data": [
+                            257.0,
+                            263.0,
+                            267.0,
+                            223.0,
+                            264.0,
+                            269.0,
+                            276.0,
+                            204.0
+                        ],
+                        "color": "#cccccc"
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            766525.0,
+                            501215.0,
+                            731879.0,
+                            702254.0,
+                            616746.0,
+                            735948.0,
+                            743725.0,
+                            630819.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ],
+                [
+                    {
+                        "name": "root",
+                        "data": [
+                            171695.0,
+                            176953.0,
+                            181963.0,
+                            213543.0,
+                            263061.0,
+                            165930.0,
+                            162069.0,
+                            197122.0
+                        ]
+                    },
+                    {
+                        "name": "Unclassified",
+                        "data": [
+                            766525.0,
+                            501215.0,
+                            731879.0,
+                            702254.0,
+                            616746.0,
+                            735948.0,
+                            743725.0,
+                            630819.0
+                        ],
+                        "color": "#d4949c"
+                    }
+                ]
+            ],
+            "config": {
+                "id": "kraken-topfive-plot",
+                "title": "Kraken 2: Top taxa",
+                "ylab": "Number of fragments",
+                "data_labels": [
+                    "Species",
+                    "Genus",
+                    "Family",
+                    "Order",
+                    "Class",
+                    "Phylum",
+                    "Kingdom",
+                    "Domain",
+                    "Root"
+                ]
+            }
+        }
+    },
+    "report_saved_raw_data": {
+        "multiqc_kaiju_species": {
+            "Sample4": {
+                "Lachnospiraceae bacterium": 30336,
+                "Lachnospiraceae bacterium A2": 8693,
+                "Lachnospiraceae bacterium A4": 28640,
+                "Muribaculaceae bacterium": 5245,
+                "bacterium 1xD42-87": 8501,
+                "not assigned": 305433,
+                "unclassified": 242313,
+                "other": 276633
+            },
+            "Sample22": {
+                "Lachnospiraceae bacterium": 10525,
+                "Lachnospiraceae bacterium A2": 8300,
+                "Lachnospiraceae bacterium A4": 5791,
+                "Muribaculaceae bacterium": 8780,
+                "bacterium 1xD42-87": 4503,
+                "not assigned": 262345,
+                "unclassified": 191997,
+                "other": 185927
+            },
+            "Sample30": {
+                "Lachnospiraceae bacterium": 16529,
+                "Lachnospiraceae bacterium A2": 18530,
+                "Lachnospiraceae bacterium A4": 34780,
+                "Muribaculaceae bacterium": 11540,
+                "bacterium 1xD42-87": 3986,
+                "not assigned": 374106,
+                "unclassified": 179709,
+                "other": 240627
+            },
+            "Sample6": {
+                "Lachnospiraceae bacterium": 23287,
+                "Lachnospiraceae bacterium A2": 3072,
+                "Lachnospiraceae bacterium A4": 9981,
+                "Muribaculaceae bacterium": 11632,
+                "bacterium 1xD42-87": 7684,
+                "not assigned": 325770,
+                "unclassified": 205872,
+                "other": 240643
+            },
+            "Sample13": {
+                "Lachnospiraceae bacterium": 26981,
+                "Lachnospiraceae bacterium A2": 45290,
+                "Lachnospiraceae bacterium A4": 15306,
+                "Muribaculaceae bacterium": 7625,
+                "bacterium 1xD42-87": 11555,
+                "not assigned": 341596,
+                "unclassified": 226127,
+                "other": 263740
+            },
+            "Sample3": {
+                "Lachnospiraceae bacterium": 22718,
+                "Lachnospiraceae bacterium A2": 9166,
+                "Lachnospiraceae bacterium A4": 20028,
+                "Muribaculaceae bacterium": 9891,
+                "bacterium 1xD42-87": 14752,
+                "not assigned": 382080,
+                "unclassified": 205986,
+                "other": 251176
+            },
+            "Sample25": {
+                "Lachnospiraceae bacterium": 22980,
+                "Lachnospiraceae bacterium A2": 30227,
+                "Lachnospiraceae bacterium A4": 15684,
+                "Muribaculaceae bacterium": 9239,
+                "bacterium 1xD42-87": 12184,
+                "not assigned": 342741,
+                "unclassified": 218803,
+                "other": 261984
+            },
+            "Sample31": {
+                "Lachnospiraceae bacterium": 31210,
+                "Lachnospiraceae bacterium A2": 34159,
+                "Lachnospiraceae bacterium A4": 11875,
+                "Muribaculaceae bacterium": 9303,
+                "bacterium 1xD42-87": 12183,
+                "not assigned": 322735,
+                "unclassified": 216544,
+                "other": 263869
+            }
+        },
+        "multiqc_general_stats": {
+            "Sample4": {
+                "Kaiju_mqc-generalstats-kaiju-Assigned": 39.528634546044685,
+                "Kaiju_mqc-generalstats-kaiju-Unclassified": 26.751446796953832,
+                "Kaiju_mqc-generalstats-kaiju-assigned": 358048,
+                "Kraken_mqc-generalstats-kraken-Muribaculum_gordoncarteri": 1.0234115041609904,
+                "Kraken_mqc-generalstats-kraken-Top_5": 3.9240710360192277,
+                "Kraken_mqc-generalstats-kraken-Unclassified": 82.10752113615237
+            },
+            "Sample22": {
+                "Kaiju_mqc-generalstats-kaiju-Assigned": 33.00450625803636,
+                "Kaiju_mqc-generalstats-kaiju-Unclassified": 28.31112644654422,
+                "Kaiju_mqc-generalstats-kaiju-assigned": 223826,
+                "Kraken_mqc-generalstats-kraken-Muribaculum_gordoncarteri": 1.5238112090219533,
+                "Kraken_mqc-generalstats-kraken-Top_5": 7.143362706585979,
+                "Kraken_mqc-generalstats-kraken-Unclassified": 73.90720293496597
+            },
+            "Sample30": {
+                "Kaiju_mqc-generalstats-kaiju-Assigned": 37.05267177915157,
+                "Kaiju_mqc-generalstats-kaiju-Unclassified": 20.425957056490798,
+                "Kaiju_mqc-generalstats-kaiju-assigned": 325992,
+                "Kraken_mqc-generalstats-kraken-Muribaculum_gordoncarteri": 5.549398902259246,
+                "Kraken_mqc-generalstats-kraken-Top_5": 11.887038861932222,
+                "Kraken_mqc-generalstats-kraken-Unclassified": 70.10014696405007
+            },
+            "Sample6": {
+                "Kaiju_mqc-generalstats-kaiju-Assigned": 35.78745345380891,
+                "Kaiju_mqc-generalstats-kaiju-Unclassified": 24.86553993581668,
+                "Kaiju_mqc-generalstats-kaiju-assigned": 296299,
+                "Kraken_mqc-generalstats-kraken-Muribaculum_gordoncarteri": 2.6218051769389366,
+                "Kraken_mqc-generalstats-kraken-Top_5": 7.799468802728697,
+                "Kraken_mqc-generalstats-kraken-Unclassified": 76.19129865533897
+            },
+            "Sample13": {
+                "Kaiju_mqc-generalstats-kaiju-Assigned": 39.48935217752766,
+                "Kaiju_mqc-generalstats-kaiju-Unclassified": 24.101703225256337,
+                "Kaiju_mqc-generalstats-kaiju-assigned": 370497,
+                "Kraken_mqc-generalstats-kraken-Muribaculum_gordoncarteri": 0.8047153119737376,
+                "Kraken_mqc-generalstats-kraken-Top_5": 3.510050947538957,
+                "Kraken_mqc-generalstats-kraken-Unclassified": 81.69992112724096
+            },
+            "Sample3": {
+                "Kaiju_mqc-generalstats-kaiju-Assigned": 35.78642428398433,
+                "Kaiju_mqc-generalstats-kaiju-Unclassified": 22.492539285453,
+                "Kaiju_mqc-generalstats-kaiju-assigned": 327731,
+                "Kraken_mqc-generalstats-kraken-Muribaculum_gordoncarteri": 3.339277154216491,
+                "Kraken_mqc-generalstats-kraken-Top_5": 7.753792598141291,
+                "Kraken_mqc-generalstats-kraken-Unclassified": 76.68227784104992
+            },
+            "Sample25": {
+                "Kaiju_mqc-generalstats-kaiju-Assigned": 38.551303179324215,
+                "Kaiju_mqc-generalstats-kaiju-Unclassified": 23.943198058307672,
+                "Kaiju_mqc-generalstats-kaiju-assigned": 352298,
+                "Kraken_mqc-generalstats-kraken-Muribaculum_gordoncarteri": 1.2524046826475475,
+                "Kraken_mqc-generalstats-kraken-Top_5": 4.57704942429873,
+                "Kraken_mqc-generalstats-kraken-Unclassified": 80.08813339723935
+            },
+            "Sample31": {
+                "Kaiju_mqc-generalstats-kaiju-Assigned": 40.20488358735882,
+                "Kaiju_mqc-generalstats-kaiju-Unclassified": 24.010342862338366,
+                "Kaiju_mqc-generalstats-kaiju-assigned": 362599,
+                "Kraken_mqc-generalstats-kraken-Muribaculum_gordoncarteri": 1.3508478973874516,
+                "Kraken_mqc-generalstats-kraken-Top_5": 3.9016363632331643,
+                "Kraken_mqc-generalstats-kraken-Unclassified": 81.60172440174836
+            }
+        }
+    },
+    "config_analysis_dir_abs": [
+        "/home/ubuntu/kraken-ws/kraken",
+        "/home/ubuntu/kraken-ws/kaiju"
+    ],
+    "config_analysis_dir": [
+        "kraken",
+        "kaiju"
+    ],
+    "config_creation_date": "2021-07-06, 08:54",
+    "config_git_hash": null,
+    "config_intro_text": null,
+    "config_report_comment": null,
+    "config_report_header_info": null,
+    "config_script_path": "/home/ubuntu/miniconda3/envs/wms/lib/python3.9/site-packages/multiqc/utils",
+    "config_short_version": "1.11",
+    "config_subtitle": null,
+    "config_title": null,
+    "config_version": "1.11"
+}
