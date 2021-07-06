@@ -142,6 +142,33 @@ We will use these files for the data exploration and analysis on day 3.
 
 But feel free to sneak peak with `head merged_rel_abund.csv`.
 
+### Get an overview for the number of host and unclassified reads
+
+One information that get’s lost when running bracken, is the number of unclassified reads. 
+However, this is a very important information when investigating (and comparing) samples. 
+To get this data, let’s merge the kraken reports in the same way we merged the bracken reports.
+
+```
+python /data/shared/scripts/merge_profiling_reports.py -i ~/kraken-ws/kraken/ -o merged
+```
+
+Then we extract the read counts of unclassified and those assigned to ‘root’ from the kraken2 reports
+
+```
+head -3 ~/kraken-ws/kraken/merged_read_numbers.csv > ~/kraken-ws/kraken/classification_counts.csv
+```
+
+Now same thing for the host removal output from day 1
+
+```
+python /data/shared/scripts/merge_profiling_reports.py \
+  -i ~/kraken-ws/reads-no-host/ \
+  -o merged_hostremoval
+
+head -3 ~/kraken-ws/reads-no-host/merged_hostremoval_read_numbers.csv > ~/kraken-ws/reads-no-host/hostread_counts.csv
+```
+
+We will explore these files tomorrow.
 ---
 
 :bulb: Optional track: [Kaiju]({{ site.baseurl }}{% link _posts/2021-03-10-Kaiju.md %})
