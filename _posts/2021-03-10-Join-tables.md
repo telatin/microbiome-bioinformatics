@@ -3,7 +3,6 @@ layout: post
 title:  "Join tabular files"
 author: at
 categories: [ metagenomics, tutorial ]
-hidden: true
 ---
 
 When performing multiple operations on the same dataset, as some of you pointed out 
