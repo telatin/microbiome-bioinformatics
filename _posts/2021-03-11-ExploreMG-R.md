@@ -2,9 +2,27 @@
 
 You can either work with R studio on your local computer or with our R studio servers. 
 
+## Plot read counts
+
+As a firt warm up in R let's explore some of the read statistics. You just created a table `filtering.csv` from your data. We will import this table into R and create a plot to visualize the data.
+
+If you have not created the table you can find it also here
+
+    /data/shared/Rfiles/filtering.csv
+
+Make sure you copy it over or specify the correct path when importing into R.
+
+Follow these commands in Rstudio to create the plot
+
+[Exercise 1]({{ site.baseurl }}/data/kraken-r/Explore_readtable_exercise.html)
+
+And here you can see the solutions
+
+[Exercise 1]({{ site.baseurl }}/data/kraken-r/Explore_readtable_solutions.html)
+
 ## Check classified and host reads across samples
 
-As a firt warm up in R let's explore some of the read statistics from kraken.
+Now let's explore some of the read statistics from kraken.
 
 We need a metadata file which can be found here
 
@@ -21,11 +39,11 @@ If you are copying the files to your local computer you can copy the entire fold
 
 When you are all set up follow the instruction in the following R markdown
 
-[Exercise 1]({{ site.baseurl }}/data/kraken-r/2021-03-30-Explore_readQ_exercise.html)
+[Exercise 2]({{ site.baseurl }}/data/kraken-r/2021-03-30-Explore_readQ_exercise.html)
 
 We also provided you with the output and solutions, so you know how this should look like. 
 
-[Solution 1]({{ site.baseurl }}/data/kraken-r/2021-03-31-Explore_readQ_solutions.html)
+[Solution 2]({{ site.baseurl }}/data/kraken-r/2021-03-31-Explore_readQ_solutions.html)
 
 
 ## Let's analyse bracken relative abundances in R
@@ -49,8 +67,8 @@ Here we will
 - Explore beta diversity and compare samples from different groups
 - Have a sneak peak on species that are differentially abundant between groups
 
-[Exercise 2]({{ site.baseurl }}/data/kraken-r/2021-03-32-ExploreMGprofiles_exercise.html)
+[Exercise 3]({{ site.baseurl }}/data/kraken-r/2021-03-32-ExploreMGprofiles_exercise.html)
 
 We also provided you with the output and solutions, so you know how this should look like. 
 
-[Solution 2]({{ site.baseurl }}/data/kraken-r/2021-03-33-ExploreMGprofiles_solutions.html)
+[Solution 3]({{ site.baseurl }}/data/kraken-r/2021-03-33-ExploreMGprofiles_solutions.html)
