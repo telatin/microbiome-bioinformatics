@@ -62,7 +62,7 @@ Follow these commands in Rstudio to create the plot
 
 And here you can see the solutions
 
-[Exercise 1]({{ site.baseurl }}/data/kraken-r/Explore_readtable_solutions.html)
+[Solution 1]({{ site.baseurl }}/data/kraken-r/Explore_readtable_solutions.html)
 
 ### Check classified and host reads across samples
 
