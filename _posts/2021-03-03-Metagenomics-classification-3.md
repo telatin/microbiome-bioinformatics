@@ -42,7 +42,7 @@ will find the instructions to generate it here:
 ## Explore your Kraken/Bracken data in R
 
  
-:info: You can either work with R studio on your local computer or with our R studio servers. 
+:information_source: You can either work with R studio on your local computer or with our R studio servers. 
 
 ### Plot read counts
 
@@ -58,11 +58,11 @@ Make sure you copy it over or specify the correct path when importing into R.
 
 Follow these commands in Rstudio to create the plot
 
-[Exercise 1]({{ site.baseurl }}/data/kraken-r/Explore_readtable_exercise.html)
+:question: [Exercise 1]({{ site.baseurl }}/data/kraken-r/Explore_readtable_exercise.html)
 
 And here you can see the solutions
 
-[Solution 1]({{ site.baseurl }}/data/kraken-r/Explore_readtable_solutions.html)
+:envelope: [Solution 1]({{ site.baseurl }}/data/kraken-r/Explore_readtable_solutions.html)
 
 ### Check classified and host reads across samples
 
@@ -72,22 +72,25 @@ We need a metadata file which can be found here
 
     /data/shared/Rfiles/metadata_sub.csv
 
-We are also using the two files `classification_counts.csv` and `hostread_counts.csv` that you created in yesterdays session. If you haven’t created those files, then we provided these files for you here:
+We are also using the two files `classification_counts.csv` and `hostread_counts.csv` that you created in yesterdays session. 
+If you haven’t created those files, then we provided these files for you here:
 
     /data/shared/Rfiles/classification_counts.csv
 
     /data/shared/Rfiles/hostread_counts.csv
 
-Make sure you copy these files to your current working directory or specify the correct path to the file when importing into the R studio server.
-If you are copying the files to your local computer you can copy the entire folder `/data/shared/Rfiles` which will also contain the files for the next exercise.
+Make sure you copy these files to your current working directory or specify 
+the correct path to the file when importing into the R studio server.
+If you are copying the files to your local computer you can copy the entire 
+folder `/data/shared/Rfiles` which will also contain the files for the next exercise.
 
 When you are all set up follow the instruction in the following R markdown
 
-[Exercise 2]({{ site.baseurl }}/data/kraken-r/2021-03-30-Explore_readQ_exercise.html)
+:question: [Exercise 2]({{ site.baseurl }}/data/kraken-r/2021-03-30-Explore_readQ_exercise.html)
 
 We also provided you with the output and solutions, so you know how this should look like. 
 
-[Solution 2]({{ site.baseurl }}/data/kraken-r/2021-03-31-Explore_readQ_solutions.html)
+:envelope: [Solution 2]({{ site.baseurl }}/data/kraken-r/2021-03-31-Explore_readQ_solutions.html)
 
 
 ### Let's analyse bracken relative abundances in R
@@ -111,8 +114,8 @@ Here we will
 - Explore beta diversity and compare samples from different groups
 - Have a sneak peak on species that are differentially abundant between groups
 
-[Exercise 3]({{ site.baseurl }}/data/kraken-r/2021-03-32-ExploreMGprofiles_exercise.html)
+:question: [Exercise 3]({{ site.baseurl }}/data/kraken-r/2021-03-32-ExploreMGprofiles_exercise.html)
 
 We also provided you with the output and solutions, so you know how this should look like. 
 
-[Solution 3]({{ site.baseurl }}/data/kraken-r/2021-03-33-ExploreMGprofiles_solutions.html)
+:envelope: [Solution 3]({{ site.baseurl }}/data/kraken-r/2021-03-33-ExploreMGprofiles_solutions.html)
