@@ -16,7 +16,7 @@ We are also using the two files `classification_counts.csv` and `hostread_counts
 
     /data/shared/Rfiles/hostread_counts.csv
 
-Make sure you copy this file to your current working directory or specify the correct path to the file when importing into the R studio server.
+Make sure you copy these files to your current working directory or specify the correct path to the file when importing into the R studio server.
 If you are copying the files to your local computer you can copy the entire folder `/data/shared/Rfiles` which will also contain the files for the next exercise.
 
 When you are all set up follow the instruction in the following R markdown
@@ -40,7 +40,14 @@ For now use the following data:
 
 Either download them to your local computer to work with your own RStudio installation or make sure in the server you specify the correct path.
 
-Then, when you are ready, follow the exercises in the markdown
+Then, when you are ready, follow the exercises in the markdown. 
+
+Here we will
+
+- Import and explore the data
+- Plot community composition
+- Explore beta diversity and compare samples from different groups
+- Have a sneak peak on species that are differentially abundant between groups
 
 [Exercise 2]({{ site.baseurl }}/data/kraken-r/2021-03-32-ExploreMGprofiles_exercise.html)
 
