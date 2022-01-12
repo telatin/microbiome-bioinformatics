@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Nextflow tutorial (day 1)"
+title:  "Nextflow tutorial (programme)"
 author: at
 categories: [ nextflow, tutorial ]
-image: assets/images/nextflow.jpg
+image: assets/images/nf/nextflow-main.jpg
 ---
 
 ## The problem
