@@ -29,6 +29,8 @@ chmod +x ./nextflow
 mv ./nextflow ~/bin/
 ```
 
+--- 
+
 ## The programme
 
 * [A de novo assembly pipeline]({{ site.baseurl }}{% link _posts/2022-02-11-Nextflow-denovo.md %}): we will design a simple workflow to assemble and annotate microbial genomes
