@@ -44,7 +44,7 @@ you might want to have a look around and see if Snakemake (for example) can work
 With this website and its companion repository, we will build a basic *de novo* assembly pipeline, using tools available from
 [BioConda](https://bioconda.github.io) and building a Nextflow pipeline using the DSL2 syntax.
 
-![Workflow scheme]({% link assets/images/nf/nf-demo.gif %})
+![Workflow scheme]({{ site.baseurl }}{% link assets/images/nf/nf-demo.gif %})
 
 ## The repository
 
