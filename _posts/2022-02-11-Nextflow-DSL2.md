@@ -16,4 +16,4 @@ image: assets/images/nextflow.jpg
 * :three: [First steps with Nextflow]({{ site.baseurl }}{% link _posts/2022-02-11-Nextflow-first-steps.md %}): we will install Nextflow and run a couple of test scripts
 * :four: [The Denovo pipeline in Nextflow]({{ site.baseurl }}{% link _posts/2022-02-11-Nextflow-DSL2.md %}): we will implement our pipeline in Nextflow
 
-:arrow_left: [Back to the Nextflow main page]({{ site.baseurl }}{% link _posts/2022-02-10-Nextflow-start.md %})
+:arrow_left: [Back to the Nextflow main page]({{ site.baseurl }}{% link _posts/2022-01-10-Nextflow-start.md %})
