@@ -31,7 +31,8 @@ to do some manual manipulation to add also Abricate.
 ### First steps
 
 Each sample is represanted by a pair of files, and there are some steps that can be linearly (one block after
-the other), for example the quality filtering, assembly and annotation:
+the other), for example the quality filtering, assembly and annotation. The multiple boxes represents the multiple
+files to be processed.
 
 ![Assembly steps]({{ site.baseurl }}{% link assets/images/nf/nextflow2.png %})
 
@@ -40,7 +41,8 @@ the other), for example the quality filtering, assembly and annotation:
 There are some steps where we need to wait all the samples to be processed: 
 the summary from Abricate (which is produced using all the Abricate outputs), 
 QUAST (which will compare all the assemblies) and finally
-MultiQC that collects output from multiple steps.
+MultiQC that collects output from multiple steps. You can see that the summaries
+have a single, rather than multiple, box representing it.
 
 ![Abricate and QUAST]({{ site.baseurl }}{% link assets/images/nf/nextflow5.png %})
 
