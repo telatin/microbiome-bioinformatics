@@ -38,6 +38,18 @@ All the solutions are rapidly evolving, and features present in one might be ado
 We picked **Nextflow** because it was born with several key features like scalability and reproducibility, and it's widely adopted, but
 you might want to have a look around and see if Snakemake (for example) can work better for you.
 
+
+## The workshop
+
+With this website and its companion repository, we will build a basic *de novo* assembly pipeline, using tools available from
+[BioConda](https://bioconda.github.io) and building a Nextflow pipeline using the DSL2 syntax.
+
+![Workflow scheme]({% link assets/images/nf/nf-demo.gif %})
+
+## The repository
+
+The code we will develop is stored in a dedicated repository: [github.com/telatin/nextflow-example](https://github.com/telatin/nextflow-example).
+
 ## The programme
 
 * [A de novo assembly pipeline]({{ site.baseurl }}{% link _posts/2022-02-11-Nextflow-denovo.md %}): we will design a simple workflow to assemble and annotate microbial genomes
