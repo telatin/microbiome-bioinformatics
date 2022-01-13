@@ -214,6 +214,7 @@ number of lines.
 
 
 We are now (almost) ready to build our pipeline...
+
 --- 
 
 ## The workshop programme
