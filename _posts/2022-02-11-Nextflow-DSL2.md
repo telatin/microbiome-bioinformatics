@@ -188,6 +188,16 @@ Inspiration from [nf-core pipelines](https://github.com/nf-core/) will help
 seeing the potential, and the [config documentation](nextflow.io/docs/latest/config.html)
 is the obligate stop.
 
+
+### Execution information
+
+Our configuration file automatically saves the timeline, report and diagram of processes
+of each execution. See [tracing and visualization](https://www.nextflow.io/docs/latest/tracing.html?highlight=timeline) from the docs.
+
+* [:mag: Execution report (html)]({{ site.baseurl }}{% link attachments/nf-execution-report.html)
+* [:mag: Execution timeline (html)]({{ site.baseurl }}{% link attachments/nf-timeline.html)
+* [:mag: Diagram (svg)]({{ site.baseurl }}{% link attachments/nf-dag.svg)
+
 ---
 
 
