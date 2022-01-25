@@ -144,13 +144,23 @@ and we will use the [mix operator](https://www.nextflow.io/docs/latest/operator.
 
 `assembly_3.nf` will bring prokka into our MultiQC report. By default, MultiQC uses the name
 from the species in the Prokka log, but we don't have this information so we will tweak
-the MultiQC command passing a configuration string. MultiQC itself is a world worth exploring!
+the MultiQC command passing a configuration string. 
+A typical way - when the report grows - is 
+to create a yaml configuration file to feed to the MultiQC step, 
+but in our case we have just one parameter to feed that
+can easily added to the command line (`--cl_config "prokka_fn_snames: True"`).
+
+MultiQC itself is a world worth exploring! In out case just checking how the "Prokka" module
+works led to the fix in the configuration.
 
 ### Script 4: custom scripts
 
 In `assembly_4.nf` we add Abricate for AMR detection. The summary is not recognized by MultiQC
 but we can easily create a MultiQC friendly table with a custom script. In this way we showcase
 that programs placed in the `./bin` subdirectory of the script will be exposed in our processes.
+
+The `abricateToMqc.py` script is placed in the _bin_ directory and automatically exposed to each
+step of the pipeline. 
 
 ### Script 5: reusable modules
 
@@ -167,6 +177,9 @@ As you can see we adopted the convention of using uppercase module names. This m
 the scripts more readable.
 
 :bulb: The _nf-core_ community has a growing list of extremely well [curated modules](https://github.com/nf-core/modules)
+
+The next step in modularization is writing **subworkflows** that can be reused as they were a single module. A minimal
+example is [available here](https://github.com/nextflow-io/nextflow/blob/master/tests/subworkflow-dsl2.nf).
 
 ### Configuration
 

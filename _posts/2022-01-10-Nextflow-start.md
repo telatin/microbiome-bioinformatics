@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Nextflow tutorial (programme)"
+title:  "Nextflow DSL2 tutorial"
 author: at
 categories: [ nextflow, tutorial ]
 image: assets/images/nf/nextflow-main.jpg
@@ -36,7 +36,8 @@ are:
 
 All the solutions are rapidly evolving, and features present in one might be adopted from the other in a few months.
 We picked **Nextflow** because it was born with several key features like scalability and reproducibility, and it's widely adopted, but
-you might want to have a look around and see if Snakemake (for example) can work better for you.
+you might want to have a look around and see if Snakemake (for example) can work better for you. Specifically, we start directly introducing
+Nextflow latest syntax (DSL2), that introduced dramatic changes to the initial implementation (giving great advantages as a result).
 
 
 ## The workshop
@@ -49,6 +50,7 @@ With this website and its companion repository, we will build a basic *de novo* 
 ## The repository
 
 The code we will develop is stored in a dedicated repository: [github.com/telatin/nextflow-example](https://github.com/telatin/nextflow-example).
+The repository contains several "snapshots" of the pipeline to make it easier to reconstruct how it was built.
 
 ## The programme
 
@@ -59,5 +61,5 @@ The code we will develop is stored in a dedicated repository: [github.com/telati
 
 
 
-
+_Part of the CLIMB Workshop [Bioinformatics skills for Microbial Genomics](https://www.climb.ac.uk/bioinformatics-skills-microbial-genomics/) (02-02-2022)_
  
