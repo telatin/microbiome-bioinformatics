@@ -8,7 +8,7 @@ image: assets/images/nextflow.jpg
 
 ## First, let's run the pipeline!
 
-:movie_camera: [Screencast of this step](https://www.youtube.com/watch?v=Ovv_fKIS8us&ab_channel=AndreaTelatin)
+:movie_camera: [Screencast of this step](https://www.youtube.com/watch?v=1km8tPMU5Vo&t=37s&ab_channel=AndreaTelatin)
 
 Before starting from scratch, we can see an interesting feature of Nextflow: we can execute pipelines
 from a Github repository, without the need of downloading them first.
@@ -25,6 +25,13 @@ nextflow run telatin/nextflow-example -r main --reads 'data/*_R{1,2}.fastq.gz' -
 
 This means that developing our pipeline using a public repository, we can also instantly run it on any
 machine!
+
+:bulb: We can even run the pipeline without having created the conda environment: if we have Docker or Singularity we can:
+
+```bash
+nextflow run telatin/nextflow-example -r main -profile singularity \
+   --reads 'data/*_R{1,2}.fastq.gz' --outdir denovo-example
+```
 
 ### Execution and output
 
@@ -68,6 +75,7 @@ The _input_ parameter is used to create a **channel**, that will be the source o
 
 This first script has no processes, but will print the content of the channel via the `.view()` method. The output will be
 a "dictionary" of labels and an array of paths (two elements: forward and reverse pair):
+
 ```text
 [T7, [/vol/data/T7_R1.fastq.gz, /vol/data/T7_R2.fastq.gz]]
 [SRR12825099, [/vol/data/SRR12825099_R1.fastq.gz, /vol/data/SRR12825099_R2.fastq.gz]]
@@ -76,7 +84,6 @@ a "dictionary" of labels and an array of paths (two elements: forward and revers
 
 The script has an optional parameter, `--collect`, that shows what happens if we collect the channel (we merge).
 To discard the _keys_ we can use the map method (`.map{it -> it[1]}`), so our output will be a single list of paths.
-
 
 ```text
 [/vol/data/T7_R1.fastq.gz, /vol/data/T7_R2.fastq.gz, /vol/data/SRR12825099_R1.fastq.gz, /vol/data/SRR12825099_R2.fastq.gz, /vol/data/GCA009944615_R1.fastq.gz, /vol/data/GCA009944615_R2.fastq.gz]
@@ -213,12 +220,11 @@ of each execution. See [tracing and visualization](https://www.nextflow.io/docs/
 
 ---
 
-
-## The programme
+## The [programme]({{ site.baseurl }}{% link _posts/2022-02-10-Nextflow-start.md %})
 
 * :one: [A *de novo* assembly pipeline]({{ site.baseurl }}{% link _posts/2022-02-11-Nextflow-denovo.md %}): we will design a simple workflow to assemble and annotate microbial genomes
-* :two: [Gathering the tools]({{ site.baseurl }}{% link _posts/2022-02-11-Nextflow-containers.md %}): we will use Miniconda to gather our required tools, and generate Docker and Singularity containers manually (Nextflow can automate this step, but it's good to practice manually first)
-* :three: [First steps with Nextflow]({{ site.baseurl }}{% link _posts/2022-02-11-Nextflow-first-steps.md %}): we will install Nextflow and run a couple of test scripts
+* :two: [Gathering the tools]({{ site.baseurl }}{% link _posts/2022-02-12-Nextflow-containers.md %}): we will use Miniconda to gather our required tools, and generate Docker and Singularity containers manually (Nextflow can automate this step, but it's good to practice manually first)
+* :three: [First steps with Nextflow]({{ site.baseurl }}{% link _posts/2022-02-13-Nextflow-first-steps.md %}): we will install Nextflow and run a couple of test scripts
 * :four: **The *de novo* pipeline in Nextflow**: we will implement our pipeline in Nextflow
 
 :arrow_left: [Back to the Nextflow main page]({{ site.baseurl }}{% link _posts/2022-01-10-Nextflow-start.md %})

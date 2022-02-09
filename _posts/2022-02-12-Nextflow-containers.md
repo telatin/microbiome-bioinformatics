@@ -23,14 +23,14 @@ If we have specific requirements for one or more tools, we can pin its version.
 As an example, we will request Shovill to be 1.1.0 and MultiQC greater or equal to 1.10. 
 
 ```bash
-# Create a new environment called "*de novo*Pipeline" with the requested tools
-conda create -n *de novo*Pipeline fastp shovill=1.1.0 abricate prokka "multiqc>=1.10"
+# Create a new environment called "DenovoPipeline" with the requested tools
+mamba create -n DenovoPipeline fastp shovill=1.1.0 abricate prokka "multiqc>=1.10"
 ```
 
 To experiment with our tools we will need to activate the environment, with:
 
 ```bash
-conda activate *de novo*Pipeline
+conda activate DenovoPipeline
 ```
 
 ### Sharing our environment
@@ -66,7 +66,7 @@ from an empty Centos image).
 
 ---
 
-## The programme
+## The [programme]({{ site.baseurl }}{% link _posts/2022-02-10-Nextflow-start.md %})
 
 * :one: [A *de novo* assembly pipeline]({{ site.baseurl }}{% link _posts/2022-02-11-Nextflow-denovo.md %}): we will design a simple workflow to assemble and annotate microbial genomes
 * :two: **Gathering the tools**: we will use Miniconda to gather our required tools, and generate Docker and Singularity containers manually (Nextflow can automate this step, but it's good to practice manually first)
