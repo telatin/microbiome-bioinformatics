@@ -4,6 +4,7 @@ title:  "Nextflow: designing our pipeline"
 author: at
 categories: [ nextflow, tutorial ]
 image: assets/images/nextflow.jpg
+hidden: true
 ---
 
 ## Our goal

@@ -4,8 +4,6 @@ title:  "Taxonomic profiling of whole metagenome shotgun"
 author: at
 categories: [ metagenomics, tutorial ]
 image: assets/images/xray-bact.jpg
-hidden: true
-featured: true 
 ---
 
 ## CLIMB Workshop on Metagenomics taxonomic profiling

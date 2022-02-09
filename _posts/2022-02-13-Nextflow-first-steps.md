@@ -4,6 +4,7 @@ title:  "Nextflow: first steps"
 author: at
 categories: [ nextflow, tutorial ]
 image: assets/images/nextflow.jpg
+hidden: true
 ---
 
 ## Installing Nextflow

@@ -4,6 +4,7 @@ title:  "Nextflow DSL2 tutorial"
 author: at
 categories: [ nextflow, tutorial ]
 image: assets/images/nf/nextflow-main.jpg
+featured: true
 ---
 
 ## The problem

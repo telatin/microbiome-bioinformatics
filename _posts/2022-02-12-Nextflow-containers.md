@@ -4,6 +4,7 @@ title:  "Tools: using Miniconda and containers"
 author: at
 categories: [ nextflow, tutorial ]
 image: assets/images/nextflow.jpg
+hidden: true
 ---
 
 ## Gathering the tools

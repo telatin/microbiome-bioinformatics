@@ -4,8 +4,6 @@ title:  "16S Analysis with Qiime2"
 author: at
 categories: [ metabarcoding, tutorial ]
 image: assets/images/qiime.jpg
-hidden: true
-featured: false 
 ---
 
 ## CLIMB Workshop on Metabarcoding (16S) analysis
