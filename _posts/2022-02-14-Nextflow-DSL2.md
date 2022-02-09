@@ -4,6 +4,7 @@ title:  "Nextflow: implementing a simple pipeline"
 author: at
 categories: [ nextflow, tutorial ]
 image: assets/images/nextflow.jpg
+hidden: true
 ---
 
 ## First, let's run the pipeline!
@@ -70,7 +71,7 @@ all executable. This page guides to the added features.
 ### Script 0: Getting parameters
 
 `assembly_0.nf` has two purposes: collecting the parameters required by the pipeline, namely _input_ and _outdir_
-(this is something we already [tried]({{ site.baseurl }}{% link _posts/2022-02-11-Nextflow-first-steps.md %})).
+(this is something we already [tried]({{ site.baseurl }}{% link _posts/2022-02-13-Nextflow-first-steps.md %})).
 The _input_ parameter is used to create a **channel**, that will be the source of data for our pipeline.
 
 This first script has no processes, but will print the content of the channel via the `.view()` method. The output will be
@@ -220,7 +221,7 @@ of each execution. See [tracing and visualization](https://www.nextflow.io/docs/
 
 ---
 
-## The [programme]({{ site.baseurl }}{% link _posts/2022-02-10-Nextflow-start.md %})
+## The [programme]({{ site.baseurl }}{% link _posts/2022-01-10-Nextflow-start.md %})
 
 * :one: [A *de novo* assembly pipeline]({{ site.baseurl }}{% link _posts/2022-02-11-Nextflow-denovo.md %}): we will design a simple workflow to assemble and annotate microbial genomes
 * :two: [Gathering the tools]({{ site.baseurl }}{% link _posts/2022-02-12-Nextflow-containers.md %}): we will use Miniconda to gather our required tools, and generate Docker and Singularity containers manually (Nextflow can automate this step, but it's good to practice manually first)

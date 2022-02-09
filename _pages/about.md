@@ -8,5 +8,8 @@ comments: true
 # Welcome to Microbiome Binfies
 
 Some notes and tutorials for microbiologists interested in bioinformatics.
+I started organising content for various workshop in this page to allow for easier sharing
+of common contents, and because I liked the layout more than GitHub wikis (my previous
+choice for handsout).
 
-:package: [repository](https://github.com/telatin/microbiome-bioinformatics)
+Found typos? :package: [repository](https://github.com/telatin/microbiome-bioinformatics)

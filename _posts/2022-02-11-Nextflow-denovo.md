@@ -59,7 +59,7 @@ sparkling interest on learning Nextflow more.
 
 --- 
 
-## The [programme]({{ site.baseurl }}{% link _posts/2022-02-10-Nextflow-start.md %})
+## The [programme]({{ site.baseurl }}{% link _posts/2022-01-10-Nextflow-start.md %})
 
 * :one: **A *de novo* assembly pipeline**: we will design a simple workflow to assemble and annotate microbial genomes
 * :two: [Gathering the tools]({{ site.baseurl }}{% link _posts/2022-02-12-Nextflow-containers.md %}): we will use Miniconda to gather our required tools, and generate Docker and Singularity containers manually (Nextflow can automate this step, but it's good to practice manually first)
