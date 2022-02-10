@@ -4,6 +4,7 @@ title:  "Metaphage"
 author: at
 categories: [ nextflow  ]
 image: assets/images/code.jpg
+hidden: true
 ---
 
 ## What is MetaPhage
