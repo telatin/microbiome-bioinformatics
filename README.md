@@ -1,3 +1,3 @@
 # Microbiome Bioinformatics
 
-[Microbiome Binfies, tutorials](https://telatin.github.io/microbiome-binfies)
+[Microbiome Binfies, tutorials](https://telatin.github.io/microbiome-bioinformatics/)
