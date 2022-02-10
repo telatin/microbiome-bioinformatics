@@ -22,7 +22,7 @@ to do so the files must have the same column and in the same order.
 
 In our workshop directory we have the three directories, let's check their content with:
 
-```
+```bash
 ls reads
 ls reads-no-host
 ls filt
@@ -55,7 +55,7 @@ make the identifier different. _SeqFu_ has an option to fix this (`-b`).
 
 ### Counting with a loop
 
-```
+```bash
 for DIR in reads reads-no-host filt;
 do
   seqfu count -b $DIR/*.gz  |  cut -f 1,2 | sort   | sed 's/_1/_R1/' > ${DIR}.counts
@@ -66,7 +66,7 @@ done
 
 Join can only work with two files:
 
-```
+```bash
 join reads.counts reads-no-host.counts
 ```
 
@@ -83,12 +83,15 @@ Sample6_R1.fq.gz 1000000 920125
 ```
 
 So we can use an intermediate file:
-```
+
+```bash
 join reads.counts reads-no-host.counts > tmp.txt
+```
 
 Then we can prepare the header line, and add the columns after manipulating the strings a little bit,
 so that we convert the space to comma and we strip the suffix:
-```
+
+```bash
 echo 'Sample,Reads,NoHost,Filtered' > table.csv
 join tmp.txt filt.counts | sed 's/ /,/g'  | sed 's/_R1.fq.gz//' >> table.csv
 ```
