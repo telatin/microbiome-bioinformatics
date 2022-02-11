@@ -4,7 +4,6 @@ title:  "Fast bioinformatics containers with Micromamba"
 author: at
 categories: [ docker, singularity, conda, tutorial ]
 image: assets/images/total_landscaping.jpg
-hidden: true
 ---
 
 ## From Conda to Docker
