@@ -18,12 +18,12 @@ a Docker container.
 ### Generating the environment
 
 We will use **mamba** to quickly generate a new environment with the tools we need 
-(see [Miniconda tutorial]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})).
+(see :book: [**Miniconda tutorial**]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})).
 
-For this example we will use a set of tools from bioconda:
+For this example we will use a set of tools from bioconda. If needed, we can specify the exact version,
+or a version range (e. g. `samtools>=1.14`).
 
 ```bash
-# If needed, the version of some tools can be "pinned"
 mamba env create -n MyEnv -c conda-forge -c bioconda -y \
   fastp  bwa "seqfu>1.9" "samtools=1.14"
 ```
@@ -65,7 +65,8 @@ To build the image:
 docker build -t imagename .
 ```
 
-:bulb: To give your use the permission to execute sudo-less docker:
+:bulb: By default, Docker will run as a root (thus requiring _sudo_). To allow your
+user to run _sudo-less_ docker commands:
 
 ```bash
 sudo groupadd docker
@@ -76,7 +77,7 @@ newgrp docker
 ### Singularity
 
 If you push your docker container to a hub, from there you can pull the image
-as a singularity container. If using Docker Hub, for example:
+as a singularity container. If using [Docker Hub](https://hub.docker.com/), for example:
 
 1. `docker login` with your username and password (required once)
 2. Build the image tagging it as `username/imagename:version`
