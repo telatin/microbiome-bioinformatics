@@ -24,7 +24,7 @@ that will guide the user through:
 
 ### Output report
 
-:star: [Pipeline report]({{ site.baseurl }}{% link attachments/metaphage/demo/index.html %}): we will design a simple workflow to assemble and annotate microbial genomes
+:star: [Pipeline report]({{ site.baseurl }}{% link attachments/metaphage/demo/report/index.html %}): we will design a simple workflow to assemble and annotate microbial genomes
 
 ### Pipeline execution introspection
 
