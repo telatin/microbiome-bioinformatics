@@ -9,20 +9,22 @@ hidden: true
 
 ## What is MetaPhage
 
-MetaPhage is a Nextflow pipeline for viromics analyses (more info coming soon).
+MetaPhage is a Nextflow pipeline for viromics analyses (under development, more info coming soon).
 
-### Running the pipeline with a test dataset
+### A worked tutorial
 
-1. Download the required databases using `db_manager.py` supplied in the repository. We will save them in the `./db` subdirectory of the repository
-2. Either create the conda environment or use a Singularity image (we will use the latter)
-3. Download the example dataset (for example using `get_example.py`)
-4. Update the configuration file with the paths of your system as documented in the pipeline manual
-5. Run the pipeline `nextflow run main.nf --readPath $DIR --metaPath $DIR`
+MetaPhage comes with a [step-by-step tutorial](https://mattiapandolfovr.github.io/MetaPhage/tutorial)
+that will guide the user through:
+
+1. The installation of the package
+2. The download of a demo dataset
+3. The installation of the dependencies either using Miniconda or downloading a Singularity image
+4. The generation of a configuration file
+5. The execution of the pipeline
 
 ### Output report
 
-:star: [Pipeline report]({{ site.baseurl }}{% link attachments/metaphage/index.html %}): we will design a simple workflow to assemble and annotate microbial genomes
-
+:star: [Pipeline report]({{ site.baseurl }}{% link attachments/metaphage/demo/index.html %}): we will design a simple workflow to assemble and annotate microbial genomes
 
 ### Pipeline execution introspection
 
