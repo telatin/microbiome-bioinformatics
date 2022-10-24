@@ -30,11 +30,11 @@ I would recommend to always start with real data. Maybe a small dataset to begin
 own complexities and caveats, which we can understand - and model our code accordingly - immediately.
 
 
-From GitHub we can download a couple of large text files like [Harry Potter Book 1](https://raw.githubusercontent.com/formcept/whiteboard/master/nbviewer/notebooks/data/harrypotter/Book%201%20-%20The%20Philosopher's%20Stone.txt") and [Moby Dick](https://gist.githubusercontent.com/StevenClontz/4445774/raw/1722a289b665d940495645a5eaaad4da8e3ad4c7/mobydick.txt):
+From GitHub we can download a couple of large text files like [Harry Potter Book 1](https://raw.githubusercontent.com/formcept/whiteboard/master/nbviewer/notebooks/data/harrypotter/Book%201%20-%20The%20Philosopher's%20Stone.txt") and [On the Origin of Species](https://www.gutenberg.org/ebooks/1228):
 
 ```bash
 wget -O harry.txt "https://raw.githubusercontent.com/formcept/whiteboard/master/nbviewer/notebooks/data/harrypotter/Book%201%20-%20The%20Philosopher's%20Stone.txt"
-wget -O moby.txt "https://gist.githubusercontent.com/StevenClontz/4445774/raw/1722a289b665d940495645a5eaaad4da8e3ad4c7/mobydick.txt"
+wget -O origin.txt "https://raw.githubusercontent.com/telatin/learn_bash/master/files/origin.txt"
 
 And if you really want to scale up your project, you can download loads of books from [Project Gutenberg](https://www.gutenberg.org/), like:
 
@@ -102,6 +102,7 @@ easily imported in R, and plotted from there.
 
 Alternatively, there are also Python libraries for plotting, like [matplotlib](https://matplotlib.org/).
 
+In addition to plotting, the new script also make use of a commonly used [logging library](https://docs.python.org/3/howto/logging.html), instead of printing to the console.
 
 A first script is available as
 [`gutenwords-topandplot.py`](https://github.com/telatin/learn_bash/blob/master/scripts/gutenwords-topandplot.py),
@@ -120,5 +121,15 @@ the cumulative curve from all the books.
 
 ![Example plot](https://raw.githubusercontent.com/telatin/learn_bash/master/files/gutenberg-plot.png)
 
+## Going even further
 
+The classical application of Zipf's law is to the distribution of words in a text, but there are applications to
+other fields, including [biological sequences](https://pubmed.ncbi.nlm.nih.gov/?term=%22Zipf+law%22+AND+protein).
 
+You can try to apply the same approach to biological datasets and see if they obey the law.
+
+![Paper]({{ site.baseurl }}{% link assets/images/ss/zipf.png %})
+
+## Further reading
+
+* [The Principle of Least Effort and Zipf Distribution in Information Retrieval](https://medium.com/geekculture/the-principle-of-least-effort-and-zipf-distribution-in-information-retrieval-a7199d68465f) by Audhi Aprilliant
