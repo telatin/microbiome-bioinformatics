@@ -65,9 +65,11 @@ Some elements are ready to go:
 * Outdir: the desired output directory (create it first)
 * Pipeline directory: simply the full path to phanta's repository
   
-For the sample file, you can generate one with SeqFu:
+For the sample file, you can generate one with [SeqFu](https://github.com/telatin/seqfu2/):
 
 ```bash
+# SeqFu can be installed via:
+# conda install -c bioconda -c conda-forge seqfu
 seqfu metadata /path/to/reads | grep -v sample-id > /path/to/metadata.txt
 ```
 
