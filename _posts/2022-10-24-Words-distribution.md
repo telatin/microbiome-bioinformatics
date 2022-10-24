@@ -127,9 +127,10 @@ the cumulative curve from all the books.
 The classical application of Zipf's law is to the distribution of words in a text, but there are applications to
 other fields, including [biological sequences](https://pubmed.ncbi.nlm.nih.gov/?term=%22Zipf+law%22+AND+protein).
 
-You can try to apply the same approach to biological datasets and see if they obey the law.
+You can try to apply the same approach to biological datasets and see if they obey the law. See below a vintage
+example from a paper from 1986.
 
-![Paper]({{ site.baseurl }}{% link assets/images/ss/zipf.png %})
+[![An old example]({{ site.baseurl }}{% link assets/images/ss/zipf.png %})](https://www.google.com/search?q=the+genetic+code+and+zipfs+law&oq=the+genetic+code+and+zipfs+law&aqs=chrome..69i57j33i10i160.3536j0j4&sourceid=chrome&ie=UTF-8)
 
 ## Further reading
 
