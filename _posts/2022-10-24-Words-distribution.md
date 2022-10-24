@@ -12,30 +12,44 @@ It is also a good example of how to use Python to process text files.
 With this post I hope to set a nice goal for beginners.
 
 
-## The background
+## The background: Zipf's law
 
 Counting words is trivial, but I'd like to set the wider background on the topic
 with this video which summarizes in simple word the main concepts:
 
 [![Video thumbnail](https://img.youtube.com/vi/fCn8zs912OE/3.jpg) Video: The Zipf Mystery (VSauce) ](https://www.youtube.com/watch?v=fCn8zs912OE")
 
-This video can inspire all sort of projects, from simple word counting to more complex plot makers!
+This video can inspire all sort of projects, from simple word counting to more complex plot makers, so it's the
+recommended start for this journey.
 
 ## Getting the text files
 
-From GitHub we can download a couple of large text files like:
-* [Harry Potter Book 1](https://raw.githubusercontent.com/formcept/whiteboard/master/nbviewer/notebooks/data/harrypotter/Book%201%20-%20The%20Philosopher's%20Stone.txt")
-* [Moby Dick](https://gist.githubusercontent.com/StevenClontz/4445774/raw/1722a289b665d940495645a5eaaad4da8e3ad4c7/mobydick.txt)
+Every project requires some data, and it's tempting to use libraries providing polished datasets ready to start with.
+For this project one could be tempted to use the [NLTK](https://www.nltk.org/api/nltk.corpus.html) library, however
+I would recommend to always start with real data. Maybe a small dataset to begin with... but real files with their 
+own complexities and caveats, which we can understand - and model our code accordingly - immediately.
+
+
+From GitHub we can download a couple of large text files like [Harry Potter Book 1](https://raw.githubusercontent.com/formcept/whiteboard/master/nbviewer/notebooks/data/harrypotter/Book%201%20-%20The%20Philosopher's%20Stone.txt") and [Moby Dick](https://gist.githubusercontent.com/StevenClontz/4445774/raw/1722a289b665d940495645a5eaaad4da8e3ad4c7/mobydick.txt):
+
+```bash
+wget -O harry.txt "https://raw.githubusercontent.com/formcept/whiteboard/master/nbviewer/notebooks/data/harrypotter/Book%201%20-%20The%20Philosopher's%20Stone.txt"
+wget -O moby.txt "https://gist.githubusercontent.com/StevenClontz/4445774/raw/1722a289b665d940495645a5eaaad4da8e3ad4c7/mobydick.txt"
 
 And if you really want to scale up your project, you can download loads of books from [Project Gutenberg](https://www.gutenberg.org/), like:
 
 ```bash
 # See https://www.gutenberg.org/policy/robot_access.html#how-to-get-certain-ebook-files
 wget -w 2 -m -H "http://www.gutenberg.org/robot/harvest?filetypes[]=txt&langs[]=en"
+
+# This will result in a complex directory structure, with a lot of zip files, which we can unpack with:
+find . -name "*.zip" | xargs -IF unzip F
 ```
 
 :bulb: note that if each file has a licence at the top/end, some words counts will be inflated (this can be
-mitigate by our cleanup code)
+mitigate by our cleanup code). In our latest examples (below) we will use a custom iterator to only retrieve
+the lines between `*** START OF` and `*** END OF`, which in our Gutenberg Project dataset are delimiters for the
+actual text.
 
 ## A first attempt
 
@@ -84,7 +98,7 @@ The results are [available here (v1)](https://github.com/telatin/learn_bash/blob
 ## Going further
 
 A next step can be plotting the results. The output of our script is a three columsn table, which can be 
-easily imported in R.
+easily imported in R, and plotted from there.
 
 Alternatively, there are also Python libraries for plotting, like [matplotlib](https://matplotlib.org/).
 
@@ -94,12 +108,15 @@ A first script is available as
 which contains a refactoring where we use *generators* to get lines and words. 
 A simple histogram plot is also added.
 
-![Example plot](https://raw.githubusercontent.com/telatin/learn_bash/master/files/gutenberg-freq.png)
+![Example plot: histogram](https://raw.githubusercontent.com/telatin/learn_bash/master/files/gutenberg-freq.png)
 
 A more detailed Zipf's law plot is the next step.
 There is a **[detailed tutorial](https://www.thepythoncode.com/article/plot-zipfs-law-using-matplotlib-python)**
 on how to use make it, and its code has been adapted to our previous scripts as
 [`gutenwords-plotzipf.py`](https://github.com/telatin/learn_bash/blob/master/scripts/gutenwords-plotzipf.py).
+
+In this example we plot a subset of books individually (the user can decide how many), and with a thicker line
+the cumulative curve from all the books.
 
 ![Example plot](https://raw.githubusercontent.com/telatin/learn_bash/master/files/gutenberg-plot.png)
 
