@@ -35,6 +35,7 @@ From GitHub we can download a couple of large text files like [Harry Potter Book
 ```bash
 wget -O harry.txt "https://raw.githubusercontent.com/formcept/whiteboard/master/nbviewer/notebooks/data/harrypotter/Book%201%20-%20The%20Philosopher's%20Stone.txt"
 wget -O origin.txt "https://raw.githubusercontent.com/telatin/learn_bash/master/files/origin.txt"
+```
 
 And if you really want to scale up your project, you can download loads of books from [Project Gutenberg](https://www.gutenberg.org/), like:
 
