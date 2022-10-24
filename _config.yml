@@ -45,6 +45,7 @@ plugins:
   - jekyll-archives
   - jemoji
   - jekyll-gist 
+  - jekyll-youtube
 
 # Archives
 jekyll-archives:
