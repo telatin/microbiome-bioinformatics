@@ -16,7 +16,7 @@ With this post I hope to set a nice goal for beginners.
 Counting words is trivial, but I'd like to set the wider background on the topic
 with this video which summarizes in simple word the main concepts:
 
-[![Video thumbnail](https://img.youtube.com/vi/fCn8zs912OE/3.jpg)](https://www.youtube.com/watch?v=fCn8zs912OE")
+[![Video thumbnail](https://img.youtube.com/vi/fCn8zs912OE/3.jpg) Video: The Zipf Mystery (VSauce) ](https://www.youtube.com/watch?v=fCn8zs912OE")
 
 This video can inspire all sort of projects, from simple word counting to more complex plot makers!
 
@@ -43,9 +43,9 @@ To do so, the script should be able to take as input a text file and a number *n
 
 We need to:
 
-1. Parse the arguments
-2. Read the file content as string
-3. Split the string into words (for example splitting on spaces, but some polishing would be welcome i.e. removing punctuation)
+1. Parse the arguments (see [here](https://realpython.com/lessons/sysargv-in-depth/))
+2. [Read the file](https://realpython.com/read-write-files-python/) content as string
+3. Split the string into words (for example splitting on spaces, but some polishing would be welcome *i.e.* removing punctuation)
 4. Iterating over the words counting each unique occurrence, incrementing values of a dictionary (are "Word" and "word" the same word?)
 5. Sorting the dictionary by value (see [this webpage](https://realpython.com/sort-python-dictionary/))
 6. Printing the first *n* words
@@ -93,14 +93,14 @@ A first script is available as
 which contains a refactoring where we use *generators* to get lines and words. 
 A simple histogram plot is also added.
 
-![Example plot](https://github.com/telatin/learn_bash/blob/master/files/gutenberg-freq.png)
+![Example plot](https://raw.githubusercontent.com/telatin/learn_bash/master/files/gutenberg-freq.png)
 
 A more detailed Zipf's law plot is the next step.
 There is a **[detailed tutorial](https://www.thepythoncode.com/article/plot-zipfs-law-using-matplotlib-python)**
 on how to use make it, and its code has been adapted to our previous scripts as
 [`gutenwords-plotzipf.py`](https://github.com/telatin/learn_bash/blob/master/scripts/gutenwords-plotzipf.py).
 
-![Example plot](https://github.com/telatin/learn_bash/blob/master/files/gutenberg-plot.png)
+![Example plot](https://raw.githubusercontent.com/telatin/learn_bash/master/files/gutenberg-plot.png)
 
 
 
