@@ -16,7 +16,7 @@ With this post I hope to set a nice goal for beginners.
 Counting words is trivial, but I'd like to set the wider background on the topic
 with this video which summarizes in simple word the main concepts:
 
-{% youtube "https://www.youtube.com/watch?v=fCn8zs912OE" %}
+[![Video thumbnail](https://img.youtube.com/vi/fCn8zs912OE/3.jpg)](https://www.youtube.com/watch?v=fCn8zs912OE")
 
 This video can inspire all sort of projects, from simple word counting to more complex plot makers!
 
