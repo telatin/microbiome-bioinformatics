@@ -3,6 +3,7 @@ layout: post
 title:  "Word distribution, and example project for Python beginners"
 author: at
 categories: [ python, distribution, project ]
+image: assets/images/dalle/books.png
 hidden: false
 ---
 
