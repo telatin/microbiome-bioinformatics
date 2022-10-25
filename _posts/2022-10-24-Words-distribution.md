@@ -126,12 +126,18 @@ the cumulative curve from all the books.
 
 The classical application of Zipf's law is to the distribution of words in a text, but there are applications to
 other fields, including [biological sequences](https://pubmed.ncbi.nlm.nih.gov/?term=%22Zipf+law%22+AND+protein).
+It can be a bit challenging to define words, but the same principle can be applied to any sequence of characters.
 
-You can try to apply the same approach to biological datasets and see if they obey the law. See below a vintage
-example from a paper from 1986.
+Applications in bioinformatics started in the early stages of the field: see below a vintage example from a paper from 1986.
 
 [![An old example]({{ site.baseurl }}{% link assets/images/ss/zipf.png %})](https://www.google.com/search?q=the+genetic+code+and+zipfs+law&oq=the+genetic+code+and+zipfs+law&aqs=chrome..69i57j33i10i160.3536j0j4&sourceid=chrome&ie=UTF-8)
 
+There is a related extension (TF-IDF, short for *term frequency–inverse document frequency*) which has also been used in genomics, *e.g.* 
+to [detect HGT](https://www.nature.com/articles/srep30308) or to (cluster genes and genomes)[https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4922-4]
+
 ## Further reading
 
-* [The Principle of Least Effort and Zipf Distribution in Information Retrieval](https://medium.com/geekculture/the-principle-of-least-effort-and-zipf-distribution-in-information-retrieval-a7199d68465f) by Audhi Aprilliant
+* :star: [**The Principle of Least Effort and Zipf Distribution in Information Retrieval**](https://medium.com/geekculture/the-principle-of-least-effort-and-zipf-distribution-in-information-retrieval-a7199d68465f) by Audhi Aprilliant - a brilliant and articulated post on Medium describing how to analyze word frequencies with Python, with worked examples.
+* Cristelli, M., Batty, M. & Pietronero, L. [There is More than a Power Law in Zipf](https://www.nature.com/articles/srep00812) - a paper published in Scientific Reports, 2012.
+* [Characterizing/Fitting Word Count Data into Zipf / Power Law / LogNormal](https://stats.stackexchange.com/questions/331219/characterizing-fitting-word-count-data-into-zipf-power-law-lognormal), one of the many questions answered in the StackOverflow network.
+* [Investigating words distribution with R](https://appsilon.com/investigating-words-distribution-with-r-zipfs-law/) - Data analysis with R, the other popular language for data science. This is short and simple tutorial.
