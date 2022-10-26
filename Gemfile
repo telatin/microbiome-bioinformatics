@@ -19,4 +19,5 @@ group :jekyll_plugins do
     gem 'rouge'
     gem 'jemoji'
     gem "jekyll-youtube"
+    gem "jekyll-gist"
 end
