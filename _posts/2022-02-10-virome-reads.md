@@ -15,18 +15,20 @@ The reads are available from the NCBI SRA under the accession number [PRJNA52470
 From the study, we selected 10 samples (5 C-section delivery and 5 vaginal delivery), having the 
 following IDs (and partial metadata):
 
-Sample|Subject_id|Sample_source|Study_group|Infant_feeding_type|Infant_formula_type|Infant_delivery_type|Infant_gender
-----------|---|-----|-------|-------|--------------|-----------------------|---
-SRR8653245|373|Stool|Month 4|Formula|cow-milk based|C-Section without labor|Female
-SRR8653218|357|Stool|Month 4|Formula|cow-milk based|C-Section without labor|Male
-SRR8653221|359|Stool|Month 4|Formula|cow-milk based|C-Section without labor|Male
-SRR8653248|368|Stool|Month 4|Formula|cow-milk based|C-Section without labor|Male
-SRR8653247|365|Stool|Month 4|Formula|soy-protein based|C-Section without labor|Female
-SRR8653084|389|Stool|Month 4|Formula|cow-milk based|Spontaneous vaginal delivery|Female
-SRR8652914|394|Stool|Month 4|Formula|cow-milk based|Spontaneous vaginal delivery|Female
-SRR8652969|398|Stool|Month 4|Formula|cow-milk based|Spontaneous vaginal delivery|Male
-SRR8652861|340|Stool|Month 4|Formula|cow-milk based|Spontaneous vaginal delivery|Female
-SRR8653090|376|Stool|Month 4|Formula|cow-milk based|Spontaneous vaginal delivery|Female
+Sample|Feeding_type|Formula_type|Delivery_type|Gender
+----------|-------|--------|---------|---
+SRR8653245|Formula|cow-milk|C-Section|Female
+SRR8653218|Formula|cow-milk|C-Section|Male
+SRR8653221|Formula|cow-milk|C-Section|Male
+SRR8653248|Formula|cow-milk|C-Section|Male
+SRR8653247|Formula|soy-protein|C-Section|Female
+SRR8653084|Formula|cow-milk|Spontaneous delivery|Female
+SRR8652914|Formula|cow-milk|Spontaneous delivery|Female
+SRR8652969|Formula|cow-milk|Spontaneous delivery|Male
+SRR8652861|Formula|cow-milk|Spontaneous delivery|Female
+SRR8653090|Formula|cow-milk|Spontaneous delivery|Female
+
+They are all **stool** samples from **4 months old** infants.
 
 These 10 samples were re-analysed in our [*MetaPhage pipeline* paper](https://journals.asm.org/doi/10.1128/msystems.00741-22), and we will call them the "full" dataset.
 
@@ -44,13 +46,15 @@ SRR8652914
 SRR8652969
 ```
 
+:warning: For the [EBAME workshop]({{ site.baseurl }}{% link _posts/2022-02-02-virome-ebame.md %}) the reads are pre-downloaded 
+
 Then we can use a NextFlow pipeline to automatically download the reads (and the needed tools).
 If we use Miniconda as dependency manager, we can run the following command:
 
 
 ```bash
 nextflow run telatin/getreads -r main \
-  --list list.txt -profile conda
+   --list list.txt -profile conda
 ```
 
 :bulb: If Docker is available, we can replace the `-profile conda` with `-profile docker`.
@@ -59,7 +63,8 @@ nextflow run telatin/getreads -r main \
 
 ## The programme
 
-* :one:[**Gathering the reads**:
+* :zero: [EBAME-22 notes]({{ site.baseurl }}{% link _posts/2022-02-02-virome-ebame.md %}): EBAME-7 specific notes
+* :one: [Gathering the reads]({{ site.baseurl }}{% link _posts/2022-02-10-virome-reads.md %}):
   downloading and subsampling reads from public repositories (optional)
 * :two: [Gathering the tools]({{ site.baseurl }}{% link _posts/2022-02-11-virome-tools.md %}):
   we will use Miniconda to manage our dependencies

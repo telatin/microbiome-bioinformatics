@@ -9,6 +9,8 @@ hidden: true
 
 ## Install "conda" (and "mamba")
 
+:warning: Conda is pre-installed in EBAME VMs. Check the [EBAME-7 notes]({{ site.baseurl }}{% link _posts/2022-02-02-virome-ebame.md %}) for more details.
+
 **Miniconda** is a package manager widely adopted in bioinformatics,
 as it allows to install and manage software packages with minimal
 effort and also to create isolated environments for each project,
@@ -28,15 +30,16 @@ itself was installed with `conda install -c conda-forge mamba`.
 
 ## The programme
 
+* :zero: [EBAME-22 notes]({{ site.baseurl }}{% link _posts/2022-02-02-virome-ebame.md %}): EBAME-7 specific notes
 * :one: [Gathering the reads]({{ site.baseurl }}{% link _posts/2022-02-10-virome-reads.md %}):
   downloading and subsampling reads from public repositories (optional)
-* :two: **Gathering the tools**:
+* :two: [Gathering the tools]({{ site.baseurl }}{% link _posts/2022-02-11-virome-tools.md %}):
   we will use Miniconda to manage our dependencies
 * :three: [Reads by reads profiling]({{ site.baseurl }}{% link _posts/2022-02-12-virome-phanta.md %}):
   using Phanta to quickly profile the bacterial and viral components of a microbial community
 * :four:  [_De novo_ mining]({{ site.baseurl }}{% link _posts/2022-02-13-virome-denovo.md %}):
   assembly based approach, using VirSorter as an example miner
-* :five:  [_De novo_ mining]({{ site.baseurl }}{% link _posts/2022-02-14-virome-taxonomy.md %}):
+* :five:  [Viral taxonomy]({{ site.baseurl }}{% link _posts/2022-02-14-virome-taxonomy.md %}):
   *ab initio* taxonomy profiling using vConTACT2
 * :six:  [MetaPhage overview]({{ site.baseurl }}{% link _posts/2022-02-15-virome-metaphage.md %}):
   what is MetaPhage, a reads to report pipeline for viral metagenomics
