@@ -19,6 +19,8 @@ We already described the first two steps in the [previous post]({{ site.baseurl 
 
 ## Setup
 
+:warning: See Ebame specific notes and skip this section
+
 Phanta's installation is not automated, but all its dependencies can be 
 installed using an environment file for Miniconda.
 

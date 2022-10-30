@@ -23,6 +23,11 @@ itself was installed with `conda install -c conda-forge mamba`.
 
 * Read more [about Miniconda and Mamba]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})
 
+## What tools
+
+* A de novo assembly program, such as MegaHit or Spades. They are both readily available from BioConda
+* One or more viral mining tools, such as VirSorter2 (BioConda)
+* A classifier: Phanta
 
 
 

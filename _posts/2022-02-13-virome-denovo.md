@@ -63,11 +63,40 @@ two tools:
 [VirSorter2](https://github.com/jiarong/VirSorter2), a complete pipeline, and
 [VirFinder](https://github.com/jessieren/VirFinder), an R package.
 
-### VirSorter 2
+### VirSorter 2 (EBAME)
+
+```bash
+cd 
+cp -r $VIR/virsorter2/ .
+virsorter run -w $OUT -d ~/virsorter2/ -i $CONTIGS -j 16
+```
+
+where:
+* `-w OUTPUT_DIR` is the output directory path
+* `-d PATH_DB` is the path to the VirSorter2 database and environments
+* `-i CONTIGS_FASTA` is the fasta file produced by the assembler
+* `-j THREADS` is the number of jobs to run in parallel
 
 ### (parallel) VirFinder
 
+We can install a [parallelised version](https://github.com/quadram-institute-bioscience/parallel-virfinder) of 
+[VirFinder](https://github.com/jessieren/VirFinder) using conda:
 
+```bash
+mamba install -c bioconda -c conda-forge parallel-virfinder
+```
+
+to use it:
+```bash
+parallel-virfinder.py -i CONTIGS -o OUTPUT -f FASTA_OUTPUT -n 16  -s MIN_SCORE -p MAX_P_VALUE
+```
+
+MIN_SCORE and MAX_P_VALUE are supplied with defaults values, but you can change them if you want.
+
+* `-i CONTIGS` is the fasta file produced by the assembler (input)
+* `-f OUTPUT` is the set of viral contigs (output)
+* `-o OUTPUT` is the tabular output 
+  
 ---
 
 ## The programme

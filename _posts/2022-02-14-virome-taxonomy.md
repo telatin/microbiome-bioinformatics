@@ -7,6 +7,15 @@ image: assets/images/virome.jpg
 hidden: true
 ---
 
+**vConTACT2** is a tool to infer the taxonomic relationship of viral sequences with
+a network-based approach, based on whole genome gene-sharing profiles.
+
+* [vConTACT2 repository](https://bitbucket.org/MAVERICLab/vcontact2/wiki/Home)
+* [vConTACT2 paper](https://pubmed.ncbi.nlm.nih.gov/31061483/)
+
+To make use of its output there is a tool called [graphanalyzer](https://github.com/lazzarigioele/graphanalyzer),
+and its repository comes with a tutorial.
+
 ---
 
 ## The programme

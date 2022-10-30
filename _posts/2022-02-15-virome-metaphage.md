@@ -7,6 +7,15 @@ image: assets/images/virome.jpg
 hidden: true
 ---
 
+[MetaPhage](https://mattiapandolfovr.github.io/MetaPhage/) is a complete reads-to-report pipeline for viral metagenomics. It is a Nextflow pipeline that can be run on a local machine or on a cluster. It is designed to be easy to use and to provide a complete report of the analysis. 
+
+[![MetaPhage pipeline]([/assets/images/metaphage/metaphage.png](https://github.com/MattiaPandolfoVR/MetaPhage/raw/dev/figures/metaphage.drawio.svg))](https://mattiapandolfovr.github.io/MetaPhage/)
+
+See:
+* [a quick overview]({{ site.baseurl }}{% link _posts/2022-01-01-MetaPhage-output.md %})
+* [MetaPhage paper](https://journals.asm.org/doi/full/10.1128/msystems.00741-22?rfr_dat=cr_pub++0pubmed&url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org) (Open Access)
+
+
 ---
 
 ## The programme
