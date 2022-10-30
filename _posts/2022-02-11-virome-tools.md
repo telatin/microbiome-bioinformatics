@@ -7,6 +7,8 @@ image: assets/images/virome.jpg
 hidden: true
 ---
 
+> A short overview of tools used and how to get them 
+
 ## Install "conda" (and "mamba")
 
 :warning: Conda is pre-installed in EBAME VMs. Check the [EBAME-7 notes]({{ site.baseurl }}{% link _posts/2022-02-02-virome-ebame.md %}) for more details.
@@ -21,15 +23,25 @@ which is faster and more efficient than conda. In simple terms, replacing
 `conda` with `mamba` will speed up the installations, as long as Mamba
 itself was installed with `conda install -c conda-forge mamba`.
 
-* Read more [about Miniconda and Mamba]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})
+* Read more about how to [**rinstall Miniconda and Mamba**]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})
 
 ## What tools
 
-* A de novo assembly program, such as MegaHit or Spades. They are both readily available from BioConda
+* A *de novo* assembly program, such as MegaHit or Spades. They are both readily available from BioConda
 * One or more viral mining tools, such as VirSorter2 (BioConda)
 * A classifier: Phanta
 
+Some programs are fully available as BioConda packages, and simply
 
+
+```bash
+mamba install -c conda-forge -c bioconda megahit
+```
+
+will install the assembler.
+
+Viromic programs sometimes are either unavailable from BioConda
+or they require further steps to download the databases.
 
 ---
 
@@ -38,7 +50,7 @@ itself was installed with `conda install -c conda-forge mamba`.
 * :zero: [EBAME-22 notes]({{ site.baseurl }}{% link _posts/2022-02-02-virome-ebame.md %}): EBAME-7 specific notes
 * :one: [Gathering the reads]({{ site.baseurl }}{% link _posts/2022-02-10-virome-reads.md %}):
   downloading and subsampling reads from public repositories (optional)
-* :two: [Gathering the tools]({{ site.baseurl }}{% link _posts/2022-02-11-virome-tools.md %}):
+* :two: Gathering the tools:
   we will use Miniconda to manage our dependencies
 * :three: [Reads by reads profiling]({{ site.baseurl }}{% link _posts/2022-02-12-virome-phanta.md %}):
   using Phanta to quickly profile the bacterial and viral components of a microbial community

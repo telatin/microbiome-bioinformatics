@@ -29,7 +29,7 @@ and its repository comes with a tutorial.
   using Phanta to quickly profile the bacterial and viral components of a microbial community
 * :four:  [_De novo_ mining]({{ site.baseurl }}{% link _posts/2022-02-13-virome-denovo.md %}):
   assembly based approach, using VirSorter as an example miner
-* :five:  [Viral taxonomy]({{ site.baseurl }}{% link _posts/2022-02-14-virome-taxonomy.md %}):
+* :five:  Viral taxonomy:
   *ab initio* taxonomy profiling using vConTACT2
 * :six:  [MetaPhage overview]({{ site.baseurl }}{% link _posts/2022-02-15-virome-metaphage.md %}):
   what is MetaPhage, a reads to report pipeline for viral metagenomics

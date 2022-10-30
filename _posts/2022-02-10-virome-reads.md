@@ -7,6 +7,8 @@ image: assets/images/virome.jpg
 hidden: true
 ---
 
+> The goal of this section is to get a set of reads to test our programs with
+
 An example dataset can be gathered from the paper by
 Liang et al. "[The stepwise assembly of the neonatal virome is modulated by breastfeeding](https://www.nature.com/articles/s41586-020-2192-1)" (2020).
 
@@ -64,7 +66,7 @@ nextflow run telatin/getreads -r main \
 ## The programme
 
 * :zero: [EBAME-22 notes]({{ site.baseurl }}{% link _posts/2022-02-02-virome-ebame.md %}): EBAME-7 specific notes
-* :one: [Gathering the reads]({{ site.baseurl }}{% link _posts/2022-02-10-virome-reads.md %}):
+* :one: Gathering the reads:
   downloading and subsampling reads from public repositories (optional)
 * :two: [Gathering the tools]({{ site.baseurl }}{% link _posts/2022-02-11-virome-tools.md %}):
   we will use Miniconda to manage our dependencies

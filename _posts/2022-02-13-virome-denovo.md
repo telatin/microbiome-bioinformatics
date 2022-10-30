@@ -65,10 +65,30 @@ two tools:
 
 ### VirSorter 2 (EBAME)
 
+VirSorter 2 comes with a [good documentation](https://github.com/jiarong/VirSorter2#readme).
+
+#### Setup
+
+VirSorter can be easily installed from BioConda. If you didn't do it already, create a "vs2" environment 
+with `virstorter=2` and activate it.
+
+The first step is to download the database:
+
 ```bash
-cd 
-cp -r $VIR/virsorter2/ .
-virsorter run -w $OUT -d ~/virsorter2/ -i $CONTIGS -j 16
+# Install the package
+mamba create -n virsorter2 -c conda-forge -c bioconda --yes virsorter=2
+conda activate virsorter2
+
+# One time database download [this may have been done for you in training servers]
+virsorter setup -d $OUTPUT_DB_PATH -j 4
+```
+
+#### Running VirSorter
+
+When the database is installed, you can run VirSorter on a single assembly:
+
+```bash
+virsorter run -w $OUT -d $VIR/virsorter2/ -i $CONTIGS -j 16 [--use-conda-off]
 ```
 
 where:
@@ -76,6 +96,7 @@ where:
 * `-d PATH_DB` is the path to the VirSorter2 database and environments
 * `-i CONTIGS_FASTA` is the fasta file produced by the assembler
 * `-j THREADS` is the number of jobs to run in parallel
+* `--use-conda-off` will allow to work with offline servers (requires a different installation)
 
 ### (parallel) VirFinder
 
@@ -87,8 +108,9 @@ mamba install -c bioconda -c conda-forge parallel-virfinder
 ```
 
 to use it:
+
 ```bash
-parallel-virfinder.py -i CONTIGS -o OUTPUT -f FASTA_OUTPUT -n 16  -s MIN_SCORE -p MAX_P_VALUE
+parallel-virfinder.py -i CONTIGS -o OUTPUT -f FASTA_OUTPUT -n 16  [-s MIN_SCORE -p MAX_P_VALUE]
 ```
 
 MIN_SCORE and MAX_P_VALUE are supplied with defaults values, but you can change them if you want.
@@ -96,7 +118,41 @@ MIN_SCORE and MAX_P_VALUE are supplied with defaults values, but you can change 
 * `-i CONTIGS` is the fasta file produced by the assembler (input)
 * `-f OUTPUT` is the set of viral contigs (output)
 * `-o OUTPUT` is the tabular output 
-  
+
+## Checking the results
+
+```bash
+# In the base environment
+mamba install -c bioconda checkv
+
+# Download the databases (a subdirectory will be created)
+checkv download_database  ~/checkv-dbs/
+```
+
+To run checkv:
+
+```bash
+checkv  end_to_end -d ~/checkv-db/checkv-db-v1.4/ -t 16 input-contigs.fa output-dir
+```
+
+The output directory includes:
+* viruses.fna
+* proviruses.fna
+* complete_genomes.tsv:  detailed overview of putative complete genomes identified
+* quality_summary.tsv: report on the program's modules for each contig
+
+For example, when running on the output of VirSorter2 on one sample in the dataset, CheckV discarded
+30% of the contigs:
+
+```text
+┌──────────────────────┬──────┬───────────┬──────────┬────────┬───────┬───────┬───────────┬─────┬─────────┐
+│ File                 │ #Seq │ Total bp  │ Avg      │ N50    │ N75   │ N90   │ auN       │ Min │ Max     │
+├──────────────────────┼──────┼───────────┼──────────┼────────┼───────┼───────┼───────────┼─────┼─────────┤
+│ final-viral-combined │ 745  │ 2,684,355 │ 3,603.16 │ 19,811 │ 3,156 │ 1,197 │ 28,566.17 │ 228 │ 124,265 │
+│ viruses              │ 716  │ 1,833,389 │ 2,560.60 │ 6,124  │ 1,956 │ 911   │ 17,494.67 │ 228 │ 70,755  │
+└──────────────────────┴──────┴───────────┴──────────┴────────┴───────┴───────┴───────────┴─────┴─────────┘
+```
+
 ---
 
 ## The programme
@@ -108,7 +164,7 @@ MIN_SCORE and MAX_P_VALUE are supplied with defaults values, but you can change 
   we will use Miniconda to manage our dependencies
 * :three: [Reads by reads profiling]({{ site.baseurl }}{% link _posts/2022-02-12-virome-phanta.md %}):
   using Phanta to quickly profile the bacterial and viral components of a microbial community
-* :four:  [_De novo_ mining]({{ site.baseurl }}{% link _posts/2022-02-13-virome-denovo.md %}):
+* :four:  _De novo_ mining:
   assembly based approach, using VirSorter as an example miner
 * :five:  [Viral taxonomy]({{ site.baseurl }}{% link _posts/2022-02-14-virome-taxonomy.md %}):
   *ab initio* taxonomy profiling using vConTACT2

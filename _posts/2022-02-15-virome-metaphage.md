@@ -9,7 +9,7 @@ hidden: true
 
 [MetaPhage](https://mattiapandolfovr.github.io/MetaPhage/) is a complete reads-to-report pipeline for viral metagenomics. It is a Nextflow pipeline that can be run on a local machine or on a cluster. It is designed to be easy to use and to provide a complete report of the analysis. 
 
-[![MetaPhage pipeline]([/assets/images/metaphage/metaphage.png](https://github.com/MattiaPandolfoVR/MetaPhage/raw/dev/figures/metaphage.drawio.svg))](https://mattiapandolfovr.github.io/MetaPhage/)
+[![MetaPhage pipeline](https://github.com/MattiaPandolfoVR/MetaPhage/raw/dev/figures/metaphage.drawio.svg)](https://mattiapandolfovr.github.io/MetaPhage/)
 
 See:
 * [a quick overview]({{ site.baseurl }}{% link _posts/2022-01-01-MetaPhage-output.md %})
@@ -20,6 +20,7 @@ See:
 
 ## The programme
 
+* :zero: [EBAME-22 notes]({{ site.baseurl }}{% link _posts/2022-02-02-virome-ebame.md %}): EBAME-7 specific notes
 * :one: [Gathering the reads]({{ site.baseurl }}{% link _posts/2022-02-10-virome-reads.md %}):
   downloading and subsampling reads from public repositories (optional)
 * :two: [Gathering the tools]({{ site.baseurl }}{% link _posts/2022-02-11-virome-tools.md %}):
@@ -30,7 +31,7 @@ See:
   assembly based approach, using VirSorter as an example miner
 * :five:  [Viral taxonomy]({{ site.baseurl }}{% link _posts/2022-02-14-virome-taxonomy.md %}):
   *ab initio* taxonomy profiling using vConTACT2
-* :six:  **MetaPhage overview**:
+* :six:  MetaPhage overview:
   what is MetaPhage, a reads to report pipeline for viral metagenomics
 
 :arrow_left: [Back to the main page]({{ site.baseurl }}{% link _posts/2022-02-01-Virome.md %})

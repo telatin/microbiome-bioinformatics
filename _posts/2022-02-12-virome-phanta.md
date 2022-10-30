@@ -142,7 +142,7 @@ The output files can be filtered at a desired taxonomic level with scripts provi
   downloading and subsampling reads from public repositories (optional)
 * :two: [Gathering the tools]({{ site.baseurl }}{% link _posts/2022-02-11-virome-tools.md %}):
   we will use Miniconda to manage our dependencies
-* :three: [Reads by reads profiling]({{ site.baseurl }}{% link _posts/2022-02-12-virome-phanta.md %}):
+* :three: Reads by reads profiling:
   using Phanta to quickly profile the bacterial and viral components of a microbial community
 * :four:  [_De novo_ mining]({{ site.baseurl }}{% link _posts/2022-02-13-virome-denovo.md %}):
   assembly based approach, using VirSorter as an example miner

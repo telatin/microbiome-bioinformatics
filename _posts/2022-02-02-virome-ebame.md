@@ -74,7 +74,11 @@ mamba env create -n phanta --yes --file ${VIR}/phanta/phanta_env.yaml
 :two: Install VirSorter2 in a dedicated environment
 
 ```bash
-mamba create -n vs2  --yes -c conda-forge -c bioconda virsorter=2
+mamba create -n vs2  --yes -c conda-forge -c bioconda \
+    "python>=3.6" scikit-learn=0.22.1 \
+    imbalanced-learn pandas seaborn hmmer==3.3 prodigal \
+    screed ruamel.yaml "snakemake>=5.18,<=5.26" \
+    click mamba virsorter=2
 ```
 :three: Optionally, you can create an environment to run vConTACT2:
 
@@ -85,7 +89,7 @@ mamba env create -n vcontact2 --yes --file ${VIR}/vcontact2.yaml
 
 ## The programme
 
-* :zero: [EBAME-22 notes]({{ site.baseurl }}{% link _posts/2022-02-02-virome-ebame.md %}): EBAME-7 specific notes
+* :zero: EBAME-22 notes: EBAME-7 specific notes
 * :one: [Gathering the reads]({{ site.baseurl }}{% link _posts/2022-02-10-virome-reads.md %}):
   downloading and subsampling reads from public repositories (optional)
 * :two: [Gathering the tools]({{ site.baseurl }}{% link _posts/2022-02-11-virome-tools.md %}):
