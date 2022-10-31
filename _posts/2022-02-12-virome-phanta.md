@@ -99,16 +99,14 @@ echo "Phanta is in ${PHANTA_DIR:=NOT_INSTALLED}"
 echo "Phanta database is in ${PHANTA_DB:=NOT_INSTALLED}"
 ```
 
-4. Check you input directory, to see the tag denoting forward and reverse reads:
-
-```bash
-ls -l $DATASET_DIR
-```
+4. Check you input directory (with `ls`), to see the tag denoting forward and reverse reads. 
 
 By default the program assumes the tags are `_1` and `_2`, but you can change them with the `-f` and `-r` options,
 if the reads are named differently (for example `_R1` and `_R2`).
 
-5. Run the program:
+1. Run the program:
+
+The basic syntax of the wrapper is:
 
 ```bash
 runPhanta.py -i ${VIR}/dataset-full/ -c 16 -o ~/phanta-out --verbose

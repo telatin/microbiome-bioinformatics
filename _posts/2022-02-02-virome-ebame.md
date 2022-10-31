@@ -27,6 +27,13 @@ conda init bash
 conda install -c conda-forge --yes mamba
 ```
 
+## Screen
+
+If you plan to use GNU Screen, you can download a configuration file to show a status bar:
+
+```bash
+wget -O "$HOME/.bashrc" "https://gist.githubusercontent.com/telatin/66fab72e9bf0dda9984cad8d97c6174b/raw/381014e047cd0d04990176b83e0b723363dda93d/.screenrc"
+```
 ## Databases and datasets location
 
 We have a dedicated partition for databases and datasets, which we can link
