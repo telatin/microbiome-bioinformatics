@@ -97,7 +97,7 @@ drwxrwxr-x 7 ubuntu ubuntu         153 Oct 19 14:41 virsorter2
 :one: We will use conda to create environments for the different tools.
 
 ```bash
-mamba env create -n phanta --yes --file ${VIR}/phanta/phanta_env.yaml
+mamba env create -n phanta --file ${VIR}/phanta/phanta_env.yaml
 ```
 
 :two: Install VirSorter2 in a dedicated environment
@@ -112,7 +112,7 @@ mamba create -n vs2  --yes -c conda-forge -c bioconda \
 :three: Optionally, you can create an environment to run vConTACT2:
 
 ```bash
-mamba env create -n vcontact2 --yes --file ${VIR}/vcontact2.yaml
+mamba env create -n vcontact2 --file ${VIR}/vcontact2.yaml
 ```
 
 ##
