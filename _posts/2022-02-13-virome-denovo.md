@@ -27,7 +27,11 @@ To assemble a single dataset, the command is like:
 # Using 16 cores
 megahit -1 reads_1.fastq.gz -2 reads_2.fastq.gz -o assembly -t 16
 ```
-To assemble a set of paired-end reads we can use a bash loop,
+
+:bulb: Choose a single sample and assemble it with MegaHIT. 
+
+
+For the records, we write here a prototype of script with a loop to assemble a set of paired-end reads,
 where we iterate over the forward reads and we will infer the name of the reverse reads:
 
 ```bash

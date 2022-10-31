@@ -13,6 +13,20 @@ The tutorial is agnostic to the environment, and can be followed on any
 linux system. This page has some notes specific for the Virtual Machines
 used during the [EBAME-7 Workshop](https://maignienlab.gitlab.io/ebame7/).
 
+> :warning: This whole website is a reference, not a step-by-step guide.
+> attempting to copy and paste commands can lead to errors or very long computation times.
+> **Let's chat on Slack!**
+
+
+## Initialize conda, instal mamba
+
+You already have conda Installed, let's install mamba too (a faster drop-in replacement):
+
+```bash
+conda init bash
+conda install -c conda-forge --yes mamba
+```
+
 ## Databases and datasets location
 
 We have a dedicated partition for databases and datasets, which we can link
@@ -63,6 +77,21 @@ drwxrwxr-x 7 ubuntu ubuntu         153 Oct 19 14:41 virsorter2
 * **vConTACT2** is downloaded to `$VIR/vcontact2` and its environment is available at `$VIR/vcontact2.yaml`
 
 
+## Datasets
+
+:bulb: Need a single sample to test your commands with? Use `$VIR/dataset/SRR8652861_1.fq.gz`.
+
+* A reduced dataset with a few reads is available at `$VIR/dataset` (45 Mb total). In the interest of time, we will use this one during the workshop.
+  * SRR8652861
+  * SRR8652914
+  * SRR8652969
+  * SRR8653218
+  * SRR8653221
+  * SRR8653245
+  
+* The raw reads are available at `$VIR/dataset-full` (6.8G total). This is still reasonably sized and can be used at your pace in the VM.
+
+
 ## Create environments
 
 :one: We will use conda to create environments for the different tools.
@@ -85,6 +114,8 @@ mamba create -n vs2  --yes -c conda-forge -c bioconda \
 ```bash
 mamba env create -n vcontact2 --yes --file ${VIR}/vcontact2.yaml
 ```
+
+##
 ---
 
 ## The programme
