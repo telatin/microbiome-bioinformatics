@@ -34,7 +34,7 @@ A great website from "Astrobiomike" which covers:
 ### Other resources
 
 * [**Ryan's tutorial**](https://ryanstutorials.net/linuxtutorial/) - a full tutorial on Linux commands with simple explanations
-* [**Bash scripting**]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-1.md %}) - from Andrea Telatin
+* [**Bash scripting**]({{ site.baseurl }}{% link _posts/2019-01-01-Bash-tutorial-1.md %}) - from Andrea Telatin
 
 * [Learn the linux command line with Ubuntu](https://ubuntu.com/tutorials/command-line-for-beginners#4-creating-folders-and-files) - A tutorial by Canonical (the company backing Ubuntu, the most popular linux distribution) to learn the linux command line.
 * [Linux Professional Institute - Learning](https://learning.lpi.org/en/learning-materials/010-160/2/2.1/) - *Learning* is an initiative of the Linux Professional Institute (LPI) and supports you in preparing for our Linux and open source certifications. 
