@@ -7,6 +7,7 @@ image: assets/images/dalle/learn.jpg
 hidden: false
 ---
 
+Some YouTube videos and tutorials to learn how to use the command line.
 
 ## Video tutorials
 
