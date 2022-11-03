@@ -2,7 +2,7 @@
 layout: post
 title:  "Microbiology from the Command Line"
 author: at
-categories: [ Jekyll, tutorial ]
+categories: [ Jekyll ]
 image: assets/images/breakfast.jpg
 featured: true
 hidden: true

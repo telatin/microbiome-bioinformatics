@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Bash learning resource"
+title:  "Bash learning resources"
 author: at
 categories: [ python, distribution, project ]
 image: assets/images/dalle/learn.jpg
@@ -25,6 +25,7 @@ hidden: false
 ### Happy Belly Bioinformatics
 
 A great website from "Astrobiomike" which covers:
+
 * [Unix training](https://astrobiomike.github.io/unix/)
 * [16S Amplicon analysis](https://astrobiomike.github.io/amplicon/)
 * [Introduction to R](https://astrobiomike.github.io/R/)
@@ -33,7 +34,7 @@ A great website from "Astrobiomike" which covers:
 ### Other resources
 
 * [**Ryan's tutorial**](https://ryanstutorials.net/linuxtutorial/) - a full tutorial on Linux commands with simple explanations
-* [**Bash scripting**]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-2.md %})
+* [**Bash scripting**]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-1.md %}) - from Andrea Telatin
 
 * [Learn the linux command line with Ubuntu](https://ubuntu.com/tutorials/command-line-for-beginners#4-creating-folders-and-files) - A tutorial by Canonical (the company backing Ubuntu, the most popular linux distribution) to learn the linux command line.
 * [Linux Professional Institute - Learning](https://learning.lpi.org/en/learning-materials/010-160/2/2.1/) - *Learning* is an initiative of the Linux Professional Institute (LPI) and supports you in preparing for our Linux and open source certifications. 
