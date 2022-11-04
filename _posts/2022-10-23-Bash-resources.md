@@ -4,7 +4,7 @@ title:  "Bash learning resources"
 author: at
 categories: [ python, distribution, project ]
 image: assets/images/dalle/learn.jpg
-hidden: false
+hidden: true
 ---
 
 Some YouTube videos and tutorials to learn how to use the command line.
