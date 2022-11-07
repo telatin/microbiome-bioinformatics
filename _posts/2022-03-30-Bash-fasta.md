@@ -2,7 +2,7 @@
 layout: post
 title:  "FASTA files"
 author: at
-categories: [ bash, tutorial ]
+categories: [ formats ]
 image: assets/images/code.jpg
 hidden: true
 ---

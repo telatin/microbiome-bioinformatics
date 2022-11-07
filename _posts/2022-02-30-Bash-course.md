@@ -18,5 +18,5 @@ hidden: false
 - :three: [Redirection]({{ site.baseurl }}{% link _posts/2022-03-03-Bash-3.md %})
 - :four: [Pipes]({{ site.baseurl }}{% link _posts/2022-03-03-Bash-4.md %})
 - :five: [FASTA files]({{ site.baseurl }}{% link _posts/2022-03-30-Bash-fasta.md %})
-
+- :six:  [SAM files]({{ site.baseurl }}{% link _posts/2022-03-30-Bash-SAM.md %})
 - :book: [Bash learning resources]({% link _posts/2022-03-30-Bash-resources.md %})
