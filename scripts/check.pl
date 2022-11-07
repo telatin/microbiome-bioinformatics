@@ -10,7 +10,12 @@ my @errors;
 say STDERR "start: ", $start_dir;
 
 find(\&wanted, $start_dir);
- 
+
+sub path_to_normalized_absolute {
+	my $path = shift;
+	$path = File::Spec->rel2abs($path);
+	return File::Spec->canonpath($path);
+}
 
 sub wanted {
 	/.md$/ && say checkmd($File::Find::name);
@@ -26,7 +31,7 @@ for my $e (@errors) {
 sub checkmd {
 	my $file = shift;
 	my $c = 0;
-	print STDERR color("green"), " * Checking $file", color("reset");
+	print STDERR color("green"), " * Checking: ", color("reset"), path_to_normalized_absolute($file);
 	open (my $I, '<', "$file") || return 0;
 	while (my $line = readline($I)) {
 		$c++;

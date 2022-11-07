@@ -34,6 +34,8 @@ Using `wget` (alternatively, use `curl`), download this file.
 
 ```bash
 wget "https://raw.githubusercontent.com/telatin/learn_bash/master/phage/vir_protein.faa"
+# or
+curl -o vir_protein.faa "https://raw.githubusercontent.com/telatin/learn_bash/master/phage/vir_protein.faa"
 ```
 
 ### Count the number of sequences
