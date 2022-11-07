@@ -56,7 +56,7 @@ def render_menu(menu_dictionary, print_numbers=False):
 
             
 
-        menu += f"- {emoji} [{title}]({{% link {path} %}})\n"    
+        menu += f"- {emoji} [{title}]({{{{ site.baseurl }}}}{{% link {path} %}})\n"    
 
     return menu
 

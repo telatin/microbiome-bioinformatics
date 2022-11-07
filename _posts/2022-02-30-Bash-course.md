@@ -12,10 +12,11 @@ hidden: false
 
 
 ## Programme
-- :one: [The first commands]({% link _posts/2022-03-01-Bash-1.md %})
-- :two: [Text files and the command line]({% link _posts/2022-03-02-Bash-2.md %})
-- :three: [Redirection]({% link _posts/2022-03-03-Bash-3.md %})
-- :four: [Pipes]({% link _posts/2022-03-03-Bash-4.md %})
-- :five: [FASTA files]({% link _posts/2022-03-30-Bash-fasta.md %})
+
+- :one: [The first commands]({{ site.baseurl }}{% link _posts/2022-03-01-Bash-1.md %})
+- :two: [Text files and the command line]({{ site.baseurl }}{% link _posts/2022-03-02-Bash-2.md %})
+- :three: [Redirection]({{ site.baseurl }}{% link _posts/2022-03-03-Bash-3.md %})
+- :four: [Pipes]({{ site.baseurl }}{% link _posts/2022-03-03-Bash-4.md %})
+- :five: [FASTA files]({{ site.baseurl }}{% link _posts/2022-03-30-Bash-fasta.md %})
 
 - :book: [Bash learning resources]({% link _posts/2022-03-30-Bash-resources.md %})
