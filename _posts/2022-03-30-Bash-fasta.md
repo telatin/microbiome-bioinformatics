@@ -78,8 +78,15 @@ including the *newline* characters. The total we receive is 10!
 So to get the answer we need to count all the characters, and then subtract the number of lines:
 
 ```bash
+# Select with grep the lines NOT starting 
+#with ">" and count their chars with wc
 grep -v "^>" dummy.fa | wc -c   # this is 10
+
+# Hwere we use grep to count the lines
+# that do not start with ">"
 grep -vc "^>" dummy.fa          # this is 2
+
+# What's 10-2? Bash can tell us!
 echo 10 - 2 | bc                # this gives 8, using a command line based calculator :)
 ```
 
