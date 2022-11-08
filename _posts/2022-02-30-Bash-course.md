@@ -19,4 +19,7 @@ hidden: false
 - :four: [Pipes]({{ site.baseurl }}{% link _posts/2022-03-03-Bash-4.md %})
 - :five: [FASTA files]({{ site.baseurl }}{% link _posts/2022-03-30-Bash-fasta.md %})
 - :six:  [SAM files]({{ site.baseurl }}{% link _posts/2022-03-30-Bash-SAM.md %})
-- :book: [Bash learning resources]({% link _posts/2022-03-30-Bash-resources.md %})
+
+See also:
+- :page_with_curl: [Miniconda and Mamba]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})
+- :book: [Bash learning resources]({{ site.baseurl }}{% link _posts/2022-03-31-Bash-resources.md %})

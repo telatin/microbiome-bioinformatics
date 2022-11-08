@@ -123,6 +123,7 @@ MIN_SCORE and MAX_P_VALUE are supplied with defaults values, but you can change 
 * `-f OUTPUT` is the set of viral contigs (output)
 * `-o OUTPUT` is the tabular output 
 
+
 ## Checking the results
 
 ```bash
