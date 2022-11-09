@@ -18,7 +18,8 @@ hidden: false
 - :three: [Redirection]({{ site.baseurl }}{% link _posts/2022-03-03-Bash-3.md %}) - how to save the output from programs, and the difference between *standard output* and *standard error*.
 - :four: [Pipes]({{ site.baseurl }}{% link _posts/2022-03-03-Bash-4.md %}) - combining multiple commands with UNIX pipes
 - :five: [IGV: A quick overview]({{ site.baseurl }}{% link _posts/2022-03-22-IGV.md %}) - Using IGV to inspect common file formats
-- :five: Some file formats:
+- :six: [SSH and remote servers]({{ site.baseurl }}{% link _posts/2022-03-04-Bash-ssh.md %}) - Working on a remote server from the command line or using VS Code
+- :seven: Some file formats:
   - [FASTA files]({{ site.baseurl }}{% link _posts/2022-03-30-Bash-fasta.md %}) - how sequences are stored in FASTA files
   -  [SAM files]({{ site.baseurl }}{% link _posts/2022-03-30-Bash-SAM.md %}) - the Sequence Alignment/Map format, and how to manipulate it with *samtools*
 

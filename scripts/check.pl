@@ -31,7 +31,7 @@ for my $e (@errors) {
 sub checkmd {
 	my $file = shift;
 	my $c = 0;
-	print STDERR color("green"), " * Checking: ", color("reset"), path_to_normalized_absolute($file);
+	print STDERR color("yellow"), " * Checking: ", color("reset"), path_to_normalized_absolute($file);
 	open (my $I, '<', "$file") || return 0;
 	while (my $line = readline($I)) {
 		$c++;
@@ -41,13 +41,15 @@ sub checkmd {
 
 sub checklink {
 	my ($line, $source, $c) = @_;
-	while ($line=~/\{\%\s+link\s+(.*?)\s+\%\}/g) {
-		if (! -e File::Spec->catfile($start_dir, $1)) {
+	while ($line=~/\{\%\s+(link)\s+(.*?)\s+\%\}/g) {
+		if (! -e File::Spec->catfile($start_dir, $2)) {
 			push(@errors, "in " .
 			 color("bold") . 
 			 basename($source) .
 			 color("reset") .
-			 "\n($source)\n - MISSING: File '$1' at line $c");
+			 "\n($source)\n - MISSING $1: File '$2' at line $c");
+		} else {
+			print STDERR color("green"), "\n\tOK $1:", color("reset"), $2;
 		}
 	}
 }
