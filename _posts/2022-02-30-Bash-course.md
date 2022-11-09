@@ -24,5 +24,5 @@ hidden: false
   -  [SAM files]({{ site.baseurl }}{% link _posts/2022-03-30-Bash-SAM.md %}) - the Sequence Alignment/Map format, and how to manipulate it with *samtools*
 
 See also:
-- :page_with_curl: [Miniconda and Mamba]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %})
-- :book: [Bash learning resources]({{ site.baseurl }}{% link _posts/2022-03-31-Bash-resources.md %})
+- :page_with_curl: [Miniconda and Mamba]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %}) - Solving the dependency hell of bioinformatics software (and how to install Miniconda and Mamba to do this)
+- :book: [Bash learning resources]({{ site.baseurl }}{% link _posts/2022-03-31-Bash-resources.md %}) - Links to other resources to learn Bash
