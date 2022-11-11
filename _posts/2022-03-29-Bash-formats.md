@@ -54,12 +54,21 @@ The Sequence Alignment/Map (SAM) format is a generic format for storing
 the output of sequence alignment programs. It is a tab-delimited text
 with a header starting with `@` and a body with the alignment records.
 
+You can see a demo SAM file [here](https://gist.github.com/telatin/0e5238286ee1e4a2bda09ecda42cd3f1).
+
+
 * [SAM format: a first tutorial]({{ site.baseurl }}{% link _posts/2022-03-30-Bash-SAM.md %})
-  
+* :book: [SAM format specification (PDF)](https://samtools.github.io/hts-specs/SAMv1.pdf)  
+
 ### VCF format
 
 The Variant Call Format (VCF) is a text file format for storing the 
 differences of a set of sequenced genomes compared with a reference sequence.
 It's header lines start with `##`, and the column names start with `#`.
+
+An example of a VCF file, with its lengthy header and only two variants detected 
+is shown below:
+
+{% gist 3d24df591d5e33818854a369feb66b13 %}
 
 * [VCF format (Broad Institute)](https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format)
