@@ -159,17 +159,17 @@ Where:
 the output should be:
 
 ```text
-┌─────────────────┬──────┬──────────┬────────┬─────┬─────┬─────┬────────┬─────┬───────┐
-│ File            │ #Seq │ Total bp │ Avg    │ N50 │ N75 │ N90 │ auN    │ Min │ Max   │
-├─────────────────┼──────┼──────────┼────────┼─────┼─────┼─────┼────────┼─────┼───────┤
-│ vir_protein.faa │ 73   │ 14,866   │ 203.64 │ 246 │ 177 │ 105 │ 360.92 │ 28  │ 1,132 │
-│ dummy.fa        │ 1    │ 8        │ 8.00   │ 8   │ 8   │ 8   │ 8.00   │ 8   │ 8     │
-└─────────────────┴──────┴──────────┴────────┴─────┴─────┴─────┴────────┴─────┴───────┘
+┌-----------------┬------┬----------┬-------┬-----┬-----┬-------┐
+│ File            │ #Seq │ Total bp │ Avg   │ N50 │ Min │  Max  │
+├-----------------┼------┼----------┼-------┼-----┼-----┼-------┤
+│ vir_protein.faa │ 73   │ 14,866   │ 203.6 │ 246 │ 28  │ 1,132 │
+│ dummy.fa        │ 1    │ 8        │ 8.00  │ 8   │ 8   │ 8     │
+└-----------------┴------┴----------┴-------┴-----┴-----┴-------┘
 ```
 
 (We used also our dummy file to check that the tool works as expected!)
 
-[SeqFu](https://telatin.github.io/seqfu2/) has a long list of tools, some are modeled after
+[**SeqFu**](https://telatin.github.io/seqfu2/) has a long list of tools, some are modeled after
 the Unix tools we have seen so far, but with a more powerful syntax and more options.
 
 For example:

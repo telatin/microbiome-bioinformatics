@@ -22,6 +22,7 @@ hidden: false
 - :seven: Some file formats:
   - [FASTA files]({{ site.baseurl }}{% link _posts/2022-03-30-Bash-fasta.md %}) - how sequences are stored in FASTA files
   -  [SAM files]({{ site.baseurl }}{% link _posts/2022-03-30-Bash-SAM.md %}) - the Sequence Alignment/Map format, and how to manipulate it with *samtools*
+  -  [A list of common formats]({% link _posts/2022-03-29-Bash-formats.md %})
 
 See also:
 - :page_with_curl: [Miniconda and Mamba]({{ site.baseurl }}{% link _posts/2021-01-01-Install-Miniconda.md %}) - Solving the dependency hell of bioinformatics software (and how to install Miniconda and Mamba to do this)
