@@ -6,6 +6,8 @@ logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: /microbiome-bioinformatics
 google_analytics: 'UA-185637-20'
+google_tag4: 'G-Q12CPTSQDT'
+
 include: ["_pages"]
 permalink: /:title/
 
