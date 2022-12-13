@@ -57,3 +57,14 @@ and then will execute the pipeline on the data in `list.txt`.
 
 The pipeline will create a folder called `getreads` with the FASTQ files (can be changed 
 passing the `--outdir DirectoryName` option).
+
+:bulb: If you don't have Docker installed, type `-profile conda` instead
+
+## Other parameters
+
+The pipeline can be customized with the following parameters:
+
+* `--max_cpus`: maximum number of CPUs to use (default: 8)
+* `--max_memory`: maximum amount of memory to use (default: 16 GB)
+
+See the [GitHub page](https://github.com/telatin/getreads) for more information
