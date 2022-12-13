@@ -3,7 +3,7 @@ layout: post
 title:  "Get FASTQ reads from NCBI: an automated workflow"
 author: at
 categories: [ tutorial ]
-image: assets/images/dalle/books.png
+image: assets/images/nf/getreads.png
 hidden: false
 ---
 
@@ -55,8 +55,8 @@ nextflow run telatin/getreads -r main --list list.txt -profile docker
 This step - when run for the first time - will download the pipeline and all the dependencies,
 and then will execute the pipeline on the data in `list.txt`.
 
-The pipeline will create a folder called `getreads` with the FASTQ files (can be changed 
-passing the `--outdir DirectoryName` option).
+The pipeline will create a folder called `getreads` with the pipeline outpout files (can be changed 
+passing the `--outdir DirectoryName` option). A subfolder called `reads` will contain the FASTQ files.
 
 :bulb: If you don't have Docker installed, type `-profile conda` instead
 
