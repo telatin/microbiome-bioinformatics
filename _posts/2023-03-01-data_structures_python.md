@@ -14,9 +14,11 @@ Welcome to this quick introduction to data structures in Python.
 We will introduce you to the concept of **data structures**, their importance, and the common data structures that are used in programming.
 
 **So, what are data structures?** 
-In simple terms, a data structure is a way of organizing and storing data in a computer so that it can be accessed and used efficiently. It can be thought of as a container for data, with different ways of organizing the data depending on the structure used.
+In simple terms, a data structure is a way of organizing and storing data in a computer so that it can be accessed and used efficiently.
+It can be thought of as a container for data, with different ways of organizing the data depending on the structure used.
 
-Data structures are important in programming because they can *greatly affect the efficiency and speed of your code*. By using the right data structure for a specific task, you can optimize your code for faster processing times and more efficient memory usage.
+Data structures are important in programming because they can *greatly affect the efficiency and speed of your code*.
+By using the right data structure for a specific task, you can optimize your code for faster processing times and more efficient memory usage.
 
 There are many different data structures that can be used in programming, but some of the most common ones include:
 * lists, 
@@ -24,7 +26,8 @@ There are many different data structures that can be used in programming, but so
 * sets, and 
 * dictionaries. 
 
-*Lists* are used to store a collection of items, while *tuples* are similar but are immutable, meaning they cannot be modified once created. *Sets* are used to store unique values, while *dictionaries* are used to store key-value pairs.
+*Lists* are used to store a collection of items, while *tuples* are similar but are immutable, meaning they cannot be modified once created. 
+*Sets* are used to store unique values, while *dictionaries* are used to store key-value pairs.
 
 ## Built-in data structures
 
@@ -33,22 +36,23 @@ Lists are a collection of ordered items, enclosed in square brackets `[ ].` They
 Here is an example of a list:
 
 ```python
-a_list = [1, 2, 3, "hello", 5.6]` 
+a_list = [1, 2, 3, "hello", 5.6]
 ```
+
 You can access individual items in a list by using the index number in square brackets, starting from 0. Negative indexes can be used to extract elements starting from the end, where the last item has index -1.
 For example:
 
 ```python
-print(a_list[0]) # Output: 1
-print(a_list[3]) # Output: hello
-print(a_list[-1])# Output: 5.6
+print(a_list[0])  # Output: 1
+print(a_list[3])  # Output: hello
+print(a_list[-1]) # Output: 5.6
 ```
 
 You can also modify items in a list by assigning a new value to the index. For example:
 
 ```python
 a_list[3] = "world"
-print(a_list) # Output: [1, 2, 3, "world", 5.6]
+print(a_list)     # Output: [1, 2, 3, "world", 5.6]
 ```    
 
 ### Tuples
@@ -60,75 +64,94 @@ my_tuple = (1, 2, 3, "hello", 5.6)
 You can access individual items in a tuple using the same indexing method as lists:
 
 ```python
-print(my_tuple[3]) # Output: "hello"
+print(my_tuple[3])   # Output: "hello"
 ```
 
 However, you cannot modify the values of a tuple once it's created.
     
 ### Sets
+
 Sets are used to store unique values, and they are enclosed in curly braces { }. Here is an example of a set:
     
 ```python
 my_set = {1, 2, 3, 3, 4, 4, 5}
-```python
+```
 
-Note that the duplicate values are automatically removed, and only the unique values are stored in the set. You can add new values to a set using the `add()` method:
+Note that the duplicate values are automatically removed, and only the unique values are stored in the set. 
+You can add new values to a set using the `add()` method:
 
 ```python
 my_set.add(6)
-print(my_set) # Output: {1, 2, 3, 4, 5, 6}` 
+print(my_set) # Output: {1, 2, 3, 4, 5, 6}
 ```
     
 ### Dictionaries
 
-Dictionaries are used to store key-value pairs, and they are enclosed in curly braces `{ }`. Here is an example of a dictionary:
+Dictionaries are used to store key-value pairs, and they are enclosed in curly braces `{ }`.
+Here is an example of a dictionary:
     
 ```python
 my_dict = {"name": "John", "age": 25, "city": "New York"}
 ```
+
 You can access the value of a specific key in a dictionary by using the key name:
 
 ```python
 print(my_dict["name"]) # Output: "John"
 ```
-You can also modify the value of a key by assigning a new value to it:
 
+You can also modify the value of a key by assigning a new value to it:
 
 ```python
 my_dict["age"] = 30
-print(my_dict) # Output: {"name": "John", "age": 30, "city": "New York"}
+print(my_dict)     # Output: {"name": "John", "age": 30, "city": "New York"}
 ```
  
-Dictionaries are very useful so we can have a deeper look at them. Let's create a simple dictionary to help us understand how they work. We will create a dictionary to store the codon frequencies for the amino acid alanine.
+Dictionaries are very useful so we can have a deeper look at them.
+Let's create a simple dictionary to help us understand how they work.
+We will create a dictionary to store the codon frequencies for the amino acid alanine.
 
 ```python
 alanine_codons = {"GCT": 0.26, "GCC": 0.45, "GCA": 0.17, "GCG": 0.12}
 ```
+
 Here, the keys are the codons for alanine, and the values are their respective frequencies. To access the value associated with a particular key, you can use the square bracket notation with the key as the index.
+
 ```python
 print(alanine_codons["GCT"]) # Output: 0.26
 ```
+
 You can also add new key-value pairs to the dictionary using the square bracket notation.
+
 ```python
 alanine_codons["GCU"] = 0.10
 print(alanine_codons) # Output: {"GCT": 0.26, "GCC": 0.45, "GCA": 0.17, "GCG": 0.12, "GCU": 0.10}
 ```
+
 If you try to access a key that does not exist in the dictionary, it will raise a `KeyError`.
+
 ```python
 print(alanine_codons["AAA"]) # Output: KeyError: 'AAA'
 ```
-To avoid this, you can use the `get()` method instead. If the key is not found in the dictionary, `get()` will return `None` by default, but you can specify a default value to return instead, as a second argument of the function.
+
+To avoid this, you can use the `get()` method instead.
+If the key is not found in the dictionary, `get()` will return `None` by default,
+but you can specify a default value to return instead, as a second argument of the function.
 
 ```python
 print(alanine_codons.get("AAA")) # Output: None
 print(alanine_codons.get("AAA", "N/A")) # Output: N/A`
 ```
+
 You can also loop through the keys and values of a dictionary using a for loop and the `items()` method.
+
 ```python
 for codon, freq in alanine_codons.items():
     print(f"The frequency of {codon} is {freq}.")
 ```
+
 Output:
+
 ```text
 The frequency of GCT is 0.26.
 The frequency of GCC is 0.45.
@@ -219,11 +242,13 @@ for base in my_list:
 
 print(my_dict)
 ```
+
 In this example, we create a list of nucleotides and then create a `defaultdict` called `my_dict` with a default value of 0. We then iterate over the list of nucleotides, adding 1 to the count for each nucleotide in the `my_dict` dictionary. Finally, we print the resulting dictionary, which shows the count of each nucleotide in the original list.
 
 ### Counter
 
 A `Counter` is another useful data structure for counting the occurrences of items in a collection. It is similar to a `defaultdict`, but it provides several additional methods for working with the counts. Here's an example:
+
 ```python
 from collections import Counter
 
@@ -233,6 +258,7 @@ my_counter = Counter(my_list)
 print(my_counter)
 print(my_counter.most_common(2))
 ```
+
 In this example, we create a list of nucleotides and then create a `Counter` called `my_counter`. We then print the resulting `my_counter` object, which shows the count of each nucleotide in the original list. We also use the `most_common` method to print the two most common nucleotides and their counts.
 
 ### OrderedDict
@@ -250,12 +276,13 @@ my_dict['T'] = 4
 
 print(my_dict.keys())
 ```
+
 In this example, we create an `OrderedDict` called `my_dict` and add four key-value pairs to it. We then print the keys of the dictionary, which will be printed in the order in which they were inserted.
 
 ### deque
 
 A `deque` is a double-ended queue data structure that allows you to efficiently append and pop items from both ends. This can be useful when you want to maintain a collection of items in which items are frequently added or removed from the beginning or end of the collection. Here's an example:
-```python
+
 ```python
 from collections import deque
 
@@ -267,6 +294,7 @@ my_deque.popleft()
 
 print(my_deque)
 ```
+
 In this example, we create a list of nucleotides and then create a `deque` called `my_deque`
 
 ### Examples
@@ -285,6 +313,7 @@ for nucleotide in sequence:
 
 print(nucleotide_counts)
 ```
+
 In this example, we first import the `defaultdict` class from the `collections` module. We then define a DNA sequence as a string. We create a `defaultdict` called `nucleotide_counts` with the default value of zero. We iterate over each nucleotide in the sequence and use the `nucleotide_counts` dictionary to keep track of the number of occurrences of each nucleotide.
 
 Finally, we print the `nucleotide_counts` dictionary, which contains the count of each nucleotide in the sequence:
