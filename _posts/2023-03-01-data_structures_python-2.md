@@ -4,7 +4,7 @@ title:  "A primer on Python data structures (2)"
 author: at
 categories: [ python, data-structures ]
 image: assets/images/python.png
-hidden: false
+hidden: true
 ---
 
 
@@ -153,10 +153,9 @@ In this example, we define a function called `sliding_window` that takes a DNA s
 
 Finally, we demonstrate the use of the `sliding_window` function by applying it to a DNA sequence with a window size of 5. The function generates all possible windows of size 5 over the sequence and prints each one to the console.
 
-## Heapq
-
-## Conclusions
 
 ---
+
+See also:
 
 * [Part 1]({{ site.baseurl }}{% link _posts/2023-03-01-data_structures_python-1.md %})

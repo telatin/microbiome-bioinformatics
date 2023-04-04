@@ -1,7 +1,6 @@
-
 ---
 layout: post
-title:  "A primer on Python data structures"
+title:  "A primer on Python data structures (1)"
 author: at
 categories: [ python, data-structures ]
 image: assets/images/python.png
@@ -219,4 +218,5 @@ Data structures are a fundamental concept in programming that can greatly impact
 
 ---
 
+See also: 
 * [Part 2]({{ site.baseurl }}{% link _posts/2023-03-01-data_structures_python-2.md %})
