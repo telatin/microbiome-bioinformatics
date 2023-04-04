@@ -1,15 +1,13 @@
 ---
 layout: post
-title:  "A primer on Python data structures (1)"
+title:  "Python data structures (1)"
 author: at
 categories: [ python, data-structures ]
 image: assets/images/python.png
 hidden: false
 ---
 
-# Data Structures in Python
-
-Built-int data structures in Python
+Built-in data structures in Python: lists, tuples, sets, and dictionaries.
 
 ## Introduction
 

@@ -7,12 +7,13 @@ image: assets/images/python.png
 hidden: true
 ---
 
+More data structures in Python using standard libraries.
 
-# Other Python data structures
+# Notable libraries
 
 Python has several standard **libraries** that offer useful new data structures beyond the built-in ones. Some examples are:
 
-1. `collections`: This library provides several useful data structures such as `defaultdict`, `Counter`, `OrderedDict`, and `deque`.
+1. **`collections`**: This library provides several useful data structures such as `defaultdict`, `Counter`, `OrderedDict`, and `deque`.
     
 2. `heapq`: This library provides a heap data structure that can be used to efficiently maintain a collection of items that can be sorted and queried in constant time.
     
@@ -24,7 +25,9 @@ Python has several standard **libraries** that offer useful new data structures 
     
 6. `graphlib`: This library provides data structures for working with graphs, including `Graph` and `DiGraph`.
 
-These libraries can be imported and used in your Python code as needed. They can provide additional functionality and efficiency for working with data beyond what is offered by the built-in data structures. We will cover them in another tutorial.
+These libraries can be imported and used in your Python code as needed. 
+They can provide additional functionality and efficiency for working with data beyond what is offered by the built-in data structures. 
+In this post, we will cover some of the most useful data structures from the `collections` library.
 
 ## Collections 
 
