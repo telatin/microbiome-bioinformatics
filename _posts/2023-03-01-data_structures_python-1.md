@@ -19,10 +19,9 @@ We will introduce you to the concept of **data structures**, their importance, a
 In simple terms, a data structure is a way of organizing and storing data in a computer so that it can be accessed and used efficiently.
 It can be thought of as a container for data, with different ways of organizing the data depending on the structure used.
 
-Data structures are important in programming because they can *greatly affect the efficiency and speed of your code*.
 By using the right data structure for a specific task, you can optimize your code for faster processing times and more efficient memory usage.
 
-Built-in data structures are available in most programming languages, and Python is no exception:
+**Built-in data** structures are available in most programming languages, and Python is no exception:
 
 * lists,
 * tuples,
@@ -32,11 +31,13 @@ Built-in data structures are available in most programming languages, and Python
 *Lists* are used to store a collection of items, while *tuples* are similar but are immutable, meaning they cannot be modified once created. 
 *Sets* are used to store unique values, while *dictionaries* are used to store key-value pairs.
 
-There are also other data structures that are not built-in, available from core libraries or third-party libraries.
+There are also **other data structures** that are not built-in, available from core libraries or third-party libraries
+(see [part 2]({{ site.baseurl }}{% link _posts/2023-03-01-data_structures_python-2.md %}))
 
 ## Built-in data structures
 
 ### Lists
+
 Lists are a collection of ordered items, enclosed in square brackets `[ ].` They can store multiple data types such as integers, floats, strings, etc. A list is usually homogeneous, but this is not a requirement and can store all the types that are needed.
 Here is an example of a list:
 
@@ -58,14 +59,16 @@ You can also modify items in a list by assigning a new value to the index. For e
 ```python
 a_list[3] = "world"
 print(a_list)     # Output: [1, 2, 3, "world", 5.6]
-```    
+```
 
 ### Tuples
+
 Tuples are similar to lists, but they are immutable, meaning that once created, their values cannot be changed. They are enclosed in parentheses ( ). Here is an example of a tuple:
-    
+
 ```python
 my_tuple = (1, 2, 3, "hello", 5.6)
 ```
+
 You can access individual items in a tuple using the same indexing method as lists:
 
 ```python
@@ -73,11 +76,11 @@ print(my_tuple[3])   # Output: "hello"
 ```
 
 However, you cannot modify the values of a tuple once it's created.
-    
+ 
 ### Sets
 
 Sets are used to store unique values, and they are enclosed in curly braces { }. Here is an example of a set:
-    
+
 ```python
 my_set = {1, 2, 3, 3, 4, 4, 5}
 ```
@@ -89,7 +92,7 @@ You can add new values to a set using the `add()` method:
 my_set.add(6)
 print(my_set) # Output: {1, 2, 3, 4, 5, 6}
 ```
-    
+
 ### Dictionaries
 
 Dictionaries are used to store key-value pairs, and they are enclosed in curly braces `{ }`.
