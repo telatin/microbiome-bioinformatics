@@ -137,18 +137,19 @@ from collections import deque
 
 def sliding_window(sequence, window_size):
     """Generate a sliding window over a DNA sequence."""
-    sequence = deque(sequence[:window_size], maxlen=window_size)
-    yield sequence
+    sequence_window = deque(sequence[:window_size], maxlen=window_size)
+    yield  sequence_window
 
-    for base in sequence:
-        sequence.append(base)
-        yield sequence
+    for base in sequence[window_size:]:
+        sequence_window.append(base)
+        yield  sequence_window
 
 # Example usage
 sequence = "ACGTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCT"
 window_size = 5
 
 for window in sliding_window(sequence, window_size):
+    # each window will be a `deque` with window_size bases
     print("".join(window))
 ```
 
