@@ -133,7 +133,7 @@ Applications in bioinformatics started in the early stages of the field: see bel
 [![An old example]({{ site.baseurl }}{% link assets/images/ss/zipf.png %})](https://www.google.com/search?q=the+genetic+code+and+zipfs+law&oq=the+genetic+code+and+zipfs+law&aqs=chrome..69i57j33i10i160.3536j0j4&sourceid=chrome&ie=UTF-8)
 
 There is a related extension (TF-IDF, short for *term frequency–inverse document frequency*) which has also been used in genomics, *e.g.* 
-to [detect HGT](https://www.nature.com/articles/srep30308) or to (cluster genes and genomes)[https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4922-4]
+to [detect HGT](https://www.nature.com/articles/srep30308) or to [cluster genes and genomes](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4922-4)
 
 ## Further reading
 
