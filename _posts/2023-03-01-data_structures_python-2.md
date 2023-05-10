@@ -92,12 +92,20 @@ A `deque` is a double-ended queue data structure that allows you to efficiently 
 ```python
 from collections import deque
 
+# Initialize a list with some elements
 my_list = ['A', 'C', 'G', 'T', 'A', 'C', 'G', 'T', 'A', 'C', 'G', 'T']
+
+# Convert the list into a deque
 my_deque = deque(my_list)
 
-my_deque.append('N')In this example, we create a list of nucleotides and then create a `deque` called `my_deque`
-my_deque.popleft()
+# Now the list is a deque, with access to new methods
+# Use the append method to add an element ('N') to the right end of the deque
+my_deque.append('N') 
 
+# Use the popleft method to remove an element from the left end of the deque
+my_deque.popleft() 
+
+# Print the final state of the deque
 print(my_deque)
 ```
 
@@ -124,7 +132,7 @@ In this example, we first import the `defaultdict` class from the `collections` 
 
 Finally, we print the `nucleotide_counts` dictionary, which contains the count of each nucleotide in the sequence:
 
-```python
+```text
 defaultdict(<class 'int'>, {'A': 16, 'T': 16, 'G': 22, 'C': 16})` 
 ```
 
