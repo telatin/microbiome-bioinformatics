@@ -155,9 +155,13 @@ conda remove -n ENVIRONMENT_NAME --all
 
 ## Using mamba for faster installations
 
+:warning: you can now update your conda to become faster as mamba 
+[see how](https://telatin.github.io/microbiome-bioinformatics/Install-Miniconda/).
+
 Sometimes we require a lot of packages to be installed and this will trigger a long
 process called "solving the environment". There is a drop-in replacement for Conda
 called mamba, that  you can install from conda-forge:
+
 ```bash
 conda install -y -c conda-forge mamba
 ```
