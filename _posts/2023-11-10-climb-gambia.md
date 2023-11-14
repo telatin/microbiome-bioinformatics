@@ -3,7 +3,7 @@ layout: post
 title:  "A very short bioinformatics tutorial using CLIMB notebooks"
 author: at
 categories: [ climb ]
-image: assets/images/laptop.jpg
+image: assets/images/gambia.jpg
 hidden: false
 ---
 
