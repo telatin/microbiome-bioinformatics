@@ -192,10 +192,12 @@ mkdir -p contigs
 skesa --cores 4 --reads trimmed/Sample1_R1.fastq.gz,data/Sample1_R2.fastq.gz > contigs/Sample1.fasta
 
 # Assemble Sample2
-skesa --cores 4 --reads trimmed/Sample1_R1.fastq.gz,data/Sample1_R2.fastq.gz > contigs/Sample2.fasta
+skesa --cores 4 --reads trimmed/Sample2_R1.fastq.gz,data/Sample2_R2.fastq.gz > contigs/Sample2.fasta
 ```
 
 :arrow_right: To know more about [genome assembly with short reads](https://www.illumina.com/Documents/products/technotes/technote_denovo_assembly_ecoli.pdf) and [skesa](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwij18bJ976CAxXITKQEHWwBCPsQFnoECBgQAQ&url=https%3A%2F%2Fgithub.com%2Fncbi%2FSKESA&usg=AOvVaw2hOhnjrZq0IToKEJB8ChC6&opi=89978449).
+
+
 ### Assembly metrics evaluation 
 
 Evaluating the quality of a genome assembly is a crucial step in any genome sequencing project. One commonly used tool for assessing assembly quality is Quast (Quality Assessment Tool for Genome Assemblies). Quast provides a comprehensive set of metrics and visualizations to help researchers gauge the accuracy and completeness of their genome assembly.  
