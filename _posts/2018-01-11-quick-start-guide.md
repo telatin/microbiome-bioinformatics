@@ -41,8 +41,8 @@ This website collects some notes, tutorials and handsout used for
 You learnt how to work from the command line, and now want to start automating
 your actions with scripts. This is a gentle introduction for you.
 
-* [Introduction and first examples]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-2.md %})
-* [For loops]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-2.md %})
+* [Introduction and first examples]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-1.md %})
+* [`for` loops]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-2.md %})
 * [`if` conditionals]({{ site.baseurl }}{% link _posts/2019-01-03-Bash-tutorial-3.md %})
-* [Safety net]({{ site.baseurl }}{% link _posts/2019-01-04-Bash-tutorial-4.md %})
+* [Safer scripts]({{ site.baseurl }}{% link _posts/2019-01-04-Bash-tutorial-4.md %})
 * [Getting parameters]({{ site.baseurl }}{% link _posts/2019-01-05-Bash-tutorial-5.md %})
