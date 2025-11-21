@@ -82,8 +82,7 @@ Try, then [check the solution](https://gist.github.com/telatin/40525157f1a169712
 #### Table of Contents
 
 * [Part1: Introduction]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-1.md %})
-* [Part2: "for" loops]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-2.md %})
-* [Part3: "if" conditionals]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-3.md %})
-* [Part4: safer scripts]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-4.md %})
-* [Part5: user parameters]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-5.md %})
-
+* [Part2: "for" loops]({{ site.baseurl }}/{% link _posts/2019-01-02-Bash-tutorial-2.md %})
+* [Part3: "if" conditionals]({{ site.baseurl }}/{% link _posts/2019-01-03-Bash-tutorial-3.md %})
+* [Part4: safer scripts]({{ site.baseurl }}/{% link _posts/2019-01-04-Bash-tutorial-4.md %})
+* [Part5: user parameters]({{ site.baseurl }}/{% link _posts/2019-01-05-Bash-tutorial-5.md %})
