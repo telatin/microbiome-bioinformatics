@@ -102,4 +102,14 @@ as they are merely storing some information inside two boxes.
 To make use of a variable we can retrieve it using the `$NAME` notation.
 In this script we did simply print its content using an _echo_ command.
 
+
+#### Table of Contents
+
+* [Part1: Introduction]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-1.md %})
+* [Part2: "for" loops]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-2.md %})
+* [Part3: "if" conditionals]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-3.md %})
+* [Part4: safer scripts]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-4.md %})
+* [Part5: user parameters]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-5.md %})
+
+
 _Norwich, 2018–02–03. Originally [published here](https://medium.com/ngs-sh/a-small-introduction-to-bash-scripting-part-1-683c3633b724)_

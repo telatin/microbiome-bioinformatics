@@ -78,3 +78,12 @@ list is not expanded and it will be taken literally as “`*.sam`”,
 having samtools to process a nonsense filename…
 Using an if statement, you’ll be able to fix the problem.
 Try, then [check the solution](https://gist.github.com/telatin/40525157f1a169712030316e181947f5)!
+
+#### Table of Contents
+
+* [Part1: Introduction]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-1.md %})
+* [Part2: "for" loops]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-2.md %})
+* [Part3: "if" conditionals]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-3.md %})
+* [Part4: safer scripts]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-4.md %})
+* [Part5: user parameters]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-5.md %})
+
