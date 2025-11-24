@@ -6,7 +6,7 @@ categories: [ bash, tutorial ]
 image: assets/images/coding.jpg
 ---
 
-After a small [introduction]({{ site.baseurl }}{% link _posts/2019-01-02-Bash-tutorial-2.md %}) to Bash scripting,
+After a small [introduction]({{ site.baseurl }}{% link _posts/2019-01-01-Bash-tutorial-1.md %}) to Bash scripting,
 we finally create a first bioinformatics script…
 introducing one of the **loops** we can use with the shell.
 A loop is a structure that allows to perform a set of commands a number of times.
@@ -71,3 +71,11 @@ The shell will try to look for the content of a variable called “Variable2”,
 ```
 echo "${Variable}2"
 ```
+
+#### Table of Contents
+
+* [Part1: Introduction]({{ site.baseurl }}/{% link _posts/2019-01-01-Bash-tutorial-1.md %})
+* [Part2: "for" loops]({{ site.baseurl }}/{% link _posts/2019-01-02-Bash-tutorial-2.md %})
+* [Part3: "if" conditionals]({{ site.baseurl }}/{% link _posts/2019-01-03-Bash-tutorial-3.md %})
+* [Part4: safer scripts]({{ site.baseurl }}/{% link _posts/2019-01-04-Bash-tutorial-4.md %})
+* [Part5: user parameters]({{ site.baseurl }}/{% link _posts/2019-01-05-Bash-tutorial-5.md %})
