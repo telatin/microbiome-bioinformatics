@@ -6,46 +6,98 @@ categories: [ metagenomics, tutorial ]
 hidden: true
 ---
 
-In our workshop we proivided a kraken2 database for you to use. 
-However, most of the times, you would need to create a database for your own host. 
-For the creation of a human database kraken to already provides pre-processed databases. 
+In our workshop we provided a Kraken2 database for you to use. However, most of the time, you would need to create a database for your own host. For the creation of a human database, Kraken2 already provides pre-processed databases.
 But sometimes you need to build a custom database. 
-Here we can practise the corona virus genome which is small enough to keep computation times and storage space minimal.
+
+Here we can practice with the coronavirus genome which is small enough to keep computation times and storage space minimal.
+
+## Custom host (example: coronavirus)
+
+Let's create a custom database for the SARS-CoV-2 coronavirus (NCBI RefSeq: NC_045512.2).
 
 
-## Custom host (example: corona virus)
+### Adding taxonomy information
 
-If your host is not included in kraken2 databases, this is a little bit more complicated. 
-You need to provide your host genome in fasta format. 
-We downloaded the corona virus genome for you to try the database creation here `git `
+Kraken2 requires NCBI taxonomy IDs in sequence headers to correctly classify reads. The format is `|kraken:taxid|TAXID` appended to each sequence name. For SARS-CoV-2, the taxid is 2697049.
 
-Very important is to add the NCBI taxid for your genome to contig names like `|kraken:taxid|2697049`. To do this we create a folder `coronaDB` to save the modified genome. 
+First, create a directory for the database:
 
-    mkdir ~/coronaDB
+```bash
+# Create directory for the custom database
+mkdir ~/coronaDB
+```
 
-Then we add the taxid. We can use _seqfu_ for this:
+Then append the taxid to sequence headers using _seqfu_:
 
-    seqfu cat --append "|kraken:taxid|2697049" /data/shared/db-genome/NC_045512.2.fasta.gz > ~/coronaDB/NC_045512.2_taxid.fasta
+```bash
+# Append taxid to sequence headers
+seqfu cat --append "|kraken:taxid|2697049" /data/shared/db-genome/NC_045512.2.fasta.gz > ~/coronaDB/NC_045512.2_taxid.fasta
+```
 
-Let's check that the taxid was indeed appended:
+Verify the modification worked:
+```bash
+# Verify the taxid was added to headers
+grep ">" ~/coronaDB/NC_045512.2_taxid.fasta
+```
 
-    grep ">" ~/coronaDB/NC_045512.2_taxid.fasta
+You should see the header now includes `|kraken:taxid|2697049`.
 
-Now you need to add your fasta file to a new database which we named `coronaDB`
+### Building the database
 
-    kraken2-build --add-to-library ~/coronaDB/NC_045512.2_taxid.fasta --db ~/coronaDB --threads 4
+Add the genome to the database library:
 
-Next we tell kraken2 to build the taxonomy (this will take a few minutes)
+```bash
+# Add genome to library
+kraken2-build \
+  --add-to-library ~/coronaDB/NC_045512.2_taxid.fasta \
+  --db ~/coronaDB \
+  --threads 4
+```
 
-    kraken2-build --download-taxonomy --db ~/coronaDB
+Download the NCBI taxonomy tree (required for classification):
 
-And now, we build the database
+```bash
+# Download NCBI taxonomy
+kraken2-build --download-taxonomy --db ~/coronaDB
+```
 
-    kraken2-build --build --db ~/coronaDB
+This downloads `taxdump.tar.gz` and creates the taxonomy structure.
 
-Finally, we need to clean up a little
+Build the k-mer database (this is the most time-consuming step):
 
-    kraken2-build --clean --db ~/coronaDB
+```bash
+# Build the Kraken2 database
+kraken2-build --build --db ~/coronaDB --threads 4
+```
 
-*Yay!* Now you are ready to use this database for your host decontamination using your own database.
+This creates the hash table and minimizer database used for classification.
 
+Clean up intermediate files to save disk space:
+
+```bash
+# Remove intermediate files to save space
+kraken2-build --clean --db ~/coronaDB
+```
+
+This removes downloaded taxonomy files and temporary data, keeping only the final database.
+
+### Using your custom database
+
+To classify reads and separate host from non-host sequences:
+
+```bash
+# Classify reads and remove host sequences
+kraken2 --db ~/coronaDB \
+  --threads 4 \
+  --unclassified-out host_removed#.fastq \
+  --classified-out host_classified#.fastq \
+  --paired input_R1.fastq input_R2.fastq
+```
+
+The `#` symbol is replaced with `_1` and `_2` for paired-end reads. Unclassified reads (non-host) go to `host_removed_*.fastq`, while classified reads (host) go to `host_classified_*.fastq`.
+
+## Notes
+
+- Replace `2697049` with your organism's NCBI taxid (find it at [NCBI Taxonomy](https://www.ncbi.nlm.nih.gov/taxonomy))
+- For larger genomes, increase memory and threads accordingly
+- The database size scales with genome complexity and k-mer diversity
