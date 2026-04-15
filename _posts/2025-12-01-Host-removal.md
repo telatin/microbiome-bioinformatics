@@ -13,7 +13,7 @@ you've almost certainly encountered the problem of **host contamination**.
 Human (or animal) DNA ends up in your library alongside the microbial DNA you actually care about, and unless you remove it efficiently, 
 it wastes sequencing capacity, compute time, and (what's worse!) may retain sensitive patient genomic data that you have no legal right to store or process.
 
-We [described mapping based approaches]({{ site.baseurl }}/{% link 2021-03-04-Host-removal.md %})
+We [described mapping based approaches]({{ site.baseurl }}/{% link _posts/2021-03-04-Host-removal.md %})
 and now we want to focus on a modern minimizer-based approach: Deacon.
  
 
