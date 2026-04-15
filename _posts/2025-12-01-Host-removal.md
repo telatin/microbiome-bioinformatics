@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Host removal from metagenomics reads (updates)"
+title:  "Host removal: why Deacon"
 author: at
 categories: [ metagenomics ]
 image: assets/images/host.jpg
