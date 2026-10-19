@@ -13,6 +13,10 @@ permalink: /:title/
 
 # Authors
 authors:
+  xx:
+    name: Team
+    web: https://telatin.github.io/microbiome-bioinformatics
+    description: "Blog posts from the web or conferences"
   at:
     name: Andrea Telatin
     display_name: Andrea Telatin
